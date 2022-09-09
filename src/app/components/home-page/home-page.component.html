@@ -1,0 +1,9 @@
+<div class="layout-container">
+    <div class="center">
+        <div class="background-container">
+            <app-info-panel class="info-panel"></app-info-panel>
+        </div>
+    </div>
+    <img [@fadeIn]="{value: 'awake', params:{yDirection:-50}}" class="plants-img-left" src="/assets/plants-left.svg">
+    <img [@fadeIn]="{value: 'awake', params:{yDirection:50, delay:1300}}" class="plants-img-right" src="/assets/plants-right.svg">
+</div>
