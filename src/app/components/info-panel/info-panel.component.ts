@@ -9,7 +9,14 @@ export class InfoPanelComponent implements OnInit {
 
   constructor() { }
 
+  mobile : boolean = false;
+
   ngOnInit(): void {
+    var ua = navigator.userAgent;
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)) {
+      this.mobile = true;
+    }
   }
 
 }
