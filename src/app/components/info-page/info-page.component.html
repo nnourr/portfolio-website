@@ -1,25 +1,25 @@
-<div class="info-page-container">
-    <div class="text-container">
+<div [@removePadding] class="info-page-container">
+    <div [@removePadding] class="text-container">
         <div>
-            <div class="name-container">
-                <h1 class="name">Hi! I'm <span class="name-highlight">Noureldeen Ahmed</span>
+            <div class="name-container" [@hide]>
+                <h1 [@hide] class="name">Hi! I'm <span class="name-highlight">Noureldeen Ahmed</span>
                 </h1>
-                <div *ngIf="mobile" class="img-container">
-                    <img class="profile-picture mobile-img" src="assets/badheadshotcoppped.jpg">
+                <div [@hideImage] *ngIf="mobile" class="img-container">
+                    <img [@hideImage] class="profile-picture mobile-img" src="assets/badheadshotcoppped.jpg">
                 </div>
             </div>
-            <p class="intro-text">
+            <p class="intro-text" [@hide]>
                 I'm a passionate and versatile <span class="green-highlight">Software Engineer</span>, with an insatiable thirst for learning and progress.
             </p>
-            <p class="intro-text">I'm a third-year student at the <span class="green-highlight">University Of Guelph.</span></p>
-            <p class="intro-text">I'm a creative <span class="green-highlight">problem solver</span> and an <span class="green-highlight">idea factory.</span></p>
+            <p [@hide] class="intro-text">I'm a third-year student at the <span class="green-highlight">University Of Guelph.</span></p>
+            <p [@hide] class="intro-text">I'm a creative <span class="green-highlight">problem solver</span> and an <span class="green-highlight">idea factory.</span></p>
         </div>
-        <div class="button-container">
+        <div [@hide] class="button-container">
             <a href="assets/resume.pdf" target="_blank"><button type="button" class="prm-btn">View Resume</button></a>
             <button type="button" class="prm-btn" (click)="openProjects()">View Projects</button>
         </div>
     </div>
-    <div *ngIf="!mobile" class="img-container">
-        <img class="profile-picture" src="assets/badheadshotcoppped.jpg">
+    <div [@hideImage] *ngIf="!mobile" class="img-container">
+        <img [@hideImage] class="profile-picture" src="assets/badheadshotcoppped.jpg">
     </div>
 </div>

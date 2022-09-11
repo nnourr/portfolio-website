@@ -1,7 +1,7 @@
 <div class="layout-container">
     <div class="center">
         <div class="background-container">
-            <app-info-page [@infoPageAnimation] *ngIf="currentPage == pagesEnum.infoPage" class="info-page" (projectEmitter)="showProjects()"></app-info-page>
+            <app-info-page [ngClass]="{'leaving' : infoPageLeave}" [@infoPageDelay] *ngIf="currentPage == pagesEnum.infoPage" class="info-page" (projectEmitter)="showProjects()"></app-info-page>
             <app-project-page *ngIf="currentPage == pagesEnum.projectViewPage" class="project-page" (projectEmitter)="showProjects()"></app-project-page>
         </div>
     </div>
