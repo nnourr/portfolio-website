@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Pages } from 'src/environments/constants';
 
 @Component({
   selector: 'app-home-page',
@@ -18,7 +19,13 @@ export class HomePageComponent implements OnInit {
 
   constructor() { }
 
+  pagesEnum = Pages
+  currentPage = Pages.infoPage 
+
   ngOnInit(): void {
   }
 
+  showProjects(): void {
+    this.currentPage = Pages.projectViewPage
+  }
 }

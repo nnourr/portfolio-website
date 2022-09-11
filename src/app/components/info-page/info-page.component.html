@@ -1,4 +1,4 @@
-<div class="info-panel-container">
+<div class="info-page-container">
     <div class="text-container">
         <div>
             <div class="name-container">
@@ -16,7 +16,7 @@
         </div>
         <div class="button-container">
             <a href="assets/resume.pdf" target="_blank"><button type="button" class="prm-btn">View Resume</button></a>
-            <button type="button" class="prm-btn">View Projects</button>
+            <button type="button" class="prm-btn" (click)="openProjects()">View Projects</button>
         </div>
     </div>
     <div *ngIf="!mobile" class="img-container">

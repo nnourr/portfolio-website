@@ -1,7 +1,8 @@
 <div class="layout-container">
     <div class="center">
         <div class="background-container">
-            <app-info-panel class="info-panel"></app-info-panel>
+            <app-info-page [@infoPageAnimation] *ngIf="currentPage == pagesEnum.infoPage" class="info-page" (projectEmitter)="showProjects()"></app-info-page>
+            <app-project-page *ngIf="currentPage == pagesEnum.projectViewPage" class="project-page" (projectEmitter)="showProjects()"></app-project-page>
         </div>
     </div>
     <img [@fadeIn]="{value: 'awake', params:{yDirection:-50}}" class="plants-img-left" src="assets/plants-left.svg">

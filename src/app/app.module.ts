@@ -5,13 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { InfoPanelComponent } from './components/info-panel/info-panel.component';
+import { InfoPanelComponent } from './components/info-page/info-page.component';
+import { ProjectPageComponent } from './components/project-page/project-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    InfoPanelComponent
+    InfoPanelComponent,
+    ProjectPageComponent
   ],
   imports: [
     BrowserModule,

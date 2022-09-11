@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoPanelComponent } from './info-panel.component';
+import { InfoPanelComponent } from './info-page.component';
 
 describe('InfoPanelComponent', () => {
   let component: InfoPanelComponent;
