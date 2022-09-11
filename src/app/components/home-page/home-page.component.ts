@@ -17,8 +17,17 @@ import { Pages } from 'src/environments/constants';
       transition(':leave', [
         group ([
           query('@*', [animateChild()]),
-          animate(50000),
+          animate(1200),
         ]),
+      ])
+    ]),
+    trigger('projectPageAnimation', [
+      transition(':enter', [
+        style({opacity:0, width:'60%', height:'60%'}),
+        group ([
+          animate("10ms 1000ms", style({opacity:1})),
+          animate("1000ms 1000ms", style({width:"80%", height:"80%"}))
+        ])
       ])
     ])
   ]

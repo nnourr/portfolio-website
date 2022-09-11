@@ -23,7 +23,7 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
     ]),
     // trigger('makeBlock', [
     //   transition(':leave', [
-    //     animate ('500ms 700ms', style({opacity: 0}))
+    //     animate ('500ms $pageTransitionSpeed', style({opacity: 0}))
     //   ])
     // ])
   ]
