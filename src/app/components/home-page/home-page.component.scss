@@ -115,7 +115,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1000ms;
+    transition: all $pageTransitionSpeed;
     &::before {
         position: absolute;
         padding: 10px;
@@ -170,8 +170,8 @@
         transition: all 1000ms;
         border-radius: 1rem;
         border: 1rem rgb(252, 245, 252) solid;
-        animation: borderBreathOtherWay 10000ms 1500ms linear infinite, borderAppearOtherWay 1500ms 1000ms forwards;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.368), inset 0 0 20px rgba(0, 0, 0, 0.368);
+        animation: borderBreathOtherWay 10000ms ($pageTransitionSpeed * 2) linear infinite, borderAppearOtherWay $pageTransitionSpeed ($pageTransitionSpeed*2) forwards;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.368);
     }
 }
 
@@ -185,8 +185,8 @@
 }
 
 .leaving {
-    height: 60%;
-    width: 60%;
+    height: 40%;
+    width: 40%;
     padding: 0;
     &::before {
         padding: 0;
@@ -212,8 +212,8 @@
         }
     }
     .leaving {
-        height: 60%;
-        width: 60%;
+        height: 40%;
+        width: 40%;
         &::before {
             padding: 0;
         }

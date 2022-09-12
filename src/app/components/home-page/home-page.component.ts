@@ -17,16 +17,17 @@ import { Pages } from 'src/environments/constants';
       transition(':leave', [
         group ([
           query('@*', [animateChild()]),
-          animate(1200),
+          animate(1250),
         ]),
       ])
     ]),
     trigger('projectPageAnimation', [
       transition(':enter', [
-        style({opacity:0, width:'60%', height:'60%'}),
+        style({opacity:0, width:'40%', height:'40%'}),
         group ([
-          animate("10ms 1000ms", style({opacity:1})),
-          animate("1000ms 1000ms", style({width:"80%", height:"80%"}))
+          query('@*', [animateChild()]),
+          animate("1ms 1250ms", style({opacity:1})),
+          animate("700ms 1250ms", style({width:"80%", height:"80%"}))
         ])
       ])
     ])
@@ -48,6 +49,6 @@ export class HomePageComponent implements OnInit {
   showProjects(): void {
     this.infoPageLeave = true
     // set delay for ngIf to allow animation
-    setTimeout(() => (this.currentPage = Pages.projectViewPage), 50)
+    setTimeout(() => (this.currentPage = Pages.projectViewPage), 1)
   }
 }

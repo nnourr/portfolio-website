@@ -20,12 +20,7 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
       transition(':leave', [
         animate (700, style({padding:0, margin: 0, width:'100%', height:'100%', maxWidth:'100%', borderRadius:0, boxShadow:'0 0 0 black'}))
       ])
-    ]),
-    // trigger('makeBlock', [
-    //   transition(':leave', [
-    //     animate ('500ms $pageTransitionSpeed', style({opacity: 0}))
-    //   ])
-    // ])
+    ])
   ]
 })
 export class InfoPanelComponent implements OnInit {
