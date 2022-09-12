@@ -8,7 +8,7 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
   animations: [
     trigger('projectPageAnimation', [
       transition(':enter', [
-        style({width:'100%', height:'100%', maxWidth:'100%', borderRadius:0}),
+        style({width:'100%', height:'100%', maxWidth:'100%', borderRadius:0, boxShadow:"0 0 0 black"}),
         animate("1000ms 1700ms", style({width:"100%", height:"80%", maxWidth:'900px', borderRadius:"1rem"})),
       ])
     ])

@@ -5,4 +5,7 @@
     max-width: 900px;
     height: 80%;
     border-radius: 1rem;
+    position: relative;
+    z-index: 50;
+    box-shadow: $default-box-shadow;
 }
