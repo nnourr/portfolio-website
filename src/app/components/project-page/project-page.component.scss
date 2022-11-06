@@ -3,9 +3,40 @@
     background-color: $primary-white;
     width: 100%;
     max-width: 900px;
-    height: 80%;
+    height: 90vh;
     border-radius: 1rem;
     position: relative;
     z-index: 50;
     box-shadow: $default-box-shadow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: auto
+}
+
+.title {
+    @include greenHighlight;
+    font-size: 1.5rem;
+}
+
+.text-container {
+    width: fit-content;
+    padding: 2rem;
+    &>p,
+    >ul {
+        margin: 0.6rem;
+    }
+}
+
+.ebc-logo {
+    height: 100px;
+    width: auto;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.col-flex {
+    display: flex;
+    width: 100%;
 }
