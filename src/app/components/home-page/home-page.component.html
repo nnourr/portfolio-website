@@ -16,7 +16,7 @@
             <ng-container *ngTemplateOutlet="imageAndNetwork"></ng-container>
         </ng-container>
         <ul class="info-buttons-container">
-            <li><a href="../../../assets/resume.pdf" target="_blank" [ngClass]="{'info-button':true, 'dark-mode': darkMode|async}">view resume</a></li>
+            <li><a href="assets/resume.pdf" target="_blank" [ngClass]="{'info-button':true, 'dark-mode': darkMode|async}">view resume</a></li>
             <li><a href="" [ngClass]="{'info-button':true, 'dark-mode': darkMode|async}">view work experience</a></li>
             <li><a href="" [ngClass]="{'info-button':true, 'dark-mode': darkMode|async}">view personal projects</a></li>
         </ul>
@@ -24,7 +24,7 @@
 </div>
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
 <ng-template #imageAndNetwork>
-    <img class="headshot" src="../../../assets/headshotcropped.jpg">
+    <img class="headshot" src="assets/headshotcropped.jpg">
     <ul [ngClass]="{'network-icons':true, 'dark-mode': darkMode|async}" aria-hidden="true">
         <li>
             <a href="mailto:nourelde@uoguelph.ca" target="_blank" rel="noopener">
