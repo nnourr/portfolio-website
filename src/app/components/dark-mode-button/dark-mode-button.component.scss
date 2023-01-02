@@ -1,0 +1,26 @@
+@use '../../../assets/_variables' as v;
+button {
+    height: 100%;
+    width: 100%;
+    background-color: v.$light-background;
+    border-radius: 1rem;
+    border-width: 0;
+    padding: 0.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+    &.dark-mode {
+        background-color: v.$dark-background;
+    }
+}
+
+.moon {
+    &>path {
+        stroke: v.$light-background;
+    }
+}
+
+.sun {
+    &>path {
+        fill: v.$dark-background;
+    }
+}
