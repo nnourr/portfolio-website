@@ -1,0 +1,39 @@
+@use '../../../assets/_variables' as v;
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: v.$light-background;
+    &.dark-mode {
+        background-color: v.$dark-background;
+    }
+    padding: 0 5% 0 5%;
+    box-sizing: border-box;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: v.$accent-color;
+    font-size: 2.7vh;
+    margin: 0;
+    transition: 0.3s;
+    &.dark-mode {
+        color: v.$light-background;
+    }
+    &:hover {
+        background-color: v.$accent-color;
+        color: v.$light-background;
+        text-decoration-color: v.$dark-background;
+    }
+}
+
+a {
+    color: unset;
+}

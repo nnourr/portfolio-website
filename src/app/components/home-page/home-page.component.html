@@ -1,13 +1,16 @@
-<div [ngClass]="{'background': true, 'dark-mode': darkMode | async}"></div>
+<app-background></app-background>
 <div class="center">
     <div class="home-container">
         <div class="text-container">
-            <div id="typed-text">
+            <div id="typed-text" style="display: none;">
                 <h1>Hello!</h1>
                 <h1><span class="text-shrink">I'm</span> Noureldeen<br>Ahmed.</h1>
             </div>
-            <h1 id="typed" [ngClass]="{'title': true, 'dark-mode': darkMode | async}"></h1>
-            <h2 [ngClass]="{'subtitle': true, 'dark-mode': darkMode | async}">A passionate and versatile 3<sup>rd</sup> year Software Engineering student at the University of Guelph.</h2>
+            <ng-container *ngIf="showAnimation == false">
+                <h1 [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"><span class="text-shrink">I'm</span> Noureldeen<br>Ahmed.</h1>
+            </ng-container>
+            <h1 id="typed" [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"></h1>
+            <h2 [ngClass]="{'subtitle': true, 'animate-in': showAnimation==true, 'dark-mode': darkMode$ | async}"> A passionate and versatile 3<sup>rd</sup> year Software Engineering student at the University of Guelph.</h2>
         </div>
         <div *ngIf="mobile" class="mobile-image">
             <ng-container *ngTemplateOutlet="imageAndNetwork"></ng-container>
@@ -15,17 +18,13 @@
         <ng-container *ngIf="!mobile">
             <ng-container *ngTemplateOutlet="imageAndNetwork"></ng-container>
         </ng-container>
-        <ul class="info-buttons-container">
-            <li><a href="assets/resume.pdf" target="_blank" [ngClass]="{'info-button':true, 'dark-mode': darkMode|async}">view resume</a></li>
-            <li><a href="" [ngClass]="{'info-button':true, 'dark-mode': darkMode|async}">view work experience</a></li>
-            <li><a href="" [ngClass]="{'info-button':true, 'dark-mode': darkMode|async}">view personal projects</a></li>
-        </ul>
+        <app-info-buttons [showAnimation]="showAnimation" [ngClass]="{'info-buttons-container': true}"></app-info-buttons>
     </div>
 </div>
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
 <ng-template #imageAndNetwork>
-    <img class="headshot" src="assets/headshotcropped.jpg">
-    <ul [ngClass]="{'network-icons':true, 'dark-mode': darkMode|async}" aria-hidden="true">
+    <img [ngClass]="{'headshot': true, 'animate-in': showAnimation==true}" src="assets/headshotcropped.jpg">
+    <ul [ngClass]="{'network-icons':true, 'dark-mode': darkMode$|async, 'animate-in-list': showAnimation==true}" aria-hidden="true">
         <li>
             <a href="mailto:nourelde@uoguelph.ca" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

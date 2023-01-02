@@ -1,0 +1,6 @@
+<div [ngClass]="{'navbar-container':true, 'dark-mode': darkMode$|async}">
+    <a [routerLink]="['/home']" [queryParams]="{showAnimation:false}">
+        <h1 [ngClass]="{'title':true, 'dark-mode': darkMode$|async}">Noureldeen Ahmed</h1>
+    </a>
+    <app-info-buttons [currPage]="currPage" [showView]="false"></app-info-buttons>
+</div>

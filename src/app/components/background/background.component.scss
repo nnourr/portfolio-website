@@ -1,0 +1,28 @@
+@use '../../../assets/_variables' as v;
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    background-color: v.$light-background;
+    &.dark-mode {
+        background-color: v.$dark-background;
+    }
+    &:after {
+        content: "";
+        background-color: grey;
+        -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
+        mask-image: url('../../../assets/tic-tac-toe.svg');
+        mask-size: 10vh;
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        transform: rotate(45deg);
+        opacity: 0.1;
+    }
+}

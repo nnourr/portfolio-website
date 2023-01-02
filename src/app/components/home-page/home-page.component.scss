@@ -12,34 +12,6 @@
     }
 }
 
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    overflow: hidden;
-    transition: 0.3s;
-    background-color: v.$light-background;
-    &.dark-mode {
-        background-color: v.$dark-background;
-    }
-    &:after {
-        content: "";
-        background-color: grey;
-        -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
-        mask-image: url('../../../assets/tic-tac-toe.svg');
-        mask-size: 10vh;
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        top: -50%;
-        left: -50%;
-        transform: rotate(45deg);
-        opacity: 0.1;
-    }
-}
-
 .dark-mode-button {
     position: absolute;
     z-index: 1;
@@ -65,8 +37,7 @@
     border-radius: 4rem;
     justify-self: center;
     align-self: center;
-    opacity: 0;
-    animation: fade-in 1s 3s forwards;
+    opacity: 1;
 }
 
 .subtitle {
@@ -75,56 +46,15 @@
     &.dark-mode {
         color: v.$light-background;
     }
-    opacity: 0;
-    animation: fade-in 1s 3s forwards;
+    opacity: 1;
 }
 
 .info-buttons-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
     align-self: baseline;
-    list-style: none;
     margin: 0;
     padding: 0;
     grid-row: 2;
-    & li:nth-child(1) {
-        opacity: 0;
-        animation: fade-in 1s 3.3s forwards;
-    }
-    & li:nth-child(2) {
-        opacity: 0;
-        animation: fade-in 1s 3.5s forwards;
-    }
-    & li:nth-child(3) {
-        opacity: 0;
-        animation: fade-in 1s 3.7s forwards;
-    }
-}
-
-.info-button {
-    text-decoration: underline;
-    text-decoration-color: v.$accent-color;
-    text-decoration-thickness: 2px;
-    font-size: 2.7vh;
-    padding: 0.3rem;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 700;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-    background-color: unset;
-    border: none;
-    &.dark-mode {
-        color: v.$light-background;
-    }
-    &:hover {
-        background-color: v.$accent-color;
-        color: v.$light-background;
-        text-decoration-color: v.$dark-background;
-    }
+    width: 50%;
 }
 
 .center {
@@ -154,9 +84,9 @@ a {
     align-self: flex-start;
     grid-column: 2;
     & svg {
-        height: 50px;
+        height: 45px;
         border-bottom: v.$accent-color solid 4px;
-        transition: 0.2s;
+        transition: 0.3s;
     }
     &.dark-mode svg {
         fill: v.$light-background;
@@ -164,18 +94,6 @@ a {
     & svg:hover {
         border-bottom: v.$accent-color solid 9px;
         transform: translateY(-5px);
-    }
-    & li:nth-child(1) {
-        opacity: 0;
-        animation: fade-in 1s 3.3s forwards;
-    }
-    & li:nth-child(2) {
-        opacity: 0;
-        animation: fade-in 1s 3.5s forwards;
-    }
-    & li:nth-child(3) {
-        opacity: 0;
-        animation: fade-in 1s 3.7s forwards;
     }
 }
 
@@ -190,6 +108,26 @@ a {
 
 .text-shrink {
     animation: text-shrink 1s 0.1s forwards;
+}
+
+.animate-in {
+    opacity: 0;
+    animation: fade-in 1s 3s forwards;
+}
+
+.animate-in-list {
+    & li {
+        opacity: 0;
+    }
+    & li:nth-child(1) {
+        animation: fade-in 1s 3.3s forwards;
+    }
+    & li:nth-child(2) {
+        animation: fade-in 1s 3.5s forwards;
+    }
+    & li:nth-child(3) {
+        animation: fade-in 1s 3.7s forwards;
+    }
 }
 
 @keyframes text-shrink {

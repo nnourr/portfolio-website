@@ -10,6 +10,19 @@ button {
     cursor: pointer;
     &.dark-mode {
         background-color: v.$dark-background;
+        &:hover {
+            background-color: v.$light-background;
+            &:hover path {
+                stroke: v.$dark-background;
+                fill: none;
+            }
+        }
+    }
+    &:hover {
+        background-color: v.$dark-background;
+    }
+    &:hover path {
+        fill: v.$light-background;
     }
 }
 
