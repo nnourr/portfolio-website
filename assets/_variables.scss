@@ -1,3 +1,27 @@
 $dark-background:rgb(22, 22, 22);
 $light-background: whitesmoke;
-$accent-color: rgb(227, 45, 145)
+$accent-color: rgb(227, 45, 145);
+@mixin underline-button {
+    background-color: unset;
+    border: none;
+    text-decoration: underline;
+    text-decoration-color: $accent-color;
+    text-decoration-thickness: 2px;
+    font-size: 2.7vh;
+    padding: 0.3rem;
+    margin: 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+    width: fit-content;
+    align-self: flex-end;
+    &.dark-mode {
+        color: $light-background;
+    }
+    &:hover {
+        background-color: $accent-color;
+        color: $light-background;
+        text-decoration-color: $dark-background;
+    }
+}
