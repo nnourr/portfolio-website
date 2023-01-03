@@ -4,10 +4,10 @@
         <div class="text-container">
             <div id="typed-text" style="display: none;">
                 <h1>Hello!</h1>
-                <h1><span class="text-shrink">I'm</span> Noureldeen<br>Ahmed.</h1>
+                <h1><span class="text-shrink">I'm<br></span>Noureldeen<br>Ahmed.</h1>
             </div>
             <ng-container *ngIf="showAnimation == false">
-                <h1 [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"><span class="text-shrink">I'm</span> Noureldeen<br>Ahmed.</h1>
+                <h1 [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"><span class="text-shrink">I'm</span><br>Noureldeen<br>Ahmed.</h1>
             </ng-container>
             <h1 id="typed" [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"></h1>
             <h2 [ngClass]="{'subtitle': true, 'animate-in': showAnimation==true, 'dark-mode': darkMode$ | async}"> A passionate and versatile 3<sup>rd</sup> year Software Engineering student at the University of Guelph.</h2>
