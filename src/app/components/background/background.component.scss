@@ -13,7 +13,7 @@
     }
     &:after {
         content: "";
-        background-color: grey;
+        background-color: rgb(171, 171, 171);
         -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
         mask-image: url('../../../assets/tic-tac-toe.svg');
         mask-size: 10vh;

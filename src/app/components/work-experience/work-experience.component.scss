@@ -1,3 +1,4 @@
+@use '../../../assets/_variables' as v;
 .dark-mode-button {
     position: absolute;
     z-index: 1;
@@ -5,4 +6,95 @@
     bottom: 3vw;
     width: 8vh;
     height: 8vh;
+}
+
+.center {
+    width: 100%;
+    height: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.experience-container {
+    display: flex;
+    height: 80%;
+    width: 80%;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.work-container {
+    height: 100%;
+    width: 80%;
+    max-width: 500px;
+    background-color: v.$light-background;
+    padding: 2%;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    &.dark-mode {
+        background-color: v.$dark-background;
+    }
+    min-width: 25rem;
+    margin: 0 5% 0 5%;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: v.$accent-color;
+    font-weight: 600;
+}
+
+.detail-button {
+    @include v.underline-button;
+    font-size: 2.5vh;
+    &::after {
+        transition: 0.3s margin;
+        content: ">";
+        margin-left: -7px;
+    }
+    &:hover::after {
+        margin-left: 0;
+    }
+}
+
+ul {
+    list-style-type: "-  ";
+    & li::marker {
+        color: v.$accent-color;
+        font-weight: 600;
+    }
+}
+
+.work-logo {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+
+.work-title {
+    @include v.underline-button;
+    font-size: x-large;
+    transform: translateX(-0.3rem);
+    margin-top: 0;
+}
+
+a {
+    color: unset;
+}
+
+.ebc-logo {
+    width: 40%;
+}
+
+.text-container {
+    &.dark-mode {
+        color: v.$light-background;
+    }
 }

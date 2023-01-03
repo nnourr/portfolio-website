@@ -18,6 +18,8 @@ export class WorkExperienceComponent implements OnInit {
   _router: Router;
   darkMode$: Observable<boolean>
   currPage = CurrPage.WorkExperiencePage
+  preLoadArr = new Array();
+  images = ["assets/system1-logo.svg", "assets/system1-logo-dark.svg", "assets/ebc-logo.png", "assets/ebc-logo-dark.png"]
 
   constructor(router: Router, darkModeService: DarkModeService) {
     this._router = router;
@@ -25,6 +27,10 @@ export class WorkExperienceComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.images.forEach ((image, i) => {
+      this.preLoadArr[i] = new Image();
+      this.preLoadArr[i].src = image;
+    })
   }
 
   goBack() {

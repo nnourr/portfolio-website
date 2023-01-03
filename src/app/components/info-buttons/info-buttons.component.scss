@@ -11,28 +11,8 @@
 }
 
 .info-button {
-    text-decoration: underline;
-    text-decoration-color: v.$accent-color;
-    text-decoration-thickness: 2px;
+    @include v.underline-button;
     font-size: 2.7vh;
-    padding: 0.3rem;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 700;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-    background-color: unset;
-    border: none;
-    white-space: nowrap;
-    &.dark-mode {
-        color: v.$light-background;
-    }
-    &:hover {
-        background-color: v.$accent-color;
-        color: v.$light-background;
-        text-decoration-color: v.$dark-background;
-    }
 }
 
 a {

@@ -6,7 +6,7 @@ import { WorkExperienceComponent } from './components/work-experience/work-exper
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'work-experience', component: WorkExperienceComponent },
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '',   redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -9,6 +9,7 @@ import { BackgroundComponent } from './components/background/background.componen
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InfoButtonsComponent } from './components/info-buttons/info-buttons.component';
+import { InProgressComponent } from './components/in-progress/in-progress.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InfoButtonsComponent } from './components/info-buttons/info-buttons.com
     BackgroundComponent,
     WorkExperienceComponent,
     NavbarComponent,
-    InfoButtonsComponent
+    InfoButtonsComponent,
+    InProgressComponent
   ],
   imports: [
     BrowserModule,
