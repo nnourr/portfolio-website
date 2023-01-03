@@ -1,1 +1,9 @@
-<p>in-progress works!</p>
+<app-background></app-background>
+<app-navbar [currPage]="2"></app-navbar>
+<app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
+<div class="container">
+    <div id="typed-text" style="display: none;">
+        <h1>This page is in progress ...</h1>
+    </div>
+    <h1 id="typed" [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"></h1>
+</div>

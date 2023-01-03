@@ -12,12 +12,25 @@ export class NavbarComponent implements OnInit {
   darkMode$: Observable<boolean>
   @Input() currPage: CurrPage = CurrPage.WorkExperiencePage;
   pages = CurrPage;
+  collapsed:boolean = true;
+  collapseButtonText = "="
 
   constructor(darkModeService: DarkModeService) {
     this.darkMode$ = darkModeService.darkMode$;
   }
 
   ngOnInit(): void {
+  }
+
+  openNavBar() {
+    this.collapsed = !this.collapsed;
+    if (this.collapsed) {
+      this.collapseButtonText = "="
+    } else {
+      this.collapseButtonText = "-"
+    }
+    console.log(this.collapsed);
+    
   }
 
 }

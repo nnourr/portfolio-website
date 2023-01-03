@@ -10,6 +10,10 @@
     grid-row: 2;
 }
 
+.show-as-rows {
+    display: block
+}
+
 .info-button {
     @include v.underline-button;
     font-size: 2.7vh;

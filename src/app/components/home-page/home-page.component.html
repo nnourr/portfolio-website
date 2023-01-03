@@ -18,7 +18,7 @@
         <ng-container *ngIf="!mobile">
             <ng-container *ngTemplateOutlet="imageAndNetwork"></ng-container>
         </ng-container>
-        <app-info-buttons [showAnimation]="showAnimation" [ngClass]="{'info-buttons-container': true}"></app-info-buttons>
+        <app-info-buttons [rows]="true" [showAnimation]="showAnimation" [ngClass]="{'info-buttons-container': true}"></app-info-buttons>
     </div>
 </div>
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>

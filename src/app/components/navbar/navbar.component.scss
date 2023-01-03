@@ -5,6 +5,7 @@
     align-items: center;
     height: 7vh;
     position: absolute;
+    z-index: 100;
     right: 0;
     top: 0;
     width: 100%;
@@ -22,4 +23,44 @@
 
 a {
     color: unset;
+}
+
+.collapse-button {
+    background-color: unset;
+    border: none;
+    display: none;
+    font-size: 5vh;
+    width: 20%;
+    &.dark-mode {
+        color: v.$light-background;
+    }
+}
+
+@media (max-width: 600px) {
+    .collapse-button {
+        display: block;
+        align-self: flex-end;
+    }
+    .info-buttons {
+        display: block;
+        &.collapsed {
+            display: none;
+        }
+    }
+    .title {
+        display: block;
+        &.collapsed {
+            display: none;
+        }
+        margin: 5% 0 5% 0;
+    }
+    .navbar-container {
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &.collapsed {
+            height: 7vh;
+        }
+    }
 }

@@ -13,6 +13,7 @@ export class InfoButtonsComponent implements OnInit {
   @Input() showAnimation?:boolean = false;
   @Input() showView?:boolean = true;
   @Input() currPage?: CurrPage = CurrPage.HomePage;
+  @Input() rows?: boolean = false;
   pages = CurrPage;
 
   constructor(darkModeService: DarkModeService) {

@@ -1,0 +1,32 @@
+@use '../../../assets/_variables' as v;
+.dark-mode-button {
+    position: absolute;
+    z-index: 1;
+    right: 3vw;
+    bottom: 3vw;
+    width: 8vh;
+    height: 8vh;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 7vh;
+    text-decoration: underline;
+    text-decoration-color: v.$accent-color;
+    margin: 0;
+    &.dark-mode {
+        color: v.$light-background;
+    }
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 10%;
+    box-sizing: border-box;
+}
