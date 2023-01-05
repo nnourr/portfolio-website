@@ -1,48 +1,21 @@
 @use '../../../assets/_variables' as v;
-.dark-mode-button {
-    position: absolute;
-    z-index: 1;
-    right: 3vw;
-    bottom: 3vw;
-    width: 8vh;
-    height: 8vh;
-}
-
-.center {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-}
-
-.experience-container {
-    display: flex;
-    height: 70%;
-    width: 80%;
-    align-items: center;
-    overflow-x: auto;
-}
-
 .work-container {
     height: 100%;
     width: 80%;
     max-width: 500px;
     background-color: v.$light-background;
-    padding: 2%;
+    padding: 5%;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 500;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    min-width: 25rem;
+    margin: 0 5% 0 5%;
     &.dark-mode {
         background-color: v.$dark-background;
     }
-    min-width: 25rem;
-    margin: 0 5% 0 5%;
 }
 
 .underline {
@@ -54,13 +27,15 @@
 .detail-button {
     @include v.underline-button;
     font-size: 2.5vh;
-    &::after {
-        transition: 0.3s margin;
-        content: ">";
-        margin-left: -7px;
-    }
-    &:hover::after {
-        margin-left: 0;
+    &.open {
+        &::after {
+            transition: 0.3s margin;
+            content: ">";
+            margin-left: -7px;
+        }
+        &:hover::after {
+            margin-left: 0;
+        }
     }
 }
 
@@ -82,15 +57,11 @@ ul {
     @include v.underline-button;
     font-size: x-large;
     transform: translateX(-0.3rem);
-    margin-top: 0;
+    margin-top: 1rem;
 }
 
 a {
     color: unset;
-}
-
-.ebc-logo {
-    width: 40%;
 }
 
 .text-container {
@@ -99,19 +70,15 @@ a {
     }
 }
 
-@media (max-width: 600px) {
-    .experience-container {
-        width: 90%;
-        flex-direction: column;
-        overflow-y: auto;
-        height: 80%;
-    }
-    .work-container {
-        min-width: unset;
-        margin: 0 0 5% 0;
-        width: 100%;
-    }
-    .work-title {
-        margin-top: 5%;
+.details-panel {
+    display: none;
+    height: 93%;
+    width: 100%;
+    background-color: rgba(v.$light-background, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    &.show {
+        display: block;
     }
 }
