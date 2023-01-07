@@ -39,7 +39,7 @@ a {
 @media (max-width: 600px) {
     .collapse-button {
         display: block;
-        align-self: flex-end;
+        align-self: center;
     }
     .info-buttons {
         display: block;
@@ -49,9 +49,6 @@ a {
     }
     .title {
         display: block;
-        &.collapsed {
-            display: none;
-        }
         margin: 5% 0 5% 0;
     }
     .navbar-container {
@@ -60,6 +57,8 @@ a {
         justify-content: flex-start;
         align-items: flex-start;
         &.collapsed {
+            flex-direction: row;
+            justify-content: space-between;
             height: 7vh;
         }
     }

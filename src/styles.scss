@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@use './assets/variables' as v;
+.underline {
+    text-decoration: underline v.$accent-color;
+}
+
+a {
+    color: unset;
+}

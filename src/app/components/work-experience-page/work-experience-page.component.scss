@@ -1,7 +1,7 @@
 @use '../../../assets/_variables' as v;
 .dark-mode-button {
     position: absolute;
-    z-index: 1;
+    z-index: 20;
     right: 3vw;
     bottom: 3vw;
     width: 8vh;
@@ -34,17 +34,18 @@
 
 @media (max-width: 600px) {
     .experience-container {
-        width: 90%;
-        flex-direction: column;
-        overflow-y: auto;
+        width: 100%;
+        overflow-x: auto;
         height: 80%;
+        gap: 2rem;
     }
     .work-container {
-        min-width: unset;
-        margin: 0 0 5% 0;
-        width: 100%;
+        height: auto;
     }
-    .work-title {
-        margin-top: 5%;
+    .work-container:first-child {
+        margin-left: 7vw;
+    }
+    .work-container:last-child {
+        margin-right: 7vw;
     }
 }

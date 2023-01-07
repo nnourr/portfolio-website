@@ -22,6 +22,9 @@
     text-decoration: underline;
     text-decoration-color: v.$accent-color;
     font-weight: 600;
+    &.work-info {
+        margin: 0.3rem 0 0.3rem 0;
+    }
 }
 
 .detail-button {
@@ -53,7 +56,13 @@ ul {
     margin: 0 auto 0 auto;
 }
 
-.work-title {
+.work-info {
+    &.details {
+        margin: 0;
+    }
+}
+
+.title {
     @include v.underline-button;
     font-size: x-large;
     transform: translateX(-0.3rem);
@@ -71,14 +80,77 @@ a {
 }
 
 .details-panel {
-    display: none;
+    display: flex;
     height: 93%;
     width: 100%;
-    background-color: rgba(v.$light-background, 0.5);
+    background-color: rgba(v.$light-background, 0.7);
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 10;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
     &.show {
-        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    &.dark-mode {
+        background-color: rgba(v.$dark-background, 0.7);
+    }
+}
+
+.details-container {
+    width: 70%;
+    height: 90%;
+    background-color: v.$light-background;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0 3% 3% 3%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    & ul {
+        margin: 0.3rem 0 0.3rem 0;
+    }
+    &>.detail-button-container {
+        width: 110%;
+        height: 7.1vh;
+        background-color: inherit;
+        position: sticky;
+        top: 0;
+        right: 0;
+        transform: translate(-5%, -0.1vh);
+        padding-right: 5%;
+        padding-top: 0.1vh;
+        box-sizing: border-box;
+        &>.detail-button {
+            float: right;
+            margin-top: 0.3rem;
+        }
+    }
+    &.dark-mode {
+        background-color: v.$dark-background;
+        color: v.$light-background;
+    }
+}
+
+@media (max-width: 600px) {
+    .work-container {
+        max-width: unset;
+        min-width: 80vw;
+        width: auto;
+        height: 100%;
+    }
+    .work-logo {
+        max-width: 80vw;
+    }
+    .details-panel {
+        bottom: 0;
+    }
+    .details-container {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 10vh;
     }
 }

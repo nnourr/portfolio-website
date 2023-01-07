@@ -1,3 +1,5 @@
+import { WorkExperienceDetails } from "./work-experience-details.model";
+
 export class WorkExperienceInfo {
     image: string;
     imageDarkMode: string;
@@ -8,4 +10,5 @@ export class WorkExperienceInfo {
     position: string;
     tech: string;
     highlights: string[];
+    details: WorkExperienceDetails;
 }

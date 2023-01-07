@@ -1,6 +1,6 @@
 <div [ngClass]="{'navbar-container':true, 'dark-mode': darkMode$|async, 'collapsed':collapsed}">
     <a [routerLink]="['/home']" [queryParams]="{showAnimation:false}">
-        <h1 [ngClass]="{'title':true, 'dark-mode': darkMode$|async, 'collapsed':collapsed}">Noureldeen Ahmed</h1>
+        <h1 [ngClass]="{'title':true, 'dark-mode': darkMode$|async}">Noureldeen Ahmed</h1>
     </a>
     <app-info-buttons [rows]="!collapsed" [ngClass]="{'info-buttons':true, 'collapsed':collapsed}" [currPage]="currPage" [showView]="false"></app-info-buttons>
     <button (click)="openNavBar()" [ngClass]="{'collapse-button':true, 'dark-mode': darkMode$|async, 'collapsed':collapsed}">{{collapseButtonText}}</button>

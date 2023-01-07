@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WorkExperienceInfo } from 'src/app/models/work-experience-info.model';
 
@@ -9,6 +9,8 @@ import { WorkExperienceInfo } from 'src/app/models/work-experience-info.model';
 })
 export class WorkExperienceContainerComponent implements OnInit {
 
+  @ViewChild('detailComponent') detailComponent: ElementRef;
+
   @Input() darkMode$: Observable<boolean>;
   @Input() experienceInfo: WorkExperienceInfo;
 
@@ -17,6 +19,12 @@ export class WorkExperienceContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  detailClick(event: Event) {
+    if (event.target != this.detailComponent.nativeElement) {
+      this.closeDetails();
+    }
   }
 
   openDetails() {
