@@ -40,7 +40,7 @@ export class DarkModeService {
     const darkModeFromStorage = this.getDarkModeFromStorage();
 
     if (!darkModeFromStorage) {
-      return false;
+      return true;
     }
 
     return darkModeFromStorage;

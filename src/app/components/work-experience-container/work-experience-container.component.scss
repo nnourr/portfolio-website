@@ -23,7 +23,7 @@
     text-decoration-color: v.$accent-color;
     font-weight: 600;
     &.work-info {
-        margin: 0.3rem 0 0.3rem 0;
+        margin-bottom: 0.3rem;
     }
 }
 
@@ -58,7 +58,7 @@ ul {
 
 .work-info {
     &.details {
-        margin: 0;
+        margin: 0.1rem;
     }
 }
 
@@ -101,8 +101,20 @@ a {
     }
 }
 
+.dark-mode::-webkit-scrollbar-thumb {
+    background-color: adjust-color($color: v.$dark-background, $lightness: 20%, $alpha: 1.0);
+}
+
+.dark-mode::-webkit-scrollbar {
+    background-color: adjust-color($color: v.$dark-background, $lightness: 10%, $alpha: 1.0);
+}
+
+.dark-mode::-webkit-scrollbar-button {
+    background-color: adjust-color($color: v.$dark-background, $lightness: 10%, $alpha: 1.0);
+}
+
 .details-container {
-    width: 70%;
+    width: 80ch;
     height: 90%;
     background-color: v.$light-background;
     font-family: 'Courier New', Courier, monospace;

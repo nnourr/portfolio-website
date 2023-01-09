@@ -6,3 +6,8 @@
 a {
     color: unset;
 }
+
+::selection {
+    color: white;
+    background: v.$accent-color;
+}

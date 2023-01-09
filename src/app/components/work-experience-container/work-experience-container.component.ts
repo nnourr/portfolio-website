@@ -22,7 +22,7 @@ export class WorkExperienceContainerComponent implements OnInit {
   }
 
   detailClick(event: Event) {
-    if (event.target != this.detailComponent.nativeElement) {
+    if (!event.composedPath().includes(this.detailComponent.nativeElement)) {
       this.closeDetails();
     }
   }
