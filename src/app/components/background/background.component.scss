@@ -10,19 +10,24 @@
     background-color: v.$light-background;
     &.dark-mode {
         background-color: v.$dark-background;
+        &:after {
+            -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
+            mask-image: url('../../../assets/tic-tac-toe.svg');
+            mask-size: 10vh;
+        }
     }
     &:after {
+        transform: rotate(45deg);
         content: "";
-        background-color: rgb(171, 171, 171);
-        -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
-        mask-image: url('../../../assets/tic-tac-toe.svg');
-        mask-size: 10vh;
+        background-color: rgb(179, 179, 179);
+        -webkit-mask-image: url('../../../assets/circuit-board.svg');
+        mask-image: url('../../../assets/circuit-board.svg');
+        mask-size: 40vh;
         position: absolute;
         width: 200%;
         height: 200%;
         top: -50%;
         left: -50%;
-        transform: rotate(45deg);
         opacity: 0.1;
     }
 }

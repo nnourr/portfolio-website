@@ -101,18 +101,6 @@ a {
     }
 }
 
-.dark-mode::-webkit-scrollbar-thumb {
-    background-color: adjust-color($color: v.$dark-background, $lightness: 20%, $alpha: 1.0);
-}
-
-.dark-mode::-webkit-scrollbar {
-    background-color: adjust-color($color: v.$dark-background, $lightness: 10%, $alpha: 1.0);
-}
-
-.dark-mode::-webkit-scrollbar-button {
-    background-color: adjust-color($color: v.$dark-background, $lightness: 10%, $alpha: 1.0);
-}
-
 .details-container {
     width: 80ch;
     height: 90%;
@@ -150,7 +138,7 @@ a {
 @media (max-width: 600px) {
     .work-container {
         max-width: unset;
-        min-width: 80vw;
+        min-width: 85vw;
         width: auto;
         height: 100%;
     }

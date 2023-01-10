@@ -2,7 +2,7 @@
 <app-navbar [currPage]="1"></app-navbar>
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
 <div class="center">
-    <div [ngClass]="{'experience-container': true}">
+    <div [ngClass]="{'experience-container': true, 'dark-mode': darkMode$| async}">
         <app-work-experience-container *ngFor="let experience of workExperiences" [experienceInfo]="experience" [ngClass]="{'work-container': true}" [darkMode$]="darkMode$"></app-work-experience-container>
     </div>
 </div>

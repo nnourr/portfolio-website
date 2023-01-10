@@ -11,3 +11,15 @@ a {
     color: white;
     background: v.$accent-color;
 }
+
+.dark-mode::-webkit-scrollbar-thumb {
+    background-color: adjust-color($color: v.$dark-background, $lightness: 10%, $alpha: 1.0);
+}
+
+.dark-mode::-webkit-scrollbar {
+    background-color: adjust-color($color: v.$dark-background, $lightness: 5%, $alpha: 1.0);
+}
+
+// .dark-mode::-webkit-scrollbar-button {
+//     background-color: adjust-color($color: v.$dark-background, $lightness: 10%, $alpha: 1.0);
+// }
