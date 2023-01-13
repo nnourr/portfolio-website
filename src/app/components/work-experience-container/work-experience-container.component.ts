@@ -15,10 +15,14 @@ export class WorkExperienceContainerComponent implements OnInit {
   @Input() experienceInfo: WorkExperienceInfo;
 
   showDetails: boolean = false;
+  referenceHref: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    if (this.experienceInfo.reference) {
+      this.referenceHref = "mailto:" + this.experienceInfo.reference;
+    }
   }
 
   detailClick(event: Event) {

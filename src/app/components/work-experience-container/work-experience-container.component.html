@@ -6,6 +6,7 @@
             <h1 [ngClass]="{'title':true}">{{experienceInfo.companyName}}</h1>
         </a>
         <p [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Date:</span> {{experienceInfo.date}}</p>
+        <p *ngIf="experienceInfo.reference" [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Reference:</span> <a [href]="referenceHref"> {{experienceInfo.reference}}</a></p>
         <p [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Position:</span> {{experienceInfo.position}}</p>
         <p [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Tech:</span> {{experienceInfo.tech}}</p>
         <span [ngClass]="{'underline':true}">Highlights:</span>

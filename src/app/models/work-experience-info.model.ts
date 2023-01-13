@@ -7,6 +7,7 @@ export class WorkExperienceInfo {
     companyUrl: string;
     companyName: string;
     date: string;
+    reference?: string;
     position: string;
     tech: string;
     highlights: string[];

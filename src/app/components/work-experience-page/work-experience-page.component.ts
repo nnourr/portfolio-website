@@ -26,6 +26,7 @@ export class WorkExperiencePageComponent implements OnInit {
     imageDarkMode: "assets/system1-logo-dark.svg",
     companyUrl: "https://system1.com/",
     companyName: "System1",
+    reference: "chris.dekker@system1.com",
     date: "Sept 2022 - Dec 2022 (4 months)",
     position: "Full Stack Software Engineer Co-Op",
     tech: "Angular, .NET, Snowflake",
