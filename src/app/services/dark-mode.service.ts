@@ -7,7 +7,7 @@ import { BehaviorSubject, distinctUntilChanged, Observable } from 'rxjs';
 export class DarkModeService {
 
   private readonly darkModeSubject$: BehaviorSubject<boolean>;
-  private readonly storageKey: string = 'darkMode';
+  private readonly storageKey: string = 'dark-mode';
 
   constructor() {
     this.darkModeSubject$ = new BehaviorSubject(this.getInitialDarkModeValue());
@@ -39,7 +39,7 @@ export class DarkModeService {
   private getInitialDarkModeValue(): boolean {
     const darkModeFromStorage = this.getDarkModeFromStorage();
 
-    if (!darkModeFromStorage) {
+    if (darkModeFromStorage === undefined || darkModeFromStorage === null) {
       return true;
     }
 
