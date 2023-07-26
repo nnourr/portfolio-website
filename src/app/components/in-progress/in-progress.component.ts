@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
 import Typed, { TypedOptions } from 'typed.js';
@@ -15,6 +15,7 @@ export class InProgressComponent implements OnInit {
   constructor(darkModeService: DarkModeService) {
     this.darkMode$ = darkModeService.darkMode$;
   }
+  @Input() fullPage?: boolean = true;
 
   ngOnInit(): void {
     let options: TypedOptions = {

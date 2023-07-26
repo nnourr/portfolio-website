@@ -19,14 +19,17 @@
     }
 }
 
+.full-page {
+    position: absolute;
+    bottom: 0;
+}
+
 .container {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
     padding: 10%;
     box-sizing: border-box;
 }

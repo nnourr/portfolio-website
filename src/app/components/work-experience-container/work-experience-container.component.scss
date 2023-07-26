@@ -56,15 +56,6 @@ ul {
     margin: 0 auto 0 auto;
 }
 
-.work-info {
-    &.details {
-        margin: 0.1rem;
-    }
-    &>a {
-        text-decoration: none;
-    }
-}
-
 .title {
     @include v.underline-button;
     font-size: x-large;
@@ -79,6 +70,16 @@ a {
 .text-container {
     &.dark-mode {
         color: v.$light-background;
+    }
+    &>p,
+    ul {
+        margin: 0.2rem 0.2rem 0 0;
+        &.details {
+            margin: 0.1rem;
+        }
+        &>a {
+            text-decoration: none;
+        }
     }
 }
 

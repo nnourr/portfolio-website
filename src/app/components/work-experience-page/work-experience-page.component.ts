@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CurrPage } from 'src/app/enums/curr-page';
 import { WorkExperienceInfo } from 'src/app/models/work-experience-info.model';
@@ -20,18 +20,34 @@ export class WorkExperiencePageComponent implements OnInit {
   darkMode$: Observable<boolean>
   currPage = CurrPage.WorkExperiencePage
   preLoadArr = new Array();
-  images = ["assets/system1-logo.svg", "assets/system1-logo-dark.svg", "assets/ebc-logo.png", "assets/ebc-logo-dark.png"]
+  images = ['assets/rbc-color.png','assets/rbc-dark.png', 'assets/system1-logo.svg', 'assets/system1-logo-dark.svg', 'assets/ebc-logo.png', 'assets/ebc-logo-dark.png']
   workExperiences: WorkExperienceInfo[] = [{
-    image: "assets/system1-logo.svg",
-    imageDarkMode: "assets/system1-logo-dark.svg",
-    companyUrl: "https://system1.com/",
-    companyName: "System1",
-    reference: "chris.dekker@system1.com",
-    date: "Sept 2022 - Dec 2022 (4 months)",
-    position: "Full Stack Software Engineer Co-Op",
-    tech: "Angular, .NET, Snowflake",
-    highlights: ["Recognized for my fast learning on a large production project using cutting-edge Angular and .NET patterns.",
-  "Thrived in fast Agile teams, using Jira and Slack to ensure efficient communication in a remote setting."],
+    image: this.images[0],
+    imageDarkMode: this.images[1],
+    customImageStyle: 'width: 60%;',
+    companyUrl: 'https://www.rbc.com/about-rbc.html',
+    companyName: 'Royal Bank of Canada',
+    reference: 'evan.timms@rbc.com',
+    date: 'May 2023 - Aug 2023 (4 months)',
+    position: 'Applications Developer Co-Op',
+    tech: 'Python Django, Vue.js, Tailwind',
+    highlights: ['Architected RESTful API endpoints, wrote Database Migrations, and configured CI/CD Pipelines using Django REST', 
+    'Collaborated with PMs and POs to refine requirements into Jira Releases, Epics and Stories in a fast agile environment',
+    'Built entire features from the ground up, starting with Figma Design then Data Ingestion then API then Vue front-end'
+    ]
+  }, {
+    image: this.images[2],
+    imageDarkMode: this.images[3],
+    companyUrl: 'https://system1.com/',
+    companyName: 'System1',
+    reference: 'chris.dekker@system1.com',
+    date: 'Sept 2022 - Dec 2022 (4 months)',
+    position: 'Full Stack Software Engineer Co-Op',
+    tech: 'Angular, .NET, Snowflake',
+    highlights: ['Recognized for my fast learning on a large production project using cutting-edge Angular and .NET patterns',
+      'Optimized SQL queries to cut down on response time by 30-40%',
+      'Thrived in fast Agile teams, using Jira and Slack to ensure efficient remote communication'
+      ],
     details: {
       introduction: 'For my Fall 2022 Co-Op placement, I worked with System1 as a <span class="underline"> Full Stack Software Engineer</span>. During this time, I was working with <span class="underline">Angular</span> on the frontend, <span class="underline">.NET</span> on the backend and <span class="underline">Snowflake</span> for the database. I worked in multiple <span class="underline">Agile teams</span>, making extensive use of <span class="underline">JIRA</span> and <span class="underline">Slack</span> for communication.',
       aboutEmployer: 'System1 combines best-in-class technology & data science to operate the most dynamic <span class="underline">Responsive Acquisition Marketing Platform (RAMP)</span>. This allows them to to build <span class="underline">powerful brands</span> across multiple <span class="underline">consumer verticals</span>, develop & grow our suite of <span class="underline">privacy-focused products</span>, and deliver <span class="underline">high-intent customers</span> to their advertising partners.',
@@ -47,16 +63,18 @@ export class WorkExperiencePageComponent implements OnInit {
       acknowledgments: 'I would to give a special thank you to team members Chris Dekker, Matt Potts and Darren Laser for the incredible support they gave me the entire term (not to mention all the PR comments), as well as Babak Hajiahmadi for his on boarding and the entire dev team for making me at home in their company.'
     }
   }, {
-    image: "assets/ebc-logo.png",
-    imageDarkMode: "assets/ebc-logo-dark.png",
-    customImageStyle: "width: 40%;",
-    companyUrl: "https://www.egyptianbanks.com/",
-    companyName: "Egyptian Banks Company",
-    date: "May 2022 - Aug 2022 (4 months)",
-    position: "Full Stack Software Engineer Co-Op",
-    tech: "Angular, Java Spring, MSSQL",
-    highlights: ["Developed a model Automated Clearing House (ACH) system using Java and MSSQL.",
-    "Transformed the ACH model into a web-app using Spring Boot and Angular."],
+    image: this.images[4],
+    imageDarkMode: this.images[5],
+    customImageStyle: 'width: 40%;',
+    companyUrl: 'https://www.egyptianbanks.com/',
+    companyName: 'Egyptian Banks Company',
+    date: 'May 2022 - Aug 2022 (4 months)',
+    position: 'Full Stack Software Engineer Co-Op',
+    tech: 'Angular, Java Spring, MSSQL',
+    highlights: ['Developed a model Automated Clearing House (ACH) system using Java and MSSQL',
+    'Proficiently applied industry-standard programming practices and Test-Driven-Design to ensure code quality',
+    'Transformed the ACH model into a web-app using Spring Boot and Angular'
+    ],
     details: {
       introduction: 'For my summer 2022 Co-Op placement, I worked with the Egyptian Banks Company in order to implement a model <span class="underline"> Automatic Clearing House System.</span> This was a <span class="underline">full stack project</span> making use of <span class="underline">Java SpringBoot</span>, <span class="underline">Angular</span> and <span class="underline">SQL Server</span>',
       aboutEmployer: 'Egyptian Banks Company is a <span class="underline">FinTech company</span> owned by the <span class="underline">Central bank of Egypt</span>. They handle the <span class="underline">technology infrastructure</span> behind <span class="underline">inter-bank transactions</span> and <span class="underline">ATMs',
