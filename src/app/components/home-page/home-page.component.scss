@@ -34,10 +34,12 @@
 
 .headshot {
     width: 60%;
-    border-radius: 4rem;
+    border-radius: 2rem;
     justify-self: center;
     align-self: center;
     opacity: 1;
+    max-height: 30vh;
+    object-fit: cover;
 }
 
 .subtitle {
