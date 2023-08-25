@@ -1,6 +1,7 @@
 @use '../../../assets/_variables' as v;
 .work-container {
     height: 100%;
+    overflow: auto;
     width: 80%;
     max-width: 500px;
     background-color: v.$light-background;

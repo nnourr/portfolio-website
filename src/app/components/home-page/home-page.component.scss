@@ -7,9 +7,6 @@
     grid-template-columns: 1fr 1fr;
     box-sizing: border-box;
     align-items: center;
-    &>* {
-        margin: 5%;
-    }
 }
 
 .dark-mode-button {
@@ -39,7 +36,10 @@
     align-self: center;
     opacity: 1;
     max-height: 30vh;
+    min-height: 230px;
     object-fit: cover;
+    transform: translateX(-30px);
+    box-shadow: v.$accent-color 60px 20px 0px;
 }
 
 .subtitle {
@@ -52,7 +52,7 @@
 }
 
 .info-buttons-container {
-    align-self: baseline;
+    align-self: center;
     margin: 0;
     padding: 0;
     grid-row: 2;
@@ -69,6 +69,31 @@
     left: 0;
 }
 
+.contact-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    background-color: v.$light-background;
+    height: fit-content;
+    padding: 20px;
+    gap: 10px;
+    width: 50%;
+    margin: auto;
+    border-radius: 2rem;
+    &.dark-mode {
+        color: whitesmoke;
+        background-color: v.$dark-background;
+    }
+    &>h3 {
+        @include v.underline-text;
+        font-weight: bold !important;
+        margin: 1rem;
+        font-size: 3vh;
+    }
+}
+
 a {
     color: unset;
 }
@@ -78,17 +103,19 @@ a {
 }
 
 .network-icons {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     list-style: none;
     margin: 0;
     padding: 0;
-    align-self: flex-start;
-    grid-column: 2;
+    width: 100%;
+    height: 6.5vh;
+    max-height: 3.2rem;
     & svg {
-        height: 45px;
+        height: 6vh;
+        max-height: 3rem;
         border-bottom: v.$accent-color solid 4px;
         transition: 0.3s;
     }
@@ -170,16 +197,27 @@ a {
         align-self: unset;
         flex-direction: column;
         align-items: center;
+        max-height: unset;
+        height: 25vh;
+    }
+    .contact-container {
+        margin: 0;
+        width: fit-content;
     }
     .info-buttons-container {
         grid-row: 3;
         margin: 5%;
-        align-self: center;
+        align-self: start;
     }
     .text-container {
         margin: 0 5% 0 5% !important;
     }
     .headshot {
         border-radius: 2rem;
+        box-shadow: v.$accent-color 20px 20px 0px;
+        transform: none;
+    }
+    .dark-mode-button {
+        bottom: 6vh;
     }
 }

@@ -1,24 +1,40 @@
 $dark-background:rgb(22, 22, 22);
 $light-background: whitesmoke;
 $accent-color: rgb(227, 45, 145);
-@mixin underline-button {
-    background-color: unset;
-    border: none;
+@mixin underline-text {
     text-decoration: underline;
     text-decoration-color: $accent-color;
     text-decoration-thickness: 2px;
     font-size: 2.7vh;
-    padding: 0.3rem;
-    margin: 0;
     font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
     font-family: 'Courier New', Courier, monospace;
-    width: fit-content;
-    align-self: flex-end;
     &.dark-mode {
         color: $light-background;
     }
+}
+
+@mixin main-title {
+    background-color: $accent-color;
+    font-size: 3vh;
+    font-weight: 600;
+    padding: 0.5vh 1vh;
+    border-radius: 1.5vh;
+    font-family: 'Courier New', Courier, monospace;
+    &.dark-mode {
+        color: $light-background;
+    }
+}
+
+@mixin underline-button {
+    @include underline-text;
+    background-color: unset;
+    border: none;
+    padding: 0.3rem;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content;
+    align-self: flex-end;
     &:hover {
         background-color: $accent-color;
         color: $light-background;
