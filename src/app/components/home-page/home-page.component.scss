@@ -38,8 +38,13 @@
     max-height: 30vh;
     min-height: 230px;
     object-fit: cover;
-    transform: translateX(-30px);
-    box-shadow: v.$accent-color 60px 20px 0px;
+    transform: translateX(-20px);
+    box-shadow: v.$accent-color 40px 20px 0px;
+    transition: 0.3s;
+    &:hover {
+        box-shadow: v.$accent-color 60px 20px 0px;
+        transform: translateX(-30px);
+    }
 }
 
 .subtitle {
