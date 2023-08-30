@@ -22,22 +22,24 @@
             <div [ngClass]="{'detail-button-container': true}">
                 <button (click)="closeDetails()" [ngClass]="{'detail-button':true, 'dark-mode':darkMode$|async}">Close Details X</button>
             </div>
-            <h3 [ngClass]="{'underline':true, 'work-info':true}">Introduction:</h3>
-            <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.introduction"></p>
-            <h3 [ngClass]="{'underline':true, 'work-info':true}">About My Employer:</h3>
-            <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.aboutEmployer"></p>
-            <h3 [ngClass]="{'underline':true, 'work-info':true}">Learning Goals:</h3>
-            <p [ngClass]="{'work-info':true, 'details': true}">My goals for this work term were to:</p>
-            <ul>
-                <li *ngFor="let goal of experienceInfo.details.learningGoals" [ngClass]="{'work-info':true}" [innerHTML]="goal"></li>
-            </ul>
-            <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.learningGoalsReflection"></p>
-            <h3 [ngClass]="{'underline':true, 'work-info':true}">Experience:</h3>
-            <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.experience"></p>
-            <h3 [ngClass]="{'underline':true, 'work-info':true}">Conclusion:</h3>
-            <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.conclusion"></p>
-            <h3 [ngClass]="{'underline':true, 'work-info':true}">Acknowledgments:</h3>
-            <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.acknowledgments"></p>
+            <div [ngClass]="{'details-text-container': true, 'dark-mode':darkMode$|async}">
+                <h3 [ngClass]="{'underline':true, 'work-info':true}">Introduction:</h3>
+                <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.introduction"></p>
+                <h3 [ngClass]="{'underline':true, 'work-info':true}">About My Employer:</h3>
+                <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.aboutEmployer"></p>
+                <h3 [ngClass]="{'underline':true, 'work-info':true}">Learning Goals:</h3>
+                <p [ngClass]="{'work-info':true, 'details': true}">My goals for this work term were to:</p>
+                <ul>
+                    <li *ngFor="let goal of experienceInfo.details.learningGoals" [ngClass]="{'work-info':true}" [innerHTML]="goal"></li>
+                </ul>
+                <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.learningGoalsReflection"></p>
+                <h3 [ngClass]="{'underline':true, 'work-info':true}">Experience:</h3>
+                <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.experience"></p>
+                <h3 [ngClass]="{'underline':true, 'work-info':true}">Conclusion:</h3>
+                <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.conclusion"></p>
+                <h3 [ngClass]="{'underline':true, 'work-info':true}">Acknowledgments:</h3>
+                <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.acknowledgments"></p>
+            </div>
         </ng-container>
         <ng-template #inProgress>
             <app-in-progress [fullPage]="false"></app-in-progress>

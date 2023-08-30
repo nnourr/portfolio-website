@@ -11,6 +11,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { InfoButtonsComponent } from './components/info-buttons/info-buttons.component';
 import { InProgressComponent } from './components/in-progress/in-progress.component';
 import { WorkExperienceContainerComponent } from './components/work-experience-container/work-experience-container.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { WorkExperienceContainerComponent } from './components/work-experience-c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

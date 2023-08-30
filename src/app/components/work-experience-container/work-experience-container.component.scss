@@ -86,7 +86,7 @@ a {
 
 .details-panel {
     display: flex;
-    height: 93%;
+    height: 100%;
     width: 100%;
     background-color: rgba(v.$light-background, 0.7);
     position: absolute;
@@ -94,6 +94,7 @@ a {
     left: 0;
     z-index: 10;
     justify-content: center;
+    align-items: center;
     opacity: 0;
     transition: 0.3s;
     visibility: hidden;
@@ -108,13 +109,11 @@ a {
 
 .details-container {
     width: 80ch;
-    height: 90%;
+    height: 80%;
     background-color: v.$light-background;
     font-family: 'Courier New', Courier, monospace;
     padding: 0 3% 3% 3%;
     box-sizing: border-box;
-    overflow-y: auto;
-    overflow-x: hidden;
     & ul {
         margin: 0.3rem 0 0.3rem 0;
     }
@@ -138,6 +137,11 @@ a {
         background-color: v.$dark-background;
         color: v.$light-background;
     }
+}
+
+.details-text-container {
+    overflow-y: auto;
+    height: 100%;
 }
 
 @media (max-width: 600px) {

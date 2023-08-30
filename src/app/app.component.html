@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<app-background [@.disabled]="true"></app-background>
+<div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>

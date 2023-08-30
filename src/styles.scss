@@ -3,6 +3,18 @@
     text-decoration: underline v.$accent-color;
 }
 
+.underlineTitle {
+    text-decoration: underline;
+    text-decoration-color: v.$accent-color;
+    text-decoration-thickness: 2px;
+    font-size: 4vh;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    &.dark-mode {
+        color: v.$light-background;
+    }
+}
+
 a {
     color: unset;
 }
