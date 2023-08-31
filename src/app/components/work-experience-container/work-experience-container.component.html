@@ -16,7 +16,7 @@
     </div>
     <button (click)="openDetails()" [ngClass]="{'detail-button':true, 'open': true, 'dark-mode':darkMode$|async}">See Details    </button>
 </div>
-<div [ngClass]="{'details-panel': true, 'show': showDetails, 'dark-mode':darkMode$|async}" (click)="detailClick($event);">
+<div [ngClass]="{'details-modal': true, 'show': showDetails, 'dark-mode':darkMode$|async}" (click)="detailClick($event);">
     <div [ngClass]="{'details-container': true, 'dark-mode':darkMode$|async}" #detailComponent>
         <ng-container *ngIf="experienceInfo.details; else inProgress">
             <div [ngClass]="{'detail-button-container': true}">

@@ -33,7 +33,7 @@
     padding: 1%;
     margin: 1%;
     margin-left: 5%;
-    padding-bottom: 0;
+    margin-bottom: 0;
     background-color: v.$light-background;
     &.dark-mode {
         background-color: v.$dark-background;
@@ -52,6 +52,7 @@
         overflow-x: auto;
         align-self: flex-end;
         gap: 2rem;
+        padding-top: 5%;
     }
     .work-container {
         height: 80%;
@@ -62,5 +63,9 @@
     }
     .dark-mode-button {
         bottom: 6vh;
+    }
+    .title {
+        margin: 5% 0 5% 5%;
+        font-size: 1.5rem;
     }
 }

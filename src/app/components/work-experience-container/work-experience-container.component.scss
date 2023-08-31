@@ -84,15 +84,15 @@ a {
     }
 }
 
-.details-panel {
+.details-modal {
     display: flex;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-color: rgba(v.$light-background, 0.7);
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -154,8 +154,9 @@ a {
     .work-logo {
         max-width: 80vw;
     }
-    .details-panel {
+    .details-modal {
         bottom: 0;
+        height: 100%;
     }
     .details-container {
         height: 100%;
