@@ -2,11 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
 import Typed, { TypedOptions } from 'typed.js';
+import { fadeTransitionAnimation } from 'src/app/animations';
 
 @Component({
   selector: 'app-in-progress',
   templateUrl: './in-progress.component.html',
-  styleUrls: ['./in-progress.component.scss']
+  styleUrls: ['./in-progress.component.scss'],
+  animations: [fadeTransitionAnimation]
 })
 export class InProgressComponent implements OnInit {
 

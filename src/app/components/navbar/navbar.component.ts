@@ -29,8 +29,6 @@ export class NavbarComponent implements OnInit {
     } else {
       this.collapseButtonText = "-"
     }
-    console.log(this.collapsed);
-    
   }
 
 }

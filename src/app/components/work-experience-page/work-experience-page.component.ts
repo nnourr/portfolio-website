@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { fadeTransitionAnimation } from 'src/app/animations';
 import { CurrPage } from 'src/app/enums/curr-page';
 import { WorkExperienceInfo } from 'src/app/models/work-experience-info.model';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
@@ -8,7 +9,8 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
 @Component({
   selector: 'app-work-experience-page',
   templateUrl: './work-experience-page.component.html',
-  styleUrls: ['./work-experience-page.component.scss']
+  styleUrls: ['./work-experience-page.component.scss'],
+  animations: [fadeTransitionAnimation]
 })
 export class WorkExperiencePageComponent implements OnInit {
   @HostListener('window:popstate', ['$event'])

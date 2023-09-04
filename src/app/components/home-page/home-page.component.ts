@@ -1,13 +1,15 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
+import { fadeTransitionAnimation } from 'src/app/animations';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
 import Typed, { TypedOptions } from 'typed.js';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: ['./home-page.component.scss'],
+  animations: [fadeTransitionAnimation]
 })
 export class HomePageComponent implements OnInit, OnDestroy {
 
@@ -21,8 +23,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this._darkModeService = darkModeService;
     this.darkMode$ = this._darkModeService.darkMode$;
     this.params$ = route.queryParams.subscribe(params => {
-      console.log(params);
-      
       if (params.showAnimation) {
         this.showAnimation = params.showAnimation.toLocaleLowerCase() === 'true';
       }
