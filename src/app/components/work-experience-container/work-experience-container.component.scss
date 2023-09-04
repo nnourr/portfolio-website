@@ -23,8 +23,9 @@
     text-decoration: underline;
     text-decoration-color: v.$accent-color;
     font-weight: 600;
+    font-size: 1.2rem;
     &.work-info {
-        margin-bottom: 0.3rem;
+        margin: 0.6rem 0 0.3rem 0;
     }
 }
 

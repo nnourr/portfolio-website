@@ -1,4 +1,7 @@
 @use './assets/variables' as v;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .underline {
     text-decoration: underline v.$accent-color;
 }
@@ -30,6 +33,21 @@ a {
 
 .dark-mode::-webkit-scrollbar {
     background-color: adjust-color($color: v.$dark-background, $lightness: 5%, $alpha: 1.0);
+}
+
+.dark-mode-button {
+    position: absolute;
+    z-index: 20;
+    right: 3vw;
+    bottom: 3vw;
+    width: 8vh;
+    height: 8vh;
+}
+
+@media (max-width: 830px) {
+    .dark-mode-button {
+        bottom: 6vh;
+    }
 }
 
 // .dark-mode::-webkit-scrollbar-button {
