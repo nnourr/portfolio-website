@@ -21,13 +21,33 @@
         content: "";
         background-color: rgb(179, 179, 179);
         -webkit-mask-image: url('../../../assets/circuit-board.svg');
+        -webkit-mask-size: 40vh;
         mask-image: url('../../../assets/circuit-board.svg');
         mask-size: 40vh;
         position: absolute;
-        width: 500%;
-        height: 500%;
+        width: 400vw;
+        height: 400vh;
         top: -150%;
         left: -150%;
         opacity: 0.1;
+    }
+}
+
+@media (max-width: 600px) {
+    .background {
+        &.dark-mode {
+            &:after {
+                animation: scrollDarkBackground 5s linear infinite;
+            }
+        }
+    }
+}
+
+@keyframes scrollDarkBackground {
+    0% {
+        left: -160%;
+    }
+    100% {
+        left: -221%;
     }
 }
