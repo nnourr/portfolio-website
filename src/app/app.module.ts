@@ -12,7 +12,7 @@ import { InfoButtonsComponent } from './components/info-buttons/info-buttons.com
 import { InProgressComponent } from './components/in-progress/in-progress.component';
 import { WorkExperienceContainerComponent } from './components/work-experience-container/work-experience-container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
+import { PersonalProjectsPageComponent } from './components/personal-projects-page/personal-projects-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { RouterModule } from '@angular/router';
     NavbarComponent,
     InfoButtonsComponent,
     InProgressComponent,
-    WorkExperienceContainerComponent
+    WorkExperienceContainerComponent,
+    PersonalProjectsPageComponent
   ],
   imports: [
     BrowserModule,

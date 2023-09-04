@@ -1,10 +1,11 @@
 <ng-container *ngIf="fullPage">
-    <app-navbar *ngIf="fullPage" [currPage]="2"></app-navbar>
+    <app-navbar [currPage]="2"></app-navbar>
     <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
 </ng-container>
-<div @fadeTransitionAnimation [ngClass]="{'container': true, 'full-page': fullPage}">
-    <div id="typed-text" style="display: none;">
+<div [ngClass]="{'container': true, 'full-page': fullPage}">
+    <!-- <div id="typed-text" style="display: none;">
         <h1>This page is in progress ...</h1>
     </div>
-    <h1 id="typed" [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"></h1>
+    <h1 id="typed" [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"></h1> -->
+    <h1 [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}">This page is in progress ...</h1>
 </div>

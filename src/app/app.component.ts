@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 
-import { fadeTransitionAnimation } from './animations';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [
-    fadeTransitionAnimation
-  ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'protfolio-website';
+  title = 'portfolio-website';
 }

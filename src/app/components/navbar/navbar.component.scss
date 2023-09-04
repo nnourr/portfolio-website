@@ -1,5 +1,5 @@
 @use '../../../assets/_variables' as v;
-.navbar-container {
+.navbar-info-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,35 +36,43 @@ a {
     }
 }
 
+.mobile-info-buttons {
+    display: none;
+}
+
 @media (max-width: 600px) {
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+    }
     .collapse-button {
         display: block;
         align-self: center;
     }
-    .info-buttons {
-        opacity: 1;
-        transition: all 300ms;
-        &.collapsed {
-            transition: none;
-            opacity: 0;
+    .mobile-info-buttons {
+        display: block;
+        opacity: 0;
+        transition: all 0.3s;
+        &.show {
+            opacity: 1;
         }
+        position: absolute;
+        top: 10vh;
+        z-index: 100;
+        background-color: v.$dark-background;
+        padding: 0 5% 5% 5%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .info-buttons {
+        display: none;
     }
     .title {
         display: block;
         margin: 5% 0 5% 0;
         width: 50%;
     }
-    .navbar-container {
-        height: auto;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        transition: all 300ms;
-        max-height: 990px;
-        &.collapsed {
-            flex-direction: row;
-            justify-content: space-between;
-            max-height: 8vh;
-        }
+    .navbar-info-container {
+        height: 10vh;
     }
 }
