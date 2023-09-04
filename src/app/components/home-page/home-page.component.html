@@ -9,22 +9,22 @@
                 <h1 [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"><span class="text-shrink">I'm</span><br>Noureldeen<br>Ahmed.</h1>
             </ng-container>
             <h1 id="typed" [ngClass]="{'title': true, 'dark-mode': darkMode$ | async}"></h1>
-            <h2 [ngClass]="{'subtitle': true, 'animate-in': showAnimation==true, 'dark-mode': darkMode$ | async}"> A passionate and versatile 3<sup>rd</sup> year Software Engineering student at the University of Guelph.</h2>
-        </div>
-        <div *ngIf="mobile" class="mobile-image">
-            <ng-container *ngTemplateOutlet="imageAndNetwork"></ng-container>
+            <h2 [ngClass]="{'subtitle': true, 'animate-in': showAnimation==true, 'dark-mode': darkMode$ | async}"> A passionate and versatile 4<sup>th</sup> year Software Engineering student at the University of Guelph.</h2>
         </div>
         <ng-container *ngIf="!mobile">
             <ng-container *ngTemplateOutlet="imageAndNetwork"></ng-container>
         </ng-container>
         <app-info-buttons [rows]="true" [showAnimation]="showAnimation" [ngClass]="{'info-buttons-container': true}"></app-info-buttons>
+        <div *ngIf="mobile" class="mobile-image">
+            <ng-container *ngTemplateOutlet="imageAndNetwork"></ng-container>
+        </div>
     </div>
 </div>
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
 <ng-template #imageAndNetwork>
-    <img [ngClass]="{'headshot': true, 'animate-in': showAnimation==true}" src="assets/headshotcropped.jpg">
+    <img *ngIf="!mobile" [ngClass]="{'headshot': true, 'animate-in': showAnimation==true}" src="assets/headshotcropped.jpg">
     <div [ngClass]="{'contact-container': true, 'animate-in': showAnimation==true, 'dark-mode': darkMode$ | async}">
-        <h3 *ngIf="!mobile">contact</h3>
+        <h3>let's connect:</h3>
         <ul [ngClass]="{'network-icons':true, 'dark-mode': darkMode$|async, 'animate-in-list': showAnimation==true}" aria-hidden="true">
             <li>
                 <a href="mailto:nourelde@uoguelph.ca" target="_blank" rel="noopener">
