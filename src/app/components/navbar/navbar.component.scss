@@ -59,10 +59,13 @@ a {
         position: absolute;
         top: 10vh;
         z-index: 100;
-        background-color: v.$dark-background;
         padding: 0 5% 5% 5%;
         width: 100%;
         box-sizing: border-box;
+        background-color: v.$light-background;
+        &.dark-mode {
+            background-color: v.$dark-background;
+        }
     }
     .info-buttons {
         display: none;

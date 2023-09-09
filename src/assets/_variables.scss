@@ -27,6 +27,7 @@ $accent-color: rgb(227, 45, 145);
 
 @mixin underline-button {
     @include underline-text;
+    font-weight: 900;
     background-color: unset;
     border: none;
     padding: 0.3rem;

@@ -6,7 +6,7 @@
         <app-info-buttons [ngClass]="{'info-buttons':true, 'collapsed':collapsed}" [currPage]="currPage" [showView]="false"></app-info-buttons>
         <button (click)="openNavBar()" [ngClass]="{'collapse-button':true, 'dark-mode': darkMode$|async, 'collapsed':collapsed}">{{collapseButtonText}}</button>
     </div>
-    <div [ngClass]="{'mobile-info-buttons': true, 'show':!collapsed}">
+    <div [ngClass]="{'mobile-info-buttons': true, 'show':!collapsed, 'dark-mode': darkMode$|async}">
         <app-info-buttons [rows]="true" [ngClass]="{'mobile-buttons': true}" [currPage]="currPage" [showView]="false"></app-info-buttons>
     </div>
 </div>
