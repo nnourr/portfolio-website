@@ -1,5 +1,10 @@
 <app-navbar [currPage]="2"></app-navbar>
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
-<div class="flex justify-center items-center p-4 w-full h-[93vh] absolute top-[7vh] right-0">
-    <app-in-progress [fullPage]="false"></app-in-progress>
+<div [@fadeTransitionAnimation] class="w-full h-[93vh] absolute top-[7vh] right-0 flex flex-col">
+    <h1 class="page-heading" [ngClass]="{'dark-mode': darkMode$ | async}">Personal Projects:</h1>
+    <div #scrollTarget class="h-full w-full overflow-y-scroll flex gap-12 flex-col mt-6 pt-48 pb-48 snap-y snap-mandatory" [ngClass]="{'dark-mode': darkMode$ | async}">
+        <div class="flex items-start justify-center h-[34rem] snap-start" *ngFor="let project of projects; let i = index">
+            <app-project-container class="w-4/5 h-full" [reverse]="i%2 == 1" [project]="project" [darkMode$]="darkMode$"></app-project-container>
+        </div>
+    </div>
 </div>

@@ -13,6 +13,7 @@ import { InProgressComponent } from './components/in-progress/in-progress.compon
 import { WorkExperienceContainerComponent } from './components/work-experience-container/work-experience-container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonalProjectsPageComponent } from './components/personal-projects-page/personal-projects-page.component';
+import { ProjectContainerComponent } from './components/project-container/project-container.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PersonalProjectsPageComponent } from './components/personal-projects-pa
     InfoButtonsComponent,
     InProgressComponent,
     WorkExperienceContainerComponent,
-    PersonalProjectsPageComponent
+    PersonalProjectsPageComponent,
+    ProjectContainerComponent
   ],
   imports: [
     BrowserModule,

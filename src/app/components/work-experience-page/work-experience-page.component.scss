@@ -19,19 +19,13 @@
     gap: 5rem;
 }
 
-.title {
-    align-self: start;
-    padding: 12px;
-    margin: 12px 0 0 92px;
-    background-color: v.$light-background;
-    &.dark-mode {
-        background-color: v.$dark-background;
-    }
-}
-
 .work-container {
     margin: auto;
     height: 90%;
+}
+
+.title {
+    align-self: baseline;
 }
 
 @media (max-width: 600px) {

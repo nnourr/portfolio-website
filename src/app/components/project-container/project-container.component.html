@@ -1,0 +1,18 @@
+<div #projectRef class="flex w-full h-full background-color p-6 gap-6" [ngClass]="{'dark-mode': darkMode$ | async, 'flex-row-reverse': reverse, 'highlight-thick': highlight$}">
+    <div class="w-2/5 flex flex-col gap-2">
+        <h1 class="heading col-span-2" [ngClass]="{ 'dark-mode': darkMode$ | async} ">{{project.title}}</h1>
+        <div class="h-full overflow-hidden">
+            <img class="object-cover w-full h-full block highlight" [src]="project.media[0]">
+        </div>
+    </div>
+    <div class="w-3/5 grid grid-rows-5 h-full">
+        <div class="row-span-5 overflow-y-auto highlight" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+            <div *ngFor="let content of project.body ">
+                <h2 class="subheading" [ngClass]="{ 'dark-mode': darkMode$ | async }">{{content.heading}}</h2>
+                <h2 class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }" [innerHTML]="content.body"></h2><br>
+            </div>
+        </div>
+        <p class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }"><span class="subheading" [ngClass]="{ 'dark-mode': darkMode$ | async }">Tech:</span> {{project.tech}}</p>
+        <p class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }"><span class="subheading" [ngClass]="{ 'dark-mode': darkMode$ | async }">Skills Learnt:</span> {{project.skillsLearnt}}</p>
+    </div>
+</div>
