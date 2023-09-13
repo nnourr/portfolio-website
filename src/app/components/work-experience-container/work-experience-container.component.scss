@@ -44,14 +44,6 @@
     }
 }
 
-ul {
-    list-style-type: "-  ";
-    & li::marker {
-        color: v.$accent-color;
-        font-weight: 900;
-    }
-}
-
 .work-logo {
     width: 100%;
     height: auto;

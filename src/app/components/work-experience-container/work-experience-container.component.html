@@ -10,7 +10,7 @@
         <p [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Position:</span> {{experienceInfo.position}}</p>
         <p [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Tech:</span> {{experienceInfo.tech}}</p>
         <p [ngClass]="{'underline':true}">Highlights:</p>
-        <ul [ngClass]="{'work-info':true}">
+        <ul>
             <li *ngFor="let highlight of experienceInfo.highlights">{{highlight}}</li>
         </ul>
     </div>

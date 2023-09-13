@@ -83,7 +83,7 @@ export class PersonalProjectsPageComponent implements OnInit {
     const scrollTarget = scrollTargetElem;
     const scrollTargetBox = scrollTarget.getBoundingClientRect();
 
-    return elementRect.top >= scrollTargetBox.top - 25 && elementRect.bottom <= scrollTargetBox.bottom;
+    return elementRect.top + 125 >= scrollTargetBox.top - 45 && elementRect.bottom - 125 <= scrollTargetBox.bottom;
   }
 
   goBack() {

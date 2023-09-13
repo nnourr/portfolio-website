@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="w-3/5 grid grid-rows-5 h-full">
-        <div class="row-span-5 overflow-y-auto h-64 border-b-8 border-dark-background" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick': highlight$ }">
+        <div class="row-span-5 overflow-y-auto h-80 border-b-8 border-dark-background" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick': highlight$ }">
             <div *ngFor="let content of project.body ">
                 <h2 class="subheading" [ngClass]="{ 'dark-mode': darkMode$ | async }">{{content.heading}}</h2>
                 <h2 class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }" [innerHTML]="content.body"></h2><br>
