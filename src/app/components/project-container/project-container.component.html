@@ -1,12 +1,12 @@
-<div #projectRef class="flex w-full h-full background-color p-6 gap-6" [ngClass]="{'dark-mode': darkMode$ | async, 'flex-row-reverse': reverse, 'highlight-thick': highlight$}">
+<div #projectRef class="flex w-full h-full background-color p-6 gap-6 border-b-8 border-dark-background" [ngClass]="{'dark-mode': darkMode$ | async, 'flex-row-reverse': reverse, 'highlight-thick': highlight$, 'no-underline': !highlight$}">
     <div class="w-2/5 flex flex-col gap-2">
         <h1 class="heading col-span-2" [ngClass]="{ 'dark-mode': darkMode$ | async} ">{{project.title}}</h1>
-        <div class="h-full overflow-hidden">
-            <img class="object-cover w-full h-full block highlight" [src]="project.media[0]">
+        <div class="h-full overflow-hidden border-b-8 border-dark-background" [ngClass]="{'highlight-thick': highlight$}">
+            <img class="object-cover w-full h-full block" [src]="project.media[0]">
         </div>
     </div>
     <div class="w-3/5 grid grid-rows-5 h-full">
-        <div class="row-span-5 overflow-y-auto highlight" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        <div class="row-span-5 overflow-y-auto h-64 border-b-8 border-dark-background" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick': highlight$ }">
             <div *ngFor="let content of project.body ">
                 <h2 class="subheading" [ngClass]="{ 'dark-mode': darkMode$ | async }">{{content.heading}}</h2>
                 <h2 class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }" [innerHTML]="content.body"></h2><br>

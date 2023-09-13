@@ -12,7 +12,7 @@ export class ProjectContainerComponent implements OnInit {
   @Input() project: ProjectContainer;
   @Input() reverse: boolean;
   @Input() darkMode$: Observable<boolean>;
-  @Input() highlight$: Observable<boolean> = new BehaviorSubject(true);
+  @Input() highlight$: any;
 
   constructor() { }
 

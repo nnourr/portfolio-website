@@ -1,6 +1,6 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, fromEvent } from 'rxjs';
+import { Observable, distinctUntilChanged, fromEvent, map, throttleTime } from 'rxjs';
 import { fadeTransitionAnimation } from 'src/app/animations';
 import { ProjectBody } from 'src/app/models/project-body.model';
 import { ProjectContainer } from 'src/app/models/project-container.model';
@@ -14,6 +14,7 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
 })
 export class PersonalProjectsPageComponent implements OnInit {
 
+  @ViewChildren('personalProjects') personalProjects: QueryList<ElementRef> 
   @ViewChild('scrollTarget', {static: true}) scrollTarget: ElementRef 
 
   @HostListener('window:popstate', ['$event'])
@@ -24,6 +25,7 @@ export class PersonalProjectsPageComponent implements OnInit {
   darkMode$: Observable<boolean>
   _router: Router;
   scrollObserver$: Observable<any>
+  isVisible$: boolean[] = [] // Array of observables for visibility
 
   projects: ProjectContainer[] = [{
     title: 'RL Reddit to TikTok Web Scrapper',
@@ -63,12 +65,26 @@ export class PersonalProjectsPageComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.scrollTarget);
-    
     this.scrollObserver$ = fromEvent(this.scrollTarget.nativeElement, 'scroll')
-    // this.scrollObserver$.subscribe(res => console.log(res))
+    this.scrollObserver$.subscribe(() => {
+      this.checkVisible()
+    })
+    
   }
-  
+
+  checkVisible() {
+    this.isVisible$ = this.personalProjects.map((elem: ElementRef) => this.isComponentInView(elem.nativeElement, this.scrollTarget.nativeElement));
+
+  }
+
+  private isComponentInView(elem:any, scrollTargetElem:any): boolean {
+    const element = elem;
+    const elementRect = element.getBoundingClientRect();
+    const scrollTarget = scrollTargetElem;
+    const scrollTargetBox = scrollTarget.getBoundingClientRect();
+
+    return elementRect.top >= scrollTargetBox.top - 25 && elementRect.bottom <= scrollTargetBox.bottom;
+  }
 
   goBack() {
     this._router.navigate(['/home'], {queryParams: {showAnimation:false}})
