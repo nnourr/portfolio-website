@@ -41,19 +41,12 @@ export class PersonalProjectsPageComponent implements OnInit {
     media: ['assets/rocketleagueimg.jpg'],
     link: 'https://www.tiktok.com/@supersonic__legend/video/6961310582783888642'
   },{
-    title: 'RL Reddit to TikTok Web Scrapper',
-    tech: ['Python Flask', 'Google Cloud', 'Docker', 'Firebase', 'Pandas', 'OpenCV', 'Selenium', 'Reddit'],
-    skillsLearnt: [ 'Microservice Architecture', 'Docker', 'Computer Vision', 'Multithreading'],
-    body: [{heading: 'Intention:', body: 'The intention of this project was to integrate my experience with web-scrapping, ingesting APIs and my love for Rocket League all in one project. It was also an opportunity to learn microservice architecture, document-oriented databases and computer vision.'}],
-    media: ['assets/rocketleagueimg.jpg'],
-    link: 'https://www.tiktok.com/@supersonic__legend/video/6961310582783888642'
-  },{
-    title: 'RL Reddit to TikTok Web Scrapper',
-    tech: ['Python Flask', 'Google Cloud', 'Docker', 'Firebase', 'Pandas', 'OpenCV', 'Selenium', 'Reddit'],
-    skillsLearnt: [ 'Microservice Architecture', 'Docker', 'Computer Vision', 'Multithreading'],
-    body: [{heading: 'Intention:', body: 'The intention of this project was to integrate my experience with web-scrapping, ingesting APIs and my love for Rocket League all in one project. It was also an opportunity to learn microservice architecture, document-oriented databases and computer vision.'}],
-    media: ['assets/rocketleagueimg.jpg'],
-    link: 'https://www.tiktok.com/@supersonic__legend/video/6961310582783888642'
+    title: 'Explore NASA',
+    tech: ['React', 'Github Pages', 'Astronomy Picture of the Day API'],
+    skillsLearnt: [ 'Web Frameworks', 'Web Storage'],
+    body: [{heading: 'Intention:', body: 'The intention of this project was to learn my first web framework. React was the perfect first choice for me, as useState() gave me a fundamental understanding of how web frameworks work under the hood. There is also a large pool of learning material.'}, {heading: 'Description', body: "Explore NASA is powered by NASA's Astronomy Picture of the Day API, which exposes their Picture of the Day images and associated metadata. I ingested this information and displayed it in my React app, allowing users to like an image and view it’s description. A user’s liked posts are retained on refresh, using web-storage."}],
+    media: ['assets/explorenasa.png'],
+    link: 'https://nnourr.tech'
   }]
 
   constructor(router: Router, darkModeService: DarkModeService) {
@@ -83,7 +76,7 @@ export class PersonalProjectsPageComponent implements OnInit {
     const scrollTarget = scrollTargetElem;
     const scrollTargetBox = scrollTarget.getBoundingClientRect();
 
-    return elementRect.top + 125 >= scrollTargetBox.top - 45 && elementRect.bottom - 125 <= scrollTargetBox.bottom;
+    return elementRect.top + 65 >= scrollTargetBox.top - 45 && elementRect.bottom - 65 <= scrollTargetBox.bottom;
   }
 
   goBack() {

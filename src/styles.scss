@@ -33,6 +33,15 @@
     }
 }
 
+.btn {
+    cursor: pointer;
+    padding: 0.5rem;
+    &:hover {
+        background: v.$accent-color;
+        text-decoration-color: v.$dark-background;
+    }
+}
+
 ul {
     padding-left: 1.5rem;
     list-style-type: "- ";
