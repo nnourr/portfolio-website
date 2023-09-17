@@ -112,6 +112,7 @@ a {
     & svg {
         height: 6vh;
         max-height: 3rem;
+        box-sizing: content-box;
         border-bottom: v.$accent-color solid 4px;
         transition: 0.3s;
     }
