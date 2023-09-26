@@ -1,10 +1,10 @@
 <app-navbar [currPage]="2"></app-navbar>
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
-<div [@fadeTransitionAnimation] class="w-full h-[93vh] absolute top-[7vh] right-0 flex flex-col">
-    <h1 class="page-heading" [ngClass]="{'dark-mode': darkMode$ | async}">Personal Projects:</h1>
-    <div #scrollTarget class="h-full w-full overflow-y-scroll flex gap-12 flex-col mt-6 pt-48 pb-48 snap-y snap-mandatory" [ngClass]="{'dark-mode': darkMode$ | async}">
-        <div #personalProjects class="flex items-start justify-center snap-start" *ngFor="let project of projects; let i = index">
-            <app-project-container class="w-4/5 h-full" [highlight$]="isVisible$[i]" [reverse]="i%2 === 1" [project]="project" [darkMode$]="darkMode$"></app-project-container>
+<div [@fadeTransitionAnimation] class="absolute right-0 top-[7vh] flex h-[93vh] w-full flex-col">
+    <h1 class="heading m-6 mt-8 w-fit underline md:ml-24" [ngClass]="{'dark-mode': darkMode$ | async}">Personal Projects:</h1>
+    <div #scrollTarget class="mt-6 flex h-full w-full snap-y snap-mandatory flex-col gap-12 overflow-y-auto py-48" [ngClass]="{'dark-mode': darkMode$ | async}">
+        <div #personalProjects class="flex snap-start items-start justify-center" *ngFor="let project of projects; let i = index">
+            <app-project-container class="h-full w-4/5" [highlight$]="isVisible$[i]" [reverse]="i%2 === 1" [project]="project" [darkMode$]="darkMode$"></app-project-container>
         </div>
     </div>
 </div>

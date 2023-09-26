@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
-        "headshot"
+      "headshot",
+      "tailwindcss"
     ],
     "files.autoSave": "onFocusChange",
     "editor.codeActionsOnSave": {

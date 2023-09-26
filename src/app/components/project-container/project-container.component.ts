@@ -7,7 +7,7 @@ import { ProjectContainer } from 'src/app/models/project-container.model';
   templateUrl: './project-container.component.html',
   styleUrls: ['./project-container.component.scss']
 })
-export class ProjectContainerComponent implements OnInit {
+export class ProjectContainerComponent {
 
   @Input() project: ProjectContainer;
   @Input() reverse: boolean;
@@ -15,8 +15,4 @@ export class ProjectContainerComponent implements OnInit {
   @Input() highlight$: any;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

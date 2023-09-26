@@ -10,7 +10,7 @@ module.exports = {
                 'dark-background': 'rgb(22, 22, 22)',
                 'light-background': '#f5f5f5',
             }
-        },
+        }
     },
     plugins: [],
 }

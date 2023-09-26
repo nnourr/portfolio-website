@@ -1,7 +1,7 @@
 @use './assets/variables' as v;
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
 .underline {
     text-decoration: underline v.$accent-color;
     font-family: 'Courier New', Courier, monospace;
@@ -19,14 +19,11 @@
 }
 
 .heading {
-    text-decoration: underline;
-    text-decoration-color: v.$accent-color;
     text-decoration-thickness: 2px;
     font-size: 24px;
     font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
     background-color: v.$light-background;
-    width: fit-content;
     &.dark-mode {
         background-color: v.$dark-background;
         color: v.$light-background;
@@ -49,12 +46,6 @@ ul {
         color: v.$accent-color;
         font-weight: 600;
     }
-}
-
-.page-heading {
-    @extend .heading;
-    padding: 12px;
-    margin: 12px 0 0 92px;
 }
 
 .subheading {
