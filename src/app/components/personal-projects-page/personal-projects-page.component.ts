@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, distinctUntilChanged, fromEvent, map, throttleTime } from 'rxjs';
 import { fadeTransitionAnimation } from 'src/app/animations';
@@ -12,7 +12,7 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
   styleUrls: ['./personal-projects-page.component.scss'],
   animations: [fadeTransitionAnimation]
 })
-export class PersonalProjectsPageComponent implements OnInit {
+export class PersonalProjectsPageComponent implements AfterViewInit {
 
   @ViewChildren('personalProjects') personalProjects: QueryList<ElementRef> 
   @ViewChild('scrollTarget', {static: true}) scrollTarget: ElementRef 
@@ -53,9 +53,6 @@ export class PersonalProjectsPageComponent implements OnInit {
     this._router = router;
     this.darkMode$ = darkModeService.darkMode$;
   }
-  
-  ngOnInit(): void {
-  }
 
   ngAfterViewInit() {
     this.scrollObserver$ = fromEvent(this.scrollTarget.nativeElement, 'scroll')
@@ -70,7 +67,7 @@ export class PersonalProjectsPageComponent implements OnInit {
 
   }
 
-  private isComponentInView(elem:any, scrollTargetElem:any): boolean {
+  private isComponentInView(elem: any, scrollTargetElem: any): boolean {
     const element = elem;
     const elementRect = element.getBoundingClientRect();
     const scrollTarget = scrollTargetElem;
