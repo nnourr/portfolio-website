@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ProjectContainer } from 'src/app/models/project-container.model';
 
@@ -14,5 +14,19 @@ export class ProjectContainerComponent {
   @Input() darkMode$: Observable<boolean>;
   @Input() highlight$: any;
 
+  expanded = false
+  
+  open () {
+    this.expanded = true
+  }
+  
+  close () {
+    this.expanded = false
+  }
+  
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+  }
+  
   constructor() { }
 }

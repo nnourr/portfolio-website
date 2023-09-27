@@ -25,7 +25,8 @@ export class PersonalProjectsPageComponent implements AfterViewInit {
   darkMode$: Observable<boolean>
   _router: Router;
   scrollObserver$: Observable<any>
-  isVisible$: boolean[] = [] // Array of observables for visibility
+  isVisible$: boolean[] = [] 
+  firstVisible = true
 
   projects: ProjectContainer[] = [{
     title: 'RL Reddit to TikTok Web Scrapper',
@@ -62,13 +63,12 @@ export class PersonalProjectsPageComponent implements AfterViewInit {
     this.scrollObserver$ = fromEvent(this.scrollTarget.nativeElement, 'scroll')
     this.scrollObserver$.subscribe(() => {
       this.checkVisible()
+      this.firstVisible = false
     })
-    
   }
 
   checkVisible() {
     this.isVisible$ = this.personalProjects.map((elem: ElementRef) => this.isComponentInView(elem.nativeElement, this.scrollTarget.nativeElement));
-
   }
 
   private isComponentInView(elem: any, scrollTargetElem: any): boolean {
