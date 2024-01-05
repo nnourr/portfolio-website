@@ -9,20 +9,12 @@
     align-items: center;
 }
 
-.dark-mode-button {
-    position: absolute;
-    z-index: 1;
-    right: 3vw;
-    bottom: 3vw;
-    width: 8vh;
-    height: 8vh;
-}
-
 .title {
     font-family: 'Courier New', Courier, monospace;
     font-size: 10vh;
     text-decoration: underline;
     text-decoration-color: v.$accent-color;
+    font-weight: 900;
     margin: 0;
     &.dark-mode {
         color: v.$light-background;
@@ -50,6 +42,7 @@
 .subtitle {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3vh;
+    font-weight: 900;
     &.dark-mode {
         color: v.$light-background;
     }
@@ -119,6 +112,7 @@ a {
     & svg {
         height: 6vh;
         max-height: 3rem;
+        box-sizing: content-box;
         border-bottom: v.$accent-color solid 4px;
         transition: 0.3s;
     }
@@ -226,8 +220,5 @@ a {
         border-radius: 2rem;
         box-shadow: v.$accent-color 20px 20px 0px;
         transform: none;
-    }
-    .dark-mode-button {
-        bottom: 6vh;
     }
 }

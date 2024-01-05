@@ -22,9 +22,10 @@
 .underline {
     text-decoration: underline;
     text-decoration-color: v.$accent-color;
-    font-weight: 600;
+    font-weight: 900;
+    font-size: 1.2rem;
     &.work-info {
-        margin-bottom: 0.3rem;
+        margin: 0.6rem 0 0.3rem 0;
     }
 }
 
@@ -40,14 +41,6 @@
         &:hover::after {
             margin-left: 0;
         }
-    }
-}
-
-ul {
-    list-style-type: "-  ";
-    & li::marker {
-        color: v.$accent-color;
-        font-weight: 600;
     }
 }
 

@@ -23,7 +23,7 @@
         </div>
     </div>
     <ng-template #imageAndNetwork>
-        <img *ngIf="!mobile" [ngClass]="{'headshot': true, 'animate-in': showAnimation==true}" src="assets/headshotcropped.jpg">
+        <img *ngIf="!mobile" [ngClass]="{'headshot': true, 'animate-in': showAnimation==true}" src="assets/headshotcropped.png">
         <div [ngClass]="{'contact-container': true, 'animate-in': showAnimation==true, 'dark-mode': darkMode$ | async}">
             <h3>let's connect:</h3>
             <ul [ngClass]="{'network-icons':true, 'dark-mode': darkMode$|async, 'animate-in-list': showAnimation==true}" aria-hidden="true">
