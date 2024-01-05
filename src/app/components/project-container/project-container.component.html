@@ -37,8 +37,8 @@
                 <h2 class="subheading underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async }">{{content.heading}}</h2>
                 <h2 class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }" [innerHTML]="content.body"></h2><br>
             </div>
-            <span class="background-color absolute bottom-0 block w-full text-accent" (click)="open()" *ngIf="!expanded" [ngClass]="{ 'dark-mode': darkMode$ | async }">more...</span>
-            <span class="background-color absolute bottom-0 block w-full text-accent" (click)="scroll(container); close()" *ngIf="expanded" [ngClass]="{ 'dark-mode': darkMode$ | async }">less...</span>
+            <span class="background-color absolute bottom-0 block w-full font-mono text-accent" (click)="open()" *ngIf="!expanded" [ngClass]="{ 'dark-mode': darkMode$ | async }">more...</span>
+            <span class="background-color absolute bottom-0 block w-full font-mono text-accent" (click)="scroll(container); close()" *ngIf="expanded" [ngClass]="{ 'dark-mode': darkMode$ | async }">less...</span>
         </div>
     </div>
     <div class="p-3">

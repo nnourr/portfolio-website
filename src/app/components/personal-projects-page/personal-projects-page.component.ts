@@ -77,7 +77,7 @@ export class PersonalProjectsPageComponent implements AfterViewInit {
     const scrollTarget = scrollTargetElem;
     const scrollTargetBox = scrollTarget.getBoundingClientRect();
 
-    return elementRect.top + 65 >= scrollTargetBox.top - 45 && elementRect.bottom - 65 <= scrollTargetBox.bottom;
+    return elementRect.top + 150 >= scrollTargetBox.top && elementRect.bottom - 150 <= scrollTargetBox.bottom;
   }
 
   goBack() {
