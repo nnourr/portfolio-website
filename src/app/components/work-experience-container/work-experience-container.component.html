@@ -1,5 +1,5 @@
 <div [ngClass]="{'work-container': true, 'dark-mode':darkMode$|async}">
-    <img *ngIf="(darkMode$ | async) == false" [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="experienceInfo.image">
+    <img *ngIf="(darkMode$ | async) === false" [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="experienceInfo.image">
     <img *ngIf="darkMode$ | async" [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="experienceInfo.imageDarkMode? experienceInfo.imageDarkMode : experienceInfo.image">
     <div [ngClass]="{'text-container':true, 'dark-mode':darkMode$|async}">
         <a [href]="experienceInfo.companyUrl" target="_blank">
