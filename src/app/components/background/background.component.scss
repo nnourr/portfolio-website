@@ -11,9 +11,10 @@
     &.dark-mode {
         background-color: v.$dark-background;
         &:after {
+            -webkit-mask-size: 10vh;
             -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
-            mask-image: url('../../../assets/tic-tac-toe.svg');
             mask-size: 10vh;
+            mask-image: url('../../../assets/tic-tac-toe.svg');
         }
     }
     &:after {
