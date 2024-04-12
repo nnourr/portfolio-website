@@ -22,10 +22,10 @@ export class WorkExperiencePageComponent implements OnInit {
   darkMode$: Observable<boolean>
   currPage = CurrPage.WorkExperiencePage
   preLoadArr = new Array();
-  images = ['assets/rbc-color.png','assets/rbc-dark.png', 'assets/system1-logo.svg', 'assets/system1-logo-dark.svg', 'assets/ebc-logo.png', 'assets/ebc-logo-dark.png']
+  images = {rbc: {light:'assets/rbc-color.png',dark:'assets/rbc-dark.png'}, system1:{light:'assets/system1-logo.svg', dark:'assets/system1-logo-dark.svg'}, ebc:{light:'assets/ebc-logo.png', dark:'assets/ebc-logo-dark.png'}}
   workExperiences: WorkExperienceInfo[] = [{
-    image: this.images[0],
-    imageDarkMode: this.images[1],
+    image: this.images.rbc.light,
+    imageDarkMode: this.images.rbc.dark,
     customImageStyle: 'width: 60%;',
     companyUrl: 'https://www.rbc.com/about-rbc.html',
     companyName: 'Royal Bank of Canada',
@@ -51,8 +51,8 @@ export class WorkExperiencePageComponent implements OnInit {
       acknowledgments: 'Thank you to my manager, <span class="underline">Evan Timms</span> for assisting me throughout my entire RBC journey, helping me get adjusted to the very new environment. I would also like to thank our front-end engineer, <span class="underline">Vinícius Philot</span> for being a beacon of knowledge into advanced <span class="underline">UI/UX</span> design practices and reviewing every pixel I placed down.'
     }
   }, {
-    image: this.images[2],
-    imageDarkMode: this.images[3],
+    image: this.images.system1.light,
+    imageDarkMode: this.images.system1.dark,
     companyUrl: 'https://system1.com/',
     companyName: 'System1',
     reference: 'chris.dekker@system1.com',
@@ -78,8 +78,8 @@ export class WorkExperiencePageComponent implements OnInit {
       acknowledgments: 'I would to give a special thank you to team members Chris Dekker, Matt Potts and Darren Laser for the incredible support they gave me the entire term (not to mention all the PR comments), as well as Babak Hajiahmadi for his on boarding and the entire dev team for making me at home in their company.'
     }
   }, {
-    image: this.images[4],
-    imageDarkMode: this.images[5],
+    image: this.images.ebc.light,
+    imageDarkMode: this.images.ebc.dark,
     customImageStyle: 'width: 40%;',
     companyUrl: 'https://www.egyptianbanks.com/',
     companyName: 'Egyptian Banks Company',
@@ -109,9 +109,11 @@ export class WorkExperiencePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.images.forEach ((image, i) => {
-      this.preLoadArr[i] = new Image();
-      this.preLoadArr[i].src = image;
+    Object.values(this.images).forEach((company) => {
+      Object.values(company).forEach((image) => {
+        this.preLoadArr.push(new Image());
+        this.preLoadArr[this.preLoadArr.length - 1].src = image;
+      })
     })
   }
 
