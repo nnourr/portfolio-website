@@ -8,7 +8,7 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
   templateUrl: './info-buttons.component.html',
   styleUrls: ['./info-buttons.component.scss']
 })
-export class InfoButtonsComponent implements OnInit {
+export class InfoButtonsComponent  {
   darkMode$: Observable<boolean>
   @Input() showAnimation?:boolean = false;
   @Input() showView?:boolean = true;
@@ -19,8 +19,4 @@ export class InfoButtonsComponent implements OnInit {
   constructor(darkModeService: DarkModeService) {
     this.darkMode$ = darkModeService.darkMode$;
   }
-
-  ngOnInit(): void {
-  }
-
 }
