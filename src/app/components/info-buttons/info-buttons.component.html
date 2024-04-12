@@ -1,6 +1,6 @@
 <ul [ngClass]="{'info-buttons-container': true, 'animate-in-list': showAnimation, 'show-as-rows':rows}">
-    <li *ngIf="currPage != pages.HomePage"><a [routerLink]="['/home']" [queryParams]="{showAnimation:false}" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}">home</a></li>
+    <li *ngIf="currPage !== pages.HomePage"><a [routerLink]="['/home']" [queryParams]="{showAnimation:false}" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}">home</a></li>
     <li><a href="assets/resume.pdf" target="_blank" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>resume</a></li>
-    <li *ngIf="currPage != pages.WorkExperiencePage"><a [routerLink]="['/work-experience']" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>work experience</a></li>
-    <li *ngIf="currPage != pages.PersonalProjectsPage "><a [routerLink]="['/personal-projects']" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>personal projects</a></li>
+    <li *ngIf="currPage !== pages.WorkExperiencePage"><a [routerLink]="['/work-experience']" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>work experience</a></li>
+    <li *ngIf="currPage !== pages.PersonalProjectsPage "><a [routerLink]="['/personal-projects']" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>personal projects</a></li>
 </ul>
