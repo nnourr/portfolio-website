@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "protfolio-website:build:production"
+              "buildTarget": "protfolio-website:build:production"
             },
             "development": {
-              "browserTarget": "protfolio-website:build:development"
+              "buildTarget": "protfolio-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "protfolio-website:build"
+            "buildTarget": "protfolio-website:build"
           }
         },
         "test": {
@@ -119,8 +119,10 @@
       }
     }
   },
-  "defaultProject": "protfolio-website",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "analytics": false,
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
