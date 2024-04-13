@@ -37,5 +37,4 @@ export class WorkExperienceContainerComponent implements OnInit {
   closeDetails() {
     this.showDetails = false;
   }
-
 }

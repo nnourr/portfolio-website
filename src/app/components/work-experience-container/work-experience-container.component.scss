@@ -1,10 +1,10 @@
 @use '../../../assets/_variables' as v;
 .work-container {
     height: 100%;
-    overflow: auto;
-    width: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
     max-width: 500px;
-    background-color: v.$light-background;
     padding: 5%;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
@@ -13,10 +13,6 @@
     justify-content: space-between;
     flex-direction: column;
     min-width: 25rem;
-    margin: 0 5% 0 5%;
-    &.dark-mode {
-        background-color: v.$dark-background;
-    }
 }
 
 .underline {

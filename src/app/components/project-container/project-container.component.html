@@ -1,8 +1,8 @@
-<div class="background-color hidden h-full w-full gap-6 border-b-8 border-solid border-dark-background p-6 sm:flex" [ngClass]="{'dark-mode': darkMode$ | async, 'flex-row-reverse': reverse, 'highlight-thick': highlight$, 'delay-300': highlight$,  'no-underline': !highlight$}">
+<div class="background-color hidden h-full w-full gap-6 border-b-8 border-solid border-transparent p-6 sm:flex" [ngClass]="{'dark-mode': darkMode$ | async, 'flex-row-reverse': reverse, 'highlight-thick': highlight$, 'delay-300': highlight$, 'no-underline': !highlight$, 'border-dark-background': highlight$}">
     <div class="flex w-2/5 flex-col gap-2">
         <a [href]="project.githubLink" target="_blank" class="group relative hover:bg-accent">
-            <h1 class="heading btn absolute left-0 top-0 col-span-2 underline decoration-accent opacity-0 group-hover:bg-accent group-hover:decoration-black group-hover:opacity-100" [ngClass]="{ 'dark-mode': darkMode$ | async} ">View Github Repo</h1>
-            <h1 class="heading btn col-span-2 underline decoration-accent group-hover:opacity-0" [ngClass]="{ 'dark-mode': darkMode$ | async} ">{{project.title}}</h1>
+            <h1 class="heading2 btn absolute left-0 top-0 col-span-2 underline decoration-accent opacity-0 group-hover:bg-accent group-hover:decoration-black group-hover:opacity-100" [ngClass]="{ 'dark-mode': darkMode$ | async} ">View Github Repo</h1>
+            <h1 class="heading2 btn col-span-2 underline decoration-accent group-hover:opacity-0" [ngClass]="{ 'dark-mode': darkMode$ | async} ">{{project.title}}</h1>
         </a>
         <div class="relative flex h-full w-full cursor-pointer items-center justify-center overflow-hidden border-b-8 border-solid border-dark-background" [ngClass]="{'highlight-thick': highlight$, 'delay-300': highlight$}">
             <img class="right-0 top-0 block h-full w-full object-cover" [src]="project.media">
@@ -29,7 +29,7 @@
         <img [src]="project.media" class="h-auto w-full object-fill">
     </div>
     <a [href]="project.githubLink" target="_blank">
-        <h1 class="heading btn underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async} ">{{project.title}}</h1>
+        <h1 class="heading2 btn underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async} ">{{project.title}}</h1>
     </a>
     <div class="flex h-full flex-col p-3" [ngClass]="{'max-h-48': !expanded}">
         <div class="background-color relative row-span-5 h-full overflow-y-hidden" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick': (highlight$ || expanded), 'delay-300': (highlight$ || expanded) }">

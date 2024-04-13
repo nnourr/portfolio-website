@@ -20,7 +20,7 @@
     &:after {
         transform: rotate(45deg);
         content: "";
-        background-color: rgb(179, 179, 179);
+        background-color: #c18aaa;
         -webkit-mask-image: url('../../../assets/circuit-board.svg');
         -webkit-mask-size: 40vh;
         mask-image: url('../../../assets/circuit-board.svg');
@@ -31,5 +31,6 @@
         top: -150%;
         left: -150%;
         opacity: 0.1;
+        mask-border: #334455 2px;
     }
 }

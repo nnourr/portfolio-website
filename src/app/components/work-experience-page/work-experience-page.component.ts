@@ -22,8 +22,22 @@ export class WorkExperiencePageComponent implements OnInit {
   darkMode$: Observable<boolean>
   currPage = CurrPage.WorkExperiencePage
   preLoadArr = new Array();
-  images = {rbc: {light:'assets/rbc-color.png',dark:'assets/rbc-dark.png'}, system1:{light:'assets/system1-logo.svg', dark:'assets/system1-logo-dark.svg'}, ebc:{light:'assets/ebc-logo.png', dark:'assets/ebc-logo-dark.png'}}
-  workExperiences: WorkExperienceInfo[] = [{
+  images = {ecobee: {light:'assets/ecobee-light.png', dark: 'assets/ecobee-dark.png'}, rbc: {light:'assets/rbc-color.png',dark:'assets/rbc-dark.png'}, system1:{light:'assets/system1-logo.svg', dark:'assets/system1-logo-dark.svg'}, ebc:{light:'assets/ebc-logo.png', dark:'assets/ebc-logo-dark.png'}}
+  workExperiences: WorkExperienceInfo[] = [
+    {
+      image: this.images.ecobee.light,
+      imageDarkMode: this.images.ecobee.dark,
+      companyUrl: 'https://www.ecobee.com/',
+      companyName: 'ecobee',
+      date: 'Jan 2024 - Aug 2024 (8 months)',
+      position: 'Backend Software Engineer Co-Op',
+      tech: 'Go, Nestjs, GKE, nginx',
+      highlights: ['Lead a multi-faceted GKE upgrade, cooperating with my team to manage risk on a tight deadline.',
+      'Took initiative to orchestrate team-wide discussions and implement process changes to improve developer QoL and production stability.',
+      'Created ADRs to investigate known bugs, involving identification of the root-cause, presenting solutions and discussing action items with the team'
+      ]
+    },
+    {
     image: this.images.rbc.light,
     imageDarkMode: this.images.rbc.dark,
     customImageStyle: 'width: 60%;',

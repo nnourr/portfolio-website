@@ -20,6 +20,18 @@
 
 .heading {
     text-decoration-thickness: 2px;
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: v.$light-background;
+    &.dark-mode {
+        background-color: v.$dark-background;
+        color: v.$light-background;
+    }
+}
+
+.heading2 {
+    text-decoration-thickness: 2px;
     font-size: 24px;
     font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
@@ -103,6 +115,14 @@ a {
     background-color: adjust-color($color: v.$dark-background, $lightness: 5%, $alpha: 1.0);
 }
 
+::-webkit-scrollbar-thumb {
+    background-color: adjust-color($color: v.$light-background, $lightness: -10%, $alpha: 1.0);
+}
+
+::-webkit-scrollbar {
+    background-color: adjust-color($color: v.$light-background, $lightness: -5%, $alpha: 1.0);
+}
+
 .dark-mode-button {
     position: absolute;
     z-index: 20;
@@ -114,7 +134,11 @@ a {
 
 @media (max-width: 830px) {
     .dark-mode-button {
-        bottom: 6vh;
+        bottom: 3vh;
+        scale: 0.7;
+    }
+    .heading {
+        font-size: 24px;
     }
 }
 

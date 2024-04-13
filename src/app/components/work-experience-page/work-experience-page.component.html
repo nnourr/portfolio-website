@@ -2,8 +2,8 @@
 <app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
 <div @fadeTransitionAnimation>
     <div class="center">
-        <h1 class="heading m-6 mt-8 w-fit self-start underline md:ml-24" [ngClass]="{'dark-mode': darkMode$| async}">Work Experience:</h1>
-        <div [ngClass]="{'experience-container': true, 'dark-mode': darkMode$| async}">
+        <h1 class="heading mx-6 mt-8 w-fit self-start underline md:ml-24" [ngClass]="{'dark-mode': darkMode$| async}">Work Experience:</h1>
+        <div class="flex lg:items-center" [ngClass]="{'experience-container': true, 'dark-mode': darkMode$| async}">
             <app-work-experience-container *ngFor="let experience of workExperiences" [experienceInfo]="experience" [ngClass]="{'work-container': true}" [darkMode$]="darkMode$"></app-work-experience-container>
         </div>
     </div>

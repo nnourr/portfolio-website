@@ -11,16 +11,13 @@
 }
 
 .experience-container {
-    display: flex;
     height: 100%;
     width: 80%;
     box-sizing: border-box;
     overflow-x: auto;
-    gap: 5rem;
 }
 
 .work-container {
-    margin: auto;
     height: 90%;
 }
 
@@ -41,7 +38,7 @@
         padding-top: 5%;
     }
     .work-container {
-        height: 80%;
+        height: 88%;
         margin: 0;
     }
     .work-container:last-child {
