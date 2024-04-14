@@ -1,6 +1,5 @@
-<div #target class="relative hidden scale-75 rounded-md border-accent bg-light-background/75 outline outline-2 outline-accent/30 lg:scale-90 lg:hover:scale-105 lg:hover:border-b-8 lg:hover:px-10 lg:hover:outline-accent" [ngClass]="{'work-container': true, 'dark-mode bg-dark-background/75': darkMode$|async, '!scale-100 border-b-8 outline-accent': highlight$, 'bg-light-background/75': (darkMode$|async) === false}">
-    <img *ngIf="(darkMode$ | async) === false" [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="experienceInfo.image">
-    <img *ngIf="darkMode$ | async" [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="experienceInfo.imageDarkMode? experienceInfo.imageDarkMode : experienceInfo.image">
+<div #baseContainer class="relative hidden scale-75 rounded-md border-accent bg-light-background/75 outline outline-2 outline-accent/30 will-change-transform md:scale-90 lg:scale-90 lg:hover:scale-105 lg:hover:border-b-8 lg:hover:px-10 lg:hover:outline-accent" [ngClass]="{'work-container': true, 'dark-mode bg-dark-background/75': darkMode$|async, '!scale-100 border-b-8 outline-accent': highlight$|async, 'bg-light-background/75': (darkMode$|async) === false}">
+    <img [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="(darkMode$|async) ? experienceInfo.imageDarkMode? experienceInfo.imageDarkMode : experienceInfo.image : experienceInfo.image">
     <div [ngClass]="{'text-container':true, 'dark-mode':darkMode$|async}">
         <a [href]="experienceInfo.companyUrl" target="_blank">
             <h1 [ngClass]="{'title':true}">{{experienceInfo.companyName}}</h1>
@@ -15,8 +14,8 @@
         </ul>
     </div>
     <button (click)="openDetails()" [ngClass]="{'detail-button':true, 'open': true, 'dark-mode':darkMode$|async}">See Details    </button>
-    <div class="absolute -right-1/4 top-0 h-24 w-48 rounded-full bg-accent/20 mix-blend-screen blur-3xl"></div>
-    <div class="absolute -left-12 bottom-0 h-32 w-64 rounded-full bg-accent/20 mix-blend-screen blur-3xl"></div>
+    <div class="absolute -right-1/4 top-0 h-24 w-48 rounded-full bg-accent/20 blur-3xl" [ngClass]="{'opacity-10' : (darkMode$|async) === false}"></div>
+    <div class="absolute -left-12 bottom-0 h-32 w-64 rounded-full bg-accent/20 blur-3xl" [ngClass]="{'opacity-10' : (darkMode$|async) === false}"></div>
 </div>
 <div [ngClass]="{'details-modal': true, 'show': showDetails, 'dark-mode':darkMode$|async}" (click)="detailClick($event);">
     <div [ngClass]="{'details-container': true, 'dark-mode':darkMode$|async}" #detailComponent>

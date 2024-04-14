@@ -24,9 +24,7 @@ export class WorkExperiencePageComponent implements OnInit {
   _router: Router
   darkMode$: Observable<boolean>
   isMobile: boolean
-  scrollObserver$: Observable<any>
-  isVisible$: boolean[] = []
-  firstVisible = true
+  isVisible$: Observable<boolean>[] = [new Observable(), new Observable(), new Observable(), new Observable()]
   currPage = CurrPage.WorkExperiencePage
   preLoadArr = new Array()
   images = {
@@ -178,28 +176,21 @@ export class WorkExperiencePageComponent implements OnInit {
     })
   }
 
-  ngAfterViewInit() {    
+  ngAfterViewInit(): void {
     if (this.isMobile) {
-      this.scrollObserver$ = fromEvent(this.scrollTarget.nativeElement, "scroll")
-      this.scrollObserver$.subscribe(() => {
-        this.checkVisible()
-        this.firstVisible = false
-      })
+      this.isVisible$ = this.companies.map((company) => new Observable((observer) => {
+        const intersectionObserver: IntersectionObserver = new IntersectionObserver((entries) => {
+          observer.next(entries[0].isIntersecting)
+        }, {threshold: 0.7})
+        intersectionObserver.observe(company.nativeElement)
+        return () => {
+          intersectionObserver.disconnect()
+        }
+      }))
+
     }
   }
-
-  private isComponentInView(elem: any, scrollTargetElem: any): boolean {
-    const element = elem
-    const elementRect = element.getBoundingClientRect()
-    const scrollTarget = scrollTargetElem
-    const scrollTargetBox = scrollTarget.getBoundingClientRect()
-
-    return elementRect.left + 150 >= scrollTargetBox.left && elementRect.right - 150 <= scrollTargetBox.right
-  }
-
-  checkVisible() {
-    this.isVisible$ = this.companies.map((elem: ElementRef) => this.isComponentInView(elem.nativeElement, this.scrollTarget.nativeElement))
-  }
+  
   goBack() {
     this._router.navigate(["/home"], { queryParams: { showAnimation: false } })
   }
