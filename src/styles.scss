@@ -31,15 +31,8 @@
 }
 
 .heading2 {
-    text-decoration-thickness: 2px;
+    @extend .heading;
     font-size: 24px;
-    font-weight: 900;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: v.$light-background;
-    &.dark-mode {
-        background-color: v.$dark-background;
-        color: v.$light-background;
-    }
 }
 
 .btn {
@@ -117,10 +110,24 @@ a {
 
 ::-webkit-scrollbar-thumb {
     background-color: adjust-color($color: v.$light-background, $lightness: -10%, $alpha: 1.0);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
-    background-color: adjust-color($color: v.$light-background, $lightness: -5%, $alpha: 1.0);
+    width: 10px;
+    background-color:
+    adjust-color($color:
+    v.$light-background,$lightness:
+    -5%,$alpha: 1.0);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .dark-mode-button {

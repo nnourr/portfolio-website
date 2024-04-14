@@ -12,7 +12,7 @@ export class ProjectContainerComponent {
   @Input() project: ProjectContainer;
   @Input() reverse: boolean;
   @Input() darkMode$: Observable<boolean>;
-  @Input() highlight$: any;
+  @Input() highlight$: boolean;
 
   expanded = false
   

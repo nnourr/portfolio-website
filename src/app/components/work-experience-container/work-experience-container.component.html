@@ -1,4 +1,4 @@
-<div #target class="relative hidden border-accent bg-light-background/75 lg:scale-90 lg:hover:scale-105 lg:hover:border-b-8 lg:hover:px-10" [ngClass]="{'work-container': true, 'dark-mode': darkMode$|async, 'bg-dark-background/75': darkMode$|async, 'bg-light-background/75': (darkMode$|async) === false}">
+<div #target class="relative hidden scale-75 rounded-md border-accent bg-light-background/75 outline outline-2 outline-accent/30 lg:scale-90 lg:hover:scale-105 lg:hover:border-b-8 lg:hover:px-10 lg:hover:outline-accent" [ngClass]="{'work-container': true, 'dark-mode bg-dark-background/75': darkMode$|async, '!scale-100 border-b-8 outline-accent': highlight$, 'bg-light-background/75': (darkMode$|async) === false}">
     <img *ngIf="(darkMode$ | async) === false" [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="experienceInfo.image">
     <img *ngIf="darkMode$ | async" [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="experienceInfo.imageDarkMode? experienceInfo.imageDarkMode : experienceInfo.image">
     <div [ngClass]="{'text-container':true, 'dark-mode':darkMode$|async}">

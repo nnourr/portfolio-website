@@ -13,6 +13,7 @@ export class WorkExperienceContainerComponent implements OnInit {
 
   @Input() darkMode$: Observable<boolean>;
   @Input() experienceInfo: WorkExperienceInfo;
+  @Input() highlight$: boolean;
 
   showDetails: boolean = false;
   referenceHref: string;

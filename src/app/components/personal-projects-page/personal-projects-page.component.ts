@@ -49,7 +49,7 @@ export class PersonalProjectsPageComponent implements AfterViewInit {
     skillsLearnt: [ 'Web Frameworks', 'Web Storage'],
     body: [{heading: 'Intention:', body: 'The intention of this project was to learn my first web framework. React was the perfect first choice for me, as useState() gave me a fundamental understanding of how web frameworks work under the hood. There is also a large pool of learning material.'}, {heading: 'Description', body: "Explore NASA is powered by NASA's Astronomy Picture of the Day API, which exposes their Picture of the Day images and associated metadata. I ingested this information and displayed it in my React app, allowing users to like an image and view it’s description. A user’s liked posts are retained on refresh, using web-storage."}],
     media: 'assets/explorenasa.png',
-    externalMedia: 'https://nnourr.tech',
+    externalMedia: ' https://nnourr.github.io/Explore-NASA/',
     externalMediaText: 'Go to Explore NASA',
     githubLink: 'https://github.com/nnourr/Explore-NASA'
   }]

@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "ng deploy --cname nnourr.tech"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "~17.3.4",
     "@angular/platform-browser-dynamic": "~17.3.4",
     "@angular/router": "~17.3.4",
+    "ngx-device-detector": "^7.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "typed.js": "^2.0.12",
@@ -35,8 +37,8 @@
     "@angular/compiler-cli": "~17.3.4",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
-    "@typescript-eslint/eslint-plugin": "5.27.1",
-    "@typescript-eslint/parser": "5.27.1",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
     "angular-cli-ghpages": "^1.0.5",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.50.0",

@@ -3,8 +3,8 @@
 <div @fadeTransitionAnimation>
     <div class="center">
         <h1 class="heading mx-6 mt-8 w-fit self-start underline md:ml-24" [ngClass]="{'dark-mode': darkMode$| async}">Work Experience:</h1>
-        <div class="flex lg:items-center" [ngClass]="{'experience-container': true, 'dark-mode': darkMode$| async}">
-            <app-work-experience-container *ngFor="let experience of workExperiences" [experienceInfo]="experience" [ngClass]="{'work-container': true}" [darkMode$]="darkMode$"></app-work-experience-container>
+        <div #scrollTarget class="flex lg:items-center" [ngClass]="{'experience-container': true, 'dark-mode': darkMode$| async}">
+            <app-work-experience-container #companies *ngFor="let experience of workExperiences; let i = index"  [highlight$]="isVisible$[i] || (firstVisible && i === 0)" [experienceInfo]="experience" [ngClass]="{'work-container': true}" [darkMode$]="darkMode$"></app-work-experience-container>
         </div>
     </div>
 </div>
