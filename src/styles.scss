@@ -61,7 +61,7 @@ ul {
 
 .body-text {
     @extend .subheading;
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 400;
     text-decoration: none;
 }
@@ -80,7 +80,7 @@ ul {
 }
 
 .highlight-thick {
-    border-bottom: 8px solid v.$accent-color;
+    border-bottom: 8px solid rgba(v.$accent-color, 1);
 }
 
 .no-underline * {

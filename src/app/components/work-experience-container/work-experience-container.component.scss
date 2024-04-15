@@ -1,5 +1,7 @@
 @use '../../../assets/_variables' as v;
 .work-container {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
