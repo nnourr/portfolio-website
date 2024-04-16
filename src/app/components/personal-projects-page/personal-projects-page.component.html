@@ -1,5 +1,4 @@
 <app-navbar [currPage]="2"></app-navbar>
-<app-dark-mode-button class="dark-mode-button"></app-dark-mode-button>
 <div [@fadeTransitionAnimation] class="absolute right-0 top-[7vh] flex h-[90%] w-full flex-col md:h-[93vh]">
     <h1 class="heading m-6 mt-8 h-6 w-fit underline md:ml-24" [ngClass]="{'dark-mode': darkMode$ | async}">Personal Projects:</h1>
     <div #scrollTarget class="flex h-auto w-full flex-col gap-8 overflow-y-auto pb-48 md:mt-6 md:snap-y md:snap-mandatory md:gap-12 md:py-48" [ngClass]="{'dark-mode': darkMode$ | async}">

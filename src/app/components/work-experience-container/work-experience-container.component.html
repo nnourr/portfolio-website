@@ -1,9 +1,9 @@
-<div #baseContainer class="relative hidden  scale-75 rounded-md border-accent bg-light-background/75 opacity-60 outline outline-2 outline-accent/30 will-change-transform hover:opacity-100 md:scale-90 lg:scale-90 lg:hover:scale-105 lg:hover:border-b-8 lg:hover:px-10 lg:hover:outline-accent" [ngClass]="{'work-container': true, 'dark-mode bg-dark-background/75': darkMode$|async, '!scale-100 border-b-8 outline-accent !opacity-100': highlight$|async, 'bg-light-background/75': (darkMode$|async) === false}">
-    <img [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="(darkMode$|async) ? experienceInfo.imageDarkMode? experienceInfo.imageDarkMode : experienceInfo.image : experienceInfo.image">
-    <div [ngClass]="{'text-container':true, 'dark-mode':darkMode$|async}">
-        <a [href]="experienceInfo.companyUrl" target="_blank">
-            <h1 [ngClass]="{'title':true}">{{experienceInfo.companyName}}</h1>
-        </a>
+<div #baseContainer class="hidden scale-75 rounded-md border-accent bg-light-background/75 opacity-60 outline outline-2 outline-accent/30 will-change-transform hover:opacity-100 md:scale-90 lg:scale-90 lg:hover:scale-105 lg:hover:border-b-8 lg:hover:px-10 lg:hover:outline-accent" [ngClass]="{'work-container': true, 'dark-mode bg-dark-background/75': darkMode$|async, '!scale-100 border-b-8 outline-accent !opacity-100': highlight$|async, 'bg-light-background/75': (darkMode$|async) === false}">
+    <div class="h-20"><img [style]="experienceInfo.customImageStyle" [ngClass]="{'work-logo':true}" [src]="(darkMode$|async) ? experienceInfo.imageDarkMode? experienceInfo.imageDarkMode : experienceInfo.image : experienceInfo.image"></div>
+    <a [href]="experienceInfo.companyUrl" target="_blank">
+        <h1 [ngClass]="{'title':true, 'dark-mode':darkMode$|async}">{{experienceInfo.companyName}}</h1>
+    </a>
+    <div class="mb-6 h-auto overflow-y-auto" [ngClass]="{'text-container':true, 'dark-mode':darkMode$|async}">
         <p [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Date:</span> {{experienceInfo.date}}</p>
         <p *ngIf="experienceInfo.reference" [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Reference:</span> <a [href]="referenceHref"> {{experienceInfo.reference}}</a></p>
         <p [ngClass]="{'work-info':true}"><span [ngClass]="{'underline':true}">Position:</span> {{experienceInfo.position}}</p>
@@ -13,17 +13,17 @@
             <li *ngFor="let highlight of experienceInfo.highlights">{{highlight}}</li>
         </ul>
     </div>
-    <button (click)="openDetails()" [ngClass]="{'detail-button':true, 'open': true, 'dark-mode':darkMode$|async}">See Details    </button>
+    <button (click)="openDetails()" class="absolute bottom-0 right-0" [ngClass]="{'detail-button':true, 'open': true, 'dark-mode':darkMode$|async}">See Details    </button>
     <div class="absolute -right-1/4 top-0 h-24 w-48 rounded-full bg-accent/20 blur-3xl" [ngClass]="{'opacity-10' : (darkMode$|async) === false}"></div>
     <div class="absolute -left-12 bottom-0 h-32 w-64 rounded-full bg-accent/20 blur-3xl" [ngClass]="{'opacity-10' : (darkMode$|async) === false}"></div>
 </div>
 <div [ngClass]="{'details-modal': true, 'show': showDetails, 'dark-mode':darkMode$|async}" (click)="detailClick($event);">
     <div [ngClass]="{'details-container': true, 'dark-mode':darkMode$|async}" #detailComponent>
         <ng-container *ngIf="experienceInfo.details; else inProgress">
-            <div [ngClass]="{'detail-button-container': true}">
-                <button (click)="closeDetails()" [ngClass]="{'detail-button':true, 'dark-mode':darkMode$|async}">Close Details X</button>
+            <div class="absolute right-0 top-0 h-auto w-full bg-inherit pr-[10%]">
+                <button class="float-right" (click)="closeDetails()" [ngClass]="{'detail-button':true, 'dark-mode':darkMode$|async}">Close Details X</button>
             </div>
-            <div [ngClass]="{'details-text-container': true, 'dark-mode':darkMode$|async}">
+            <div class="mt-12" [ngClass]="{'details-text-container': true, 'dark-mode':darkMode$|async}">
                 <h3 [ngClass]="{'underline':true, 'work-info':true}">Introduction:</h3>
                 <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.introduction"></p>
                 <h3 [ngClass]="{'underline':true, 'work-info':true}">About My Employer:</h3>
@@ -43,6 +43,9 @@
             </div>
         </ng-container>
         <ng-template #inProgress>
+            <div class="absolute right-0 top-0 h-auto w-full bg-inherit pr-[10%]">
+                <button class="float-right" (click)="closeDetails()" [ngClass]="{'detail-button':true, 'dark-mode':darkMode$|async}">Close Details X</button>
+            </div>
             <app-in-progress [fullPage]="false"></app-in-progress>
         </ng-template>
     </div>
