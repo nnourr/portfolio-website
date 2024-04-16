@@ -47,6 +47,15 @@ export class WorkExperiencePageComponent implements OnInit {
         "Took initiative to orchestrate team-wide discussions and implement process changes to improve developer QoL and production stability.",
         "Created ADRs to investigate known bugs, involving identification of the root-cause, presenting solutions and discussing action items with the team",
       ],
+      details: {
+        introduction: 'At ecobee, I was as a <span class="underline">Software Engineer</span> on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the <span class="underline">backend services</span> for ecobee\'s <span class="underline">home security</span> projects. This work term report will cover the <span class="underline">first 4 months</span> of my employment during the winter semester.',
+        aboutEmployer: '',
+        learningGoals: [''],
+        learningGoalsReflection: '',
+        experience: '',
+        conclusion: '',
+        acknowledgments: ''
+      }
     },
     {
       image: this.images.rbc.light,
