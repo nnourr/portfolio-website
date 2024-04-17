@@ -11,20 +11,20 @@
     &.dark-mode {
         background-color: v.$dark-background;
         &:after {
-            -webkit-mask-size: 10vh;
-            -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
-            mask-size: 10vh;
-            mask-image: url('../../../assets/tic-tac-toe.svg');
+            -webkit-mask-image: url('../../../assets/circuit-board.svg');
+            -webkit-mask-size: 40vh;
+            mask-image: url('../../../assets/circuit-board.svg');
+            mask-size: 40vh;
         }
     }
     &:after {
+        -webkit-mask-size: 10vh;
+        -webkit-mask-image: url('../../../assets/tic-tac-toe.svg');
+        mask-size: 10vh;
+        mask-image: url('../../../assets/tic-tac-toe.svg');
         transform: rotate(45deg);
         content: "";
         background-color: #c18aaa;
-        -webkit-mask-image: url('../../../assets/circuit-board.svg');
-        -webkit-mask-size: 40vh;
-        mask-image: url('../../../assets/circuit-board.svg');
-        mask-size: 40vh;
         position: absolute;
         width: 400vw;
         height: 400vh;
