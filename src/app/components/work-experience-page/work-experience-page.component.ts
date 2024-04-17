@@ -49,10 +49,10 @@ export class WorkExperiencePageComponent implements OnInit {
       ],
       details: {
         introduction: 'At ecobee, I was as a <span class="underline">Software Engineer</span> on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the <span class="underline">backend services</span> for ecobee\'s <span class="underline">home security</span> projects. This work term report will cover the <span class="underline">first 4 months</span> of my employment during the winter semester.',
-        aboutEmployer: '',
-        learningGoals: [''],
-        learningGoalsReflection: '',
-        experience: '',
+        aboutEmployer: 'ecobee is a <span class="underline">eco-friendly smart home company</span>, aiming to create products that promote <span class="underline">comfort, security and sustainability</span>. They started with just thermostats, but have now introduced an <span class="underline">indoor camera, smart doorbell and various sensors</span> to compose their home monitoring division.',
+        learningGoals: ['Learn more about architecture design in a complex, hexagonal context', 'Improve my leadership by leaving a positive impact on the team\'s culture or processes', 'Become comfortable with the Go programming language'],
+        learningGoalsReflection: 'ecobee manages a large variety of interconnected devices, emphasizing the importance of software architecture - an aspect of software engineering which I was eager to delve into. For my second goal, I could immediately see how incredibly collaborative, trusting and positive the HMB team was, meaning it was the perfect opportunity for me to for me to hone my leadership and leave an impact on the team.',
+        experience: 'As of now, I\'ve gotten a good grasp on the architecture of most of our services from walkthroughs with my team, creating diagrams in Miro and interacting with them directly.',
         conclusion: '',
         acknowledgments: ''
       }
