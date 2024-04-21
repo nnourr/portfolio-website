@@ -18,7 +18,7 @@
     <div class="absolute -left-12 bottom-0 h-32 w-64 rounded-full bg-accent/20 blur-3xl" [ngClass]="{'opacity-10' : (darkMode$|async) === false}"></div>
 </div>
 <div [ngClass]="{'details-modal': true, 'show': showDetails, 'dark-mode':darkMode$|async}" (click)="detailClick($event);">
-    <div class="overflow-hidden rounded-md border-b-8 border-accent outline outline-2 outline-accent" [ngClass]="{'details-container': true, 'dark-mode':darkMode$|async}" #detailComponent>
+    <div class="mx-[2px] overflow-hidden rounded-md border-b-8 border-accent outline outline-2 outline-accent lg:mx-0" [ngClass]="{'details-container': true, 'dark-mode':darkMode$|async}" #detailComponent>
         <ng-container *ngIf="experienceInfo.details; else inProgress">
             <div class="absolute right-0 top-0 h-auto w-full bg-inherit pr-[10%]">
                 <button class="float-right" (click)="closeDetails()" [ngClass]="{'detail-button':true, 'dark-mode':darkMode$|async}">Close Details X</button>
