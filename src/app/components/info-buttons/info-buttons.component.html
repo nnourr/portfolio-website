@@ -1,6 +1,20 @@
-<ul class="group" [ngClass]="{'info-buttons-container': true, 'animate-in-list': showAnimation, 'show-as-rows':rows}">
-    <li class="hover:!opacity-100 group-hover:opacity-60" *ngIf="currPage !== pages.HomePage"><a [routerLink]="['/home']" [queryParams]="{showAnimation:false}" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}">home</a></li>
-    <li class="hover:!opacity-100 group-hover:opacity-60"><a href="assets/resume.pdf" target="_blank" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>resume</a></li>
-    <li class="hover:!opacity-100 group-hover:opacity-60" *ngIf="currPage !== pages.WorkExperiencePage"><a [routerLink]="['/work-experience']" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>work experience</a></li>
-    <li class="hover:!opacity-100 group-hover:opacity-60" *ngIf="currPage !== pages.PersonalProjectsPage "><a [routerLink]="['/personal-projects']" [ngClass]="{'info-button':true, 'dark-mode': darkMode$|async}"><span *ngIf="showView">view </span>personal projects</a></li>
+<ul class="group" [ngClass]="{ 'info-buttons-container': true, 'animate-in-list': showAnimation, 'show-as-rows': rows }">
+  <li *ngIf="currPage !== pages.HomePage">
+    <a class="hover:!opacity-100 group-hover:opacity-60" [routerLink]="['/home']" [queryParams]="{ showAnimation: false }" [ngClass]="{ 'info-button': true, 'dark-mode': darkMode$ | async }">home</a>
+  </li>
+  <li>
+    <a class="hover:!opacity-100 group-hover:opacity-60" href="assets/resume.pdf" target="_blank" [ngClass]="{ 'info-button': true, 'dark-mode': darkMode$ | async }"
+      ><span *ngIf="showView">view </span>resume</a
+    >
+  </li>
+  <li *ngIf="currPage !== pages.WorkExperiencePage">
+    <a class="hover:!opacity-100 group-hover:opacity-60" [routerLink]="['/work-experience']" [ngClass]="{ 'info-button': true, 'dark-mode': darkMode$ | async }"
+      ><span *ngIf="showView">view </span>work experience</a
+    >
+  </li>
+  <li *ngIf="currPage !== pages.PersonalProjectsPage">
+    <a class="hover:!opacity-100 group-hover:opacity-60" [routerLink]="['/personal-projects']" [ngClass]="{ 'info-button': true, 'dark-mode': darkMode$ | async }"
+      ><span *ngIf="showView">view </span>personal projects</a
+    >
+  </li>
 </ul>
