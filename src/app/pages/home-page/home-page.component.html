@@ -12,7 +12,7 @@
           <h1 [ngClass]="{ title: true, 'dark-mode': darkMode$ | async }"><span class="text-shrink">I'm</span><br />Noureldeen<br />Ahmed.</h1>
         </ng-container>
         <h1 id="typed" [ngClass]="{ title: true, 'dark-mode': darkMode$ | async }"></h1>
-        <h2 [ngClass]="{ subtitle: true, 'animate-in': showAnimation === true, 'dark-mode': darkMode$ | async }">
+        <h2 [ngClass]="{ subtitle: true, 'animate-in': showAnimation, 'dark-mode': darkMode$ | async }">
           A passionate and versatile 4<sup>th</sup> year Software Engineering student at the University of Guelph.
         </h2>
       </div>
@@ -26,10 +26,10 @@
     </div>
   </div>
   <ng-template #imageAndNetwork>
-    <img *ngIf="!mobile" [ngClass]="{ headshot: true, 'animate-in': showAnimation === true }" src="assets/headshotcropped.png" />
-    <div [ngClass]="{ 'contact-container': true, 'animate-in': showAnimation === true, 'dark-mode': darkMode$ | async }">
+    <img *ngIf="!mobile" [ngClass]="{ headshot: true, 'animate-in': showAnimation }" src="assets/headshotcropped.png" />
+    <div [ngClass]="{ 'contact-container': true, 'animate-in': showAnimation, 'dark-mode': darkMode$ | async }">
       <h3>let's connect:</h3>
-      <ul class="group" [ngClass]="{ 'network-icons': true, 'dark-mode': darkMode$ | async, 'animate-in-list': showAnimation === true }" aria-hidden="true">
+      <ul class="group" [ngClass]="{ 'network-icons': true, 'dark-mode': darkMode$ | async, 'animate-in-list': showAnimation}" aria-hidden="true">
         <li class="hover:!opacity-100 group-hover:opacity-60">
           <a href="mailto:nnourr.me@nnourr.me" target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

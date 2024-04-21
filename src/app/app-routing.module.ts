@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './components/home-page/home-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { InProgressComponent } from './components/in-progress/in-progress.component';
-import { WorkExperiencePageComponent } from './components/work-experience-page/work-experience-page.component';
-import { PersonalProjectsPageComponent } from './components/personal-projects-page/personal-projects-page.component';
+import { WorkExperiencePageComponent } from './pages/work-experience-page/work-experience-page.component';
+import { PersonalProjectsPageComponent } from './pages/personal-projects-page/personal-projects-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
