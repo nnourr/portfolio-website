@@ -2,6 +2,8 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+$scrollbarWidth: 10px;
+
 .underline {
     text-decoration: underline v.$accent-color;
     font-family: 'Courier New', Courier, monospace;
@@ -9,6 +11,10 @@
     &.dark-mode {
         color: v.$light-background;
     }
+}
+
+u {
+    @extend .underline;
 }
 
 .background-color {
@@ -111,24 +117,24 @@ a {
 
 ::-webkit-scrollbar-thumb {
     background-color: adjust-color($color: v.$light-background, $lightness: -10%, $alpha: 1.0);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: $scrollbarWidth;
+    -webkit-border-radius: $scrollbarWidth;
+    -moz-border-radius: $scrollbarWidth;
+    -ms-border-radius: $scrollbarWidth;
+    -o-border-radius: $scrollbarWidth;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: $scrollbarWidth;
     background-color:
     adjust-color($color:
     v.$light-background,$lightness:
     -5%,$alpha: 1.0);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: $scrollbarWidth;
+    -webkit-border-radius: $scrollbarWidth;
+    -moz-border-radius: $scrollbarWidth;
+    -ms-border-radius: $scrollbarWidth;
+    -o-border-radius: $scrollbarWidth;
 }
 
 .dark-mode-button {

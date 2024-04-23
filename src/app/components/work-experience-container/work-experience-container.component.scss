@@ -28,7 +28,7 @@
 
 .detail-button {
     @include v.underline-button;
-    font-size: 2.5vh; 
+    // font-size: 2.5vh; 
     &.open {
         &::after {
             transition: 0.3s margin;
@@ -37,6 +37,16 @@
         }
         &:hover::after {
             margin-left: 0;
+        }
+    }
+    &.close {
+        &::before {
+            transition: 0.3s margin;
+            content: "<";
+            margin-right: -7px;
+        }
+        &:hover::before {
+            margin-right: 0;
         }
     }
 }
