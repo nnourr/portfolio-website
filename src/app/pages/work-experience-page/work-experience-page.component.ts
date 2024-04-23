@@ -56,8 +56,12 @@ export class WorkExperiencePageComponent implements OnInit {
           intersectionObserver.disconnect()
         }
       }))
-
     }
+  }
+
+
+  scrollToExperience(index: number) {
+    this.companies.get(index)?.nativeElement.scrollIntoView({behavior: 'smooth'})
   }
   
   goBack() {
