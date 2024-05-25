@@ -6,7 +6,7 @@ import { fadeTransitionAnimation } from "src/app/animations"
 import { CurrPage } from "src/app/enums/curr-page"
 import { WorkExperienceInfo } from "src/app/models/work-experience-info.model"
 import { DarkModeService } from "src/app/services/dark-mode.service"
-import { Images, WorkExperience } from "./work-experience-information.obj"
+import { Images, WorkExperience } from "./work-experience.info"
 
 @Component({
   selector: "app-work-experience-page",

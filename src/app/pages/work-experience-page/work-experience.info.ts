@@ -19,19 +19,19 @@ export const WorkExperience = [
         'Took initiative to orchestrate team-wide discussions and implement process changes to improve developer QoL and production stability.',
         'Created ADRs to investigate known bugs, involving identification of the root-cause, presenting solutions and discussing action items with the team',
       ],
-      details: {
-        introduction: 'At ecobee, I was as a <u>Software Engineer</u> on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the <u>backend services</u> for ecobee\'s <u>home security</u> projects. This work term report will cover the <u>first 4 months</u> of my employment during the winter semester.',
-        aboutEmployer: 'ecobee is a <u>eco-friendly smart home company</u>, aiming to create products that promote <u>comfort, security and sustainability</u>. They started with just thermostats, but have now introduced an <u>indoor camera, smart doorbell and various sensors</u> to compose their home monitoring division.',
-        learningGoals: ['Learn more about software architecture and infrastructure in a complex, hexagonal context', 'Improve my leadership by leaving a positive impact on the team\'s culture or processes', 'Become comfortable with the Go programming language'],
-        learningGoalsReflection: `While architecture and infrastructure are certainly separate parts of the software engineering ecosystem, they also tend to work in collaboration and are especially important at a company like ecobee with so many interconnected devices across many mediums. As a result, I was eager to delve into this topic as my first goal. 
-        For my second goal, I could immediately see how incredibly collaborative, trusting and positive the HMB team was, meaning it was the perfect opportunity for me to for me to hone my leadership and leave an impact on the team.
-        Lastly, I wanted to learn Go as I had understood it to be the language used for most of HMB's services.`,
-        experience: 
-        `I started my HMB journey in a meeting with the sprint lead, getting to know each other and mapping out a very high level overview of ecobee's architecture in Miro. This Miro board evolved over the course of my term, and diagraming in general has proven to be one of the most learning and communicating skills I have developed this term.
-        `,
-        conclusion: '',
-        acknowledgments: ''
-      }
+      // details: {
+      //   introduction: 'At ecobee, I was as a <u>Software Engineer</u> on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the <u>backend services</u> for ecobee\'s <u>home security</u> projects. This work term report will cover the <u>first 4 months</u> of my employment during the winter semester.',
+      //   aboutEmployer: 'ecobee is a <u>eco-friendly smart home company</u>, aiming to create products that promote <u>comfort, security and sustainability</u>. They started with just thermostats, but have now introduced an <u>indoor camera, smart doorbell and various sensors</u> to compose their home monitoring division.',
+      //   learningGoals: ['Learn more about software architecture and infrastructure in a complex, hexagonal context', 'Improve my leadership by leaving a positive impact on the team\'s culture or processes', 'Become comfortable with the Go programming language'],
+      //   learningGoalsReflection: `While architecture and infrastructure are certainly separate parts of the software engineering ecosystem, they also tend to work in collaboration and are especially important at a company like ecobee with so many interconnected devices across many mediums. As a result, I was eager to delve into this topic as my first goal. 
+      //   For my second goal, I could immediately see how incredibly collaborative, trusting and positive the HMB team was, meaning it was the perfect opportunity for me to for me to hone my leadership and leave an impact on the team.
+      //   Lastly, I wanted to learn Go as I had understood it to be the language used for most of HMB's services.`,
+      //   experience: 
+      //   `I started my HMB journey in a meeting with the sprint lead, getting to know each other and mapping out a very high level overview of ecobee's architecture in Miro. This Miro board evolved over the course of my term, and diagraming in general has proven to be one of the most learning and communicating skills I have developed this term.
+      //   `,
+      //   conclusion: '',
+      //   acknowledgments: ''
+      // }
     },
     {
       image: Images.rbc.light,
