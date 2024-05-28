@@ -35,7 +35,10 @@
                 </ul>
                 <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.learningGoalsReflection"></p>
                 <h3 [ngClass]="{'underline':true, 'work-info':true}">Experience:</h3>
-                <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.experience"></p>
+                <ng-container *ngFor="let section of experienceInfo.details.experience">
+                    <h4 *ngIf="section.heading" class="work-info underline" [innerHTML]="section.heading"></h4>
+                    <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="section.body"></p>
+                </ng-container>
                 <h3 [ngClass]="{'underline':true, 'work-info':true}">Conclusion:</h3>
                 <p [ngClass]="{'work-info':true, 'details': true}" [innerHTML]="experienceInfo.details.conclusion"></p>
                 <h3 [ngClass]="{'underline':true, 'work-info':true}">Acknowledgments:</h3>

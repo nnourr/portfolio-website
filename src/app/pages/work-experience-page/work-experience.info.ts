@@ -1,3 +1,5 @@
+import { WorkExperienceInfo } from "src/app/models/work-experience-info.model"
+
 export const Images = {
   ecobee: { light: 'assets/ecobee-light.png', dark: 'assets/ecobee-dark.png' },
   rbc: { light: 'assets/rbc-color.png', dark: 'assets/rbc-dark.png' },
@@ -5,7 +7,7 @@ export const Images = {
   ebc: { light: 'assets/ebc-logo.png', dark: 'assets/ebc-logo-dark.png' },
 }
 
-export const WorkExperience = [
+export const WorkExperience: WorkExperienceInfo[] = [
     {
       image: Images.ecobee.light,
       imageDarkMode: Images.ecobee.dark,
@@ -19,19 +21,35 @@ export const WorkExperience = [
         'Took initiative to orchestrate team-wide discussions and implement process changes to improve developer QoL and production stability.',
         'Created ADRs to investigate known bugs, involving identification of the root-cause, presenting solutions and discussing action items with the team',
       ],
-      // details: {
-      //   introduction: 'At ecobee, I was as a <u>Software Engineer</u> on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the <u>backend services</u> for ecobee\'s <u>home security</u> projects. This work term report will cover the <u>first 4 months</u> of my employment during the winter semester.',
-      //   aboutEmployer: 'ecobee is a <u>eco-friendly smart home company</u>, aiming to create products that promote <u>comfort, security and sustainability</u>. They started with just thermostats, but have now introduced an <u>indoor camera, smart doorbell and various sensors</u> to compose their home monitoring division.',
-      //   learningGoals: ['Learn more about software architecture and infrastructure in a complex, hexagonal context', 'Improve my leadership by leaving a positive impact on the team\'s culture or processes', 'Become comfortable with the Go programming language'],
-      //   learningGoalsReflection: `While architecture and infrastructure are certainly separate parts of the software engineering ecosystem, they also tend to work in collaboration and are especially important at a company like ecobee with so many interconnected devices across many mediums. As a result, I was eager to delve into this topic as my first goal. 
-      //   For my second goal, I could immediately see how incredibly collaborative, trusting and positive the HMB team was, meaning it was the perfect opportunity for me to for me to hone my leadership and leave an impact on the team.
-      //   Lastly, I wanted to learn Go as I had understood it to be the language used for most of HMB's services.`,
-      //   experience: 
-      //   `I started my HMB journey in a meeting with the sprint lead, getting to know each other and mapping out a very high level overview of ecobee's architecture in Miro. This Miro board evolved over the course of my term, and diagraming in general has proven to be one of the most learning and communicating skills I have developed this term.
-      //   `,
-      //   conclusion: '',
-      //   acknowledgments: ''
-      // }
+      details: {
+        introduction: 'At ecobee, I was as a <u>Software Engineer</u> on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the <u>backend services</u> for ecobee\'s <u>home security</u> projects. This work term report will cover the <u>first 4 months</u> of my employment during the winter semester.',
+        aboutEmployer: 'ecobee is a <u>eco-friendly smart home company</u>, aiming to create products that promote <u>comfort, security and sustainability</u>. They started with just thermostats, but have now introduced an <u>indoor camera, smart doorbell and various sensors</u> to compose their home monitoring division.',
+        learningGoals: ['Learn more about software architecture and infrastructure in a complex, hexagonal context', 'Improve my leadership by leaving a positive impact on the team\'s culture or processes', 'Become comfortable with the Go programming language'],
+        learningGoalsReflection: `While architecture and infrastructure are certainly separate parts of the software engineering ecosystem, they also tend to work in collaboration and are especially important at a company like ecobee with so many interconnected devices across many mediums. As a result, I was eager to delve into this topic as my first goal. 
+        For my second goal, I could immediately see how incredibly collaborative, trusting and positive the HMB team was, meaning it was the perfect opportunity for me to for me to hone my leadership and leave an impact on the team.
+        Lastly, I wanted to learn Go as I had understood it to be the language used for most of HMB's services.`,
+        experience: [
+          { 
+            heading: 'Miro and Architecture Overview',
+            body:  `I started my HMB journey in a meeting with my "onboarding buddy" and sprint lead, getting to know each other and mapping out a very high level overview of ecobee's architecture in Miro. This Miro board evolved over the course of my term, and diagraming in general has proven to be one of the most helpful skills I've developed this term.
+            It was also around this time that I started learning go using the extremely helpful <a href='gobyexample.com'>gobyexample.com</a>, and by the time I received my first ticket, I was already relatively familiar with this programming language.`
+          },
+          { 
+            heading: 'My First Ticket And Introduction To Team Processes',
+            body: `This ticket was to investigate and fix a bug brought to our attention by one of our customers, and it immediately challenged me to grasp the nitty-gritty details of our pub-sub based event-driven architecture.
+            Ultimately, after some thorough investigation and some back and fourth with my onboarding buddy, we concluded that the bug is not as simple as we though but will in fact require a sizeable system redesign to fix. I was then tasked with creating an Architecture Decision Record (ADR) to document the problem, containing context, reproduction steps and details on the root cause. 
+            I then documented our simple and straightforward options, and why none of them work. The ADR ended with an inspirational proposal to restructure this particular flow to fix the root cause of the problem and improve our user experience. This ADR was presented at our weekly "Tech Topics", an open forum where the team discusses things we've been working on. 
+            Ultimately however, we decided that the scope of the change was rather large and so I created a Jira epic to address the issue and we left it at that.`
+          },
+          {
+            heading: 'GKE Upgrades and Team Leadership',
+            body: `At the time, we were running an outdated version of Google Kubernetes Engine (GKE), Google's Kubernetes management service. I had not worked with Kubernetes before, so this was an exciting opportunity to address my software infrastructure goal and learn something new. 
+            Thankfully I was paired with a teammate who had a lot more experience with GKE, but we we're both learning and exploring the details together. In order to perform this upgrade, we needed to upgrade our NGINX version and identify deprecated GKE APIs such as the beta version of HPA.`
+          }
+        ],
+        conclusion: '',
+        acknowledgments: ''
+      }
     },
     {
       image: Images.rbc.light,
@@ -61,23 +79,26 @@ export const WorkExperience = [
         ],
         learningGoalsReflection:
           'My goals for this term were mostly focused on <u>Soft-Skills</u> and <u>building interpersonal relationships</u>. I consider myself successful, as I attended multiple networking events and got a lot more comfortable reach out to people. I was also successful in performing a team presentation, as you can read more about in the Experience section.',
-        experience:
-          `At RBC, I learnt what it takes to build <u>quality</u>, <u>resilient</u> and <u>fast</u> backends, as well as <u>beautiful</u>, <u>accessible</u> and <u>responsive</u> frontends. I started with mostly backend work, rebuilding our entire <u>REST API</u> (which was very new at the time) to better handle our frontend requirements, re-thinking how we use <u>Django Serializers</u> for a better <u>developer experience</u> and <u>scalability</u>. 
-          I was also in charge of implementing the cutting edge <u>DRF-Spectacular</u> library, which utilizes the <u>Open API</u> specification to automatically generate accurate and usable documentation, facilitating a <u>better QA and on-boarding experience</u>. 
-          Once that was done, I started <u>building entire features</u>, with endpoints architected with a <u>test-driven-design</u> approach, ensuring <u>code quality</u>.<br><br>
-
-          On the frontend, we use <u>Figma</u>, a UI design application, to create all our designs before implementing them in <u>Vue.js</u>. This was my first time using the framework, so I had to utilize my <u>fast-learning skills</u> to on-board to our application. At first, I took components that were already designed and implemented them, using the <u>CSS Post-Processor Tailwind</u> and <u>UseFetch</u> to communicate with the endpoints I had created. 
-          These components were <u>dynamic</u> and <u>bug-free</u>, as I used <u>Jest</u> to ensure functionality. After gaining familiarity with Vue.Js, I moved on to designing a component myself, a new <u>Priority Tag</u>. This involved design changes across the entire application, providing me with extensive experience in Figma, which I was also using for the first time. 
-          Working <u>cross-functionally</u> with <u>Project Managers and Project Owners</u> to gain approval for my designs, I learnt valuable <u>business communication</u> skills. During the design process, I had to think about <u>User Flows</u> and <u>scalability</u> when designing new modals and notification components. The Priority Tag also involved a new <u>POST</u> endpoint, completing <u>CRUD</u> functionality for the program.<br><br>
-
-          To facilitate better <u>end-to-end testing</u>, I was tasked with the creation of a <u>Mock API</u> for our ingestible data. This was an entirely <u>new Django application</u>, where I used the <u>Faker library</u> to generate mock data. This data also had to be <u>relational</u> in order to test our ingestion process, so I had to design the new API with that in mind. 
-          I also took a <u>test-driven-design</u> approach to this API, configuring our <u>proprietary pipeline</u> to <u>ensure unit tests were successful</u> before deployment.<br><br>
-
-          During my work term, I also had lots of valuable <u>networking experiences</u>, including <u>town halls</u> and <u>summer celebrations</u>. I was also involved in a number of <u>hackathons</u>, the first of which being <u>BattleSnake</u>. This involved working in a team with 3 other students to create an <u>AI powered</u> snake in a competitive, PVP game. We used the <u>MaxN MinMax</u> algorithm to find the best move for our snake, looking 5 moves ahead. 
-          To score the board, we used a <u>FloodFill</u> algorithm. We also used an <u>AWS EC2</u> instance to host our snake for the competition, where we were <u>finalists</u> in the Experienced division. For more details about our snake and the competition, click <a class='underline' target='_blank' href=https://github.com/JaxHodg/battlesnake>here</a>. My second competition was a <u>Case Competition</u>, where students were placed in groups of 6 to solve a <u>real-world</u> business problem and <u>present</u> our ideas. While our team did not win, our proposed solution <u>PowerAutomate</u> did. 
-          I also <u>attended 2 Tech conferences</u>, the <a class='underline' target='_blank' href=https://brainstation.io/online/intro-day/data-science>Brain Station Intro-Day</a> and the <a class='underline' target='_blank' href=https://www.techto.org/in-real-life-event>TechTo:TechTogether Conference</a><br><br>
-
-          Thought my time at RBC, I was also showcasing my work through the bi-weekly <u>demo day</u>, which I had suggested to my manager. During my demos, I provided the extended JSOC team with insights into DRF-Spectacular and Faker, showcasing their <u>purpose</u> and <u>business impact</u>. Demo days continue to this day.`,
+        experience: [
+          {
+            body:  `At RBC, I learnt what it takes to build <u>quality</u>, <u>resilient</u> and <u>fast</u> backends, as well as <u>beautiful</u>, <u>accessible</u> and <u>responsive</u> frontends. I started with mostly backend work, rebuilding our entire <u>REST API</u> (which was very new at the time) to better handle our frontend requirements, re-thinking how we use <u>Django Serializers</u> for a better <u>developer experience</u> and <u>scalability</u>. 
+            I was also in charge of implementing the cutting edge <u>DRF-Spectacular</u> library, which utilizes the <u>Open API</u> specification to automatically generate accurate and usable documentation, facilitating a <u>better QA and on-boarding experience</u>. 
+            Once that was done, I started <u>building entire features</u>, with endpoints architected with a <u>test-driven-design</u> approach, ensuring <u>code quality</u>.<br><br>
+  
+            On the frontend, we use <u>Figma</u>, a UI design application, to create all our designs before implementing them in <u>Vue.js</u>. This was my first time using the framework, so I had to utilize my <u>fast-learning skills</u> to on-board to our application. At first, I took components that were already designed and implemented them, using the <u>CSS Post-Processor Tailwind</u> and <u>UseFetch</u> to communicate with the endpoints I had created. 
+            These components were <u>dynamic</u> and <u>bug-free</u>, as I used <u>Jest</u> to ensure functionality. After gaining familiarity with Vue.Js, I moved on to designing a component myself, a new <u>Priority Tag</u>. This involved design changes across the entire application, providing me with extensive experience in Figma, which I was also using for the first time. 
+            Working <u>cross-functionally</u> with <u>Project Managers and Project Owners</u> to gain approval for my designs, I learnt valuable <u>business communication</u> skills. During the design process, I had to think about <u>User Flows</u> and <u>scalability</u> when designing new modals and notification components. The Priority Tag also involved a new <u>POST</u> endpoint, completing <u>CRUD</u> functionality for the program.<br><br>
+  
+            To facilitate better <u>end-to-end testing</u>, I was tasked with the creation of a <u>Mock API</u> for our ingestible data. This was an entirely <u>new Django application</u>, where I used the <u>Faker library</u> to generate mock data. This data also had to be <u>relational</u> in order to test our ingestion process, so I had to design the new API with that in mind. 
+            I also took a <u>test-driven-design</u> approach to this API, configuring our <u>proprietary pipeline</u> to <u>ensure unit tests were successful</u> before deployment.<br><br>
+  
+            During my work term, I also had lots of valuable <u>networking experiences</u>, including <u>town halls</u> and <u>summer celebrations</u>. I was also involved in a number of <u>hackathons</u>, the first of which being <u>BattleSnake</u>. This involved working in a team with 3 other students to create an <u>AI powered</u> snake in a competitive, PVP game. We used the <u>MaxN MinMax</u> algorithm to find the best move for our snake, looking 5 moves ahead. 
+            To score the board, we used a <u>FloodFill</u> algorithm. We also used an <u>AWS EC2</u> instance to host our snake for the competition, where we were <u>finalists</u> in the Experienced division. For more details about our snake and the competition, click <a class='underline' target='_blank' href=https://github.com/JaxHodg/battlesnake>here</a>. My second competition was a <u>Case Competition</u>, where students were placed in groups of 6 to solve a <u>real-world</u> business problem and <u>present</u> our ideas. While our team did not win, our proposed solution <u>PowerAutomate</u> did. 
+            I also <u>attended 2 Tech conferences</u>, the <a class='underline' target='_blank' href=https://brainstation.io/online/intro-day/data-science>Brain Station Intro-Day</a> and the <a class='underline' target='_blank' href=https://www.techto.org/in-real-life-event>TechTo:TechTogether Conference</a><br><br>
+  
+            Thought my time at RBC, I was also showcasing my work through the bi-weekly <u>demo day</u>, which I had suggested to my manager. During my demos, I provided the extended JSOC team with insights into DRF-Spectacular and Faker, showcasing their <u>purpose</u> and <u>business impact</u>. Demo days continue to this day.`
+          }
+        ],
         conclusion:
           'In conclusion, my work term at RBC was extremely influential. Working in an environment with such <u>high code-quality standards</u> was intimidating at first, but I quickly adapted and improved as a developer because of it. The experience also <u>kickstarted my networking</u> and brought light to the importance of business communication. I learnt several new technologies and progressed in my path to becoming a well rounded developer. I also gained new insight into <u>best design practices</u> through my experiences with Figma.',
         acknowledgments:
@@ -110,14 +131,17 @@ export const WorkExperience = [
         ],
         learningGoalsReflection:
           'My goals for this work term are mostly focused on the <u>soft skills</u> of working as a Software Engineer as opposed to technical goals. This is because I am confident in my ability to learn technical concepts, but I was unsure about my application in a <u>real-world working environment</u>. From my experience these skills are also more valued by employers, meaning they will be vital for my next work term and continued career',
-        experience:
-          `My experience at System1 was <u>fast-paced</u>, <u>technical</u> and <u>highly resourceful</u>. My first task involved creating <u>JIRA tickets</u> from a spreadsheet created during a BugBash. Within my first ticket I learnt about <u>RXJS Observables</u> as well as <u>service dependency injection</u>, immediately improving my knowledge about <u>professional Angular development</u>.<br><br>
+        experience: [
+          {
+            body:`My experience at System1 was <u>fast-paced</u>, <u>technical</u> and <u>highly resourceful</u>. My first task involved creating <u>JIRA tickets</u> from a spreadsheet created during a BugBash. Within my first ticket I learnt about <u>RXJS Observables</u> as well as <u>service dependency injection</u>, immediately improving my knowledge about <u>professional Angular development</u>.<br><br>
 
-          Not much later I took on a ticket involving changes on the full stack, meaning I was interacting with not only Angular on the frontend, but also <u>.NET</u> and <u>Snowflake</u> for the first time. This change involved modifying an existing query to <u>join data</u> from a new table, then modifying the <u>.NET API endpoint</u> and frontend to reflect the changes. Despite adding a new table to the query, me and supervisor found a way to make the query run <u>30-40% faster</u> by removing other redundant joins.<br><br>
-
-          Another memorable ticked involved me <u>preventing cyber attacks</u> by improving the <u>file validation</u> on the frontend and backend. On the Angular side, I developed a new component in an internal shared library, which made use of <u>Angular FormControl</u>. This gave me a little bit of experience developing <u>NPM Packages</u> as well as <u>custom Form Control validation</u>. For the backend, I developed an <u>injectable service</u> that works with <u>IFormFile</u> objects. It checks the file extension, content-type and <u>file header bytes</u> of the IFormFile to make sure that it is the correct type. In order to make sure the code is as <u>reusable</u> and <u>extendable</u> as possible, I made use of the <u>strategy pattern</u> to deicide what it would use to validate based on the file type. All a developer would have to do to add a new file type for validation is add a new FileType value, <u>with no changes made to service itself</u>.<br><br>
-
-          During my term, I <u>presented my work</u> to the whole dev team on two separate occasions, and received <u>special recognition for my work</u>`,
+            Not much later I took on a ticket involving changes on the full stack, meaning I was interacting with not only Angular on the frontend, but also <u>.NET</u> and <u>Snowflake</u> for the first time. This change involved modifying an existing query to <u>join data</u> from a new table, then modifying the <u>.NET API endpoint</u> and frontend to reflect the changes. Despite adding a new table to the query, me and supervisor found a way to make the query run <u>30-40% faster</u> by removing other redundant joins.<br><br>
+  
+            Another memorable ticked involved me <u>preventing cyber attacks</u> by improving the <u>file validation</u> on the frontend and backend. On the Angular side, I developed a new component in an internal shared library, which made use of <u>Angular FormControl</u>. This gave me a little bit of experience developing <u>NPM Packages</u> as well as <u>custom Form Control validation</u>. For the backend, I developed an <u>injectable service</u> that works with <u>IFormFile</u> objects. It checks the file extension, content-type and <u>file header bytes</u> of the IFormFile to make sure that it is the correct type. In order to make sure the code is as <u>reusable</u> and <u>extendable</u> as possible, I made use of the <u>strategy pattern</u> to deicide what it would use to validate based on the file type. All a developer would have to do to add a new file type for validation is add a new FileType value, <u>with no changes made to service itself</u>.<br><br>
+  
+            During my term, I <u>presented my work</u> to the whole dev team on two separate occasions, and received <u>special recognition for my work</u>`
+          }
+        ],
         conclusion:
           'My Fall 2022 work term could not have been more impactful. It exposed me to countless new experiences that will surely form the rest of my professional career. On the technical side, I improved my <u>Angular proficiency</u> to a <u>professional standard</u>, exposed me to <u>.NET</u> for the first time and taught me the <u>subtleties of high-performance SQL queries</u>. The work done on my soft skills have been even more impactful in my opinion, greatly <u>improving my technical communication skills</u> and my <u>confidence in an office environment</u>. I was able to <u>meet my goals</u> and could not have been happier.',
         acknowledgments:
@@ -150,8 +174,11 @@ export const WorkExperience = [
         ],
         learningGoalsReflection:
           'These goals would help me on my next work term placements as they would give me experience in highly demanded skills and abilities in todays Software Engineering environment. Previously, I have had experience dealing with web apps and developing my own APIs, but in order to expand my skills to a production-level standard, I had to make an attentive effort to analyze existing production level and engage in active feedback with my superiors.',
-        experience:
-          `As previously mentioned, my assigned task was to create a model <u>Automatic Clearing House System.</u> An Automatic Clearing House system allows for the management of electronic banking transactions. This was achieved by using the <u>REST API, JPA and DTO/Entity models</u>. For implementation, I used <u>Java Spring Boot, SQL Server and Angular</u>. I was able to develop my Software Engineering best practices by learning <u>Test Driven Development</u>. While I wasn\'t able to work in a team, I was able to cooperate with my fellow Co-Op team members on the same project, allowing us to share our ideas and learn from each other\'s techniques.`,
+        experience: [
+          {
+            body: `As previously mentioned, my assigned task was to create a model <u>Automatic Clearing House System.</u> An Automatic Clearing House system allows for the management of electronic banking transactions. This was achieved by using the <u>REST API, JPA and DTO/Entity models</u>. For implementation, I used <u>Java Spring Boot, SQL Server and Angular</u>. I was able to develop my Software Engineering best practices by learning <u>Test Driven Development</u>. While I wasn\'t able to work in a team, I was able to cooperate with my fellow Co-Op team members on the same project, allowing us to share our ideas and learn from each other\'s techniques.`
+          }
+        ],
         conclusion:
           'My Summer 2022 work term experience was extremely positive to my future work. It was crucial to my understanding of the role of <u>best practices</u> in production environments, as well as in developing my <u>web app experience</u>.',
         acknowledgments:
