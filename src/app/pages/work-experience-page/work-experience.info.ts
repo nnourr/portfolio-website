@@ -42,9 +42,23 @@ export const WorkExperience: WorkExperienceInfo[] = [
             Ultimately however, we decided that the scope of the change was rather large and so I created a Jira epic to address the issue and we left it at that.`
           },
           {
-            heading: 'GKE Upgrades and Team Leadership',
+            heading: 'GKE Upgrades and Leadership',
             body: `At the time, we were running an outdated version of Google Kubernetes Engine (GKE), Google's Kubernetes management service. I had not worked with Kubernetes before, so this was an exciting opportunity to address my software infrastructure goal and learn something new. 
-            Thankfully I was paired with a teammate who had a lot more experience with GKE, but we we're both learning and exploring the details together. In order to perform this upgrade, we needed to upgrade our NGINX version and identify deprecated GKE APIs such as the beta version of HPA.`
+            Thankfully I was paired with a teammate who had a lot more experience with GKE, but we both still had a lot to learn. In order to perform this upgrade we needed to upgrade our NGINX version, identify deprecated GKE APIs on our Helm chart (such as the v1beta2 version of HPA), upgrade them then perform the upgrade for each of our clusters.
+            We also wrote upgrade plan documents for each step of the process, providing team members with context, a detailed list of steps for us and future maintainers to reference, a risk assessment and a rollback plan in case things go south. 
+            Writing these documents enforced a deep understanding of GKE and it's inner workings. To aid our upgrade process we also took advantage of various metrics, both built into Google Cloud and other collected through Prometheus and displayed on Grafana. 
+            These metrics, combined with testing the upgrades on our staging environment gave us ample information to provide a detailed and informed assessment of the upgrade's intended outcome, health and signs of failure.
+            
+            It was during this momentous task that I got my first leadership opportunity. At ecobee we have "on-call members", a rotation of team members who are in charge of maintaining the health of our services. They get paged for alerts outside of business hours, 
+            and thus are strongly affected by the stability of out production environments. During one of our on-call handover meetings, a retrospective about last week's on-call rotation and an outline of any future scheduled infrastructure changes, an upcoming
+            on-call member expressed his concerns over the NGINX upgrade we were planning to perform in production. He expressed that he didn't feel familiar with the upgrade process, didn't understand the risks fully and also didn't have confidence in our rollback command.
+            Ultimately, he didn't feel comfortable tackling any issues that might arise in production as a result of our upgrade. Immediately, this struck me as a communicative problem with our release process, as on-call members are the first line of defense against
+            production instability and a negative customer experience. As a result, they need to respond quickly and effectively with confidence. After discussing more during the on-call meeting, it was clear that this issue needed more careful and considerate analysis,
+            and so I took the initiative to organize a set of meetings to discuss the matter. We landed on three main discussion points: How we can better verify that a change is ready for production, how can we better support on-call folks and we can better
+            communicate and coordinate our releases. The end result was a comprehensive document outlining areas we as a team can improve, with a vow to increase communication around impacting changes, such as using non-blocking events in Outlook to signal 
+            impacting changes, ensuring impacting changes are visible through clear and accessible metrics and providing keeping runbooks up to date to aid on-call members in the event of an incident.
+            
+            Since then our on-call process has improved significantly, resulting in increased satisfaction among our on-call team, the production environment, and importantly our customers!`
           }
         ],
         conclusion: '',
