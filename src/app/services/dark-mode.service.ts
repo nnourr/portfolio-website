@@ -40,7 +40,11 @@ export class DarkModeService {
     const darkModeFromStorage = this.getDarkModeFromStorage();
 
     if (darkModeFromStorage === undefined || darkModeFromStorage === null) {
-      return true;
+      const darkModeOn =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+      return darkModeOn
     }
 
     return darkModeFromStorage;

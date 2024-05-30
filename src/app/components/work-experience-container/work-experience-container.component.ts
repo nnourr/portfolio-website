@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Observable, observable } from 'rxjs';
 import { WorkExperienceInfo } from 'src/app/models/work-experience-info.model';
 
 @Component({
@@ -9,10 +9,12 @@ import { WorkExperienceInfo } from 'src/app/models/work-experience-info.model';
 })
 export class WorkExperienceContainerComponent implements OnInit {
 
-  @ViewChild('detailComponent') detailComponent: ElementRef;
+  @ViewChild('baseContainer', { read: ElementRef }) baseContainer: ElementRef;
+  @ViewChild('detailComponent', { read: ElementRef }) detailComponent: ElementRef;
 
   @Input() darkMode$: Observable<boolean>;
   @Input() experienceInfo: WorkExperienceInfo;
+  @Input() highlight$: Observable<boolean>;
 
   showDetails: boolean = false;
   referenceHref: string;
@@ -37,5 +39,4 @@ export class WorkExperienceContainerComponent implements OnInit {
   closeDetails() {
     this.showDetails = false;
   }
-
 }

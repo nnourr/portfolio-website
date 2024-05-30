@@ -18,16 +18,16 @@ export class InProgressComponent implements OnInit {
   @Input() fullPage?: boolean = true;
 
   ngOnInit(): void {
-    // let options: TypedOptions = {
-    //   stringsElement: '#typed-text',
-    //   typeSpeed: 40,
-    //   backSpeed: 30,
-    //   showCursor: false,
-    //   backDelay: 2000,
-    //   loop: true
-    // };
+    let options: TypedOptions = {
+      stringsElement: '#typed-text',
+      typeSpeed: 40,
+      backSpeed: 30,
+      showCursor: false,
+      backDelay: 2000,
+      loop: true
+    };
     
-    // let typed = new Typed('#typed', options);
+    let typed = new Typed('#typed', options);
   }
 
 }

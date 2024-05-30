@@ -2,6 +2,8 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+$scrollbarWidth: 10px;
+
 .underline {
     text-decoration: underline v.$accent-color;
     font-family: 'Courier New', Courier, monospace;
@@ -9,6 +11,10 @@
     &.dark-mode {
         color: v.$light-background;
     }
+}
+
+u {
+    @extend .underline;
 }
 
 .background-color {
@@ -20,7 +26,7 @@
 
 .heading {
     text-decoration-thickness: 2px;
-    font-size: 24px;
+    font-size: 3rem;
     font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
     background-color: v.$light-background;
@@ -28,6 +34,11 @@
         background-color: v.$dark-background;
         color: v.$light-background;
     }
+}
+
+.heading2 {
+    @extend .heading;
+    font-size: 24px;
 }
 
 .btn {
@@ -56,7 +67,7 @@ ul {
 
 .body-text {
     @extend .subheading;
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 400;
     text-decoration: none;
 }
@@ -75,7 +86,7 @@ ul {
 }
 
 .highlight-thick {
-    border-bottom: 8px solid v.$accent-color;
+    border-bottom: 8px solid rgba(v.$accent-color, 1);
 }
 
 .no-underline * {
@@ -83,6 +94,7 @@ ul {
 }
 
 * {
+    -webkit-tap-highlight-color: transparent;
     transition: all 300ms;
 }
 
@@ -103,6 +115,28 @@ a {
     background-color: adjust-color($color: v.$dark-background, $lightness: 5%, $alpha: 1.0);
 }
 
+::-webkit-scrollbar-thumb {
+    background-color: adjust-color($color: v.$light-background, $lightness: -10%, $alpha: 1.0);
+    border-radius: $scrollbarWidth;
+    -webkit-border-radius: $scrollbarWidth;
+    -moz-border-radius: $scrollbarWidth;
+    -ms-border-radius: $scrollbarWidth;
+    -o-border-radius: $scrollbarWidth;
+}
+
+::-webkit-scrollbar {
+    width: $scrollbarWidth;
+    background-color:
+    adjust-color($color:
+    v.$light-background,$lightness:
+    -5%,$alpha: 1.0);
+    border-radius: $scrollbarWidth;
+    -webkit-border-radius: $scrollbarWidth;
+    -moz-border-radius: $scrollbarWidth;
+    -ms-border-radius: $scrollbarWidth;
+    -o-border-radius: $scrollbarWidth;
+}
+
 .dark-mode-button {
     position: absolute;
     z-index: 20;
@@ -114,10 +148,10 @@ a {
 
 @media (max-width: 830px) {
     .dark-mode-button {
-        bottom: 6vh;
+        bottom: 3vh;
+        scale: 0.7;
+    }
+    .heading {
+        font-size: 24px;
     }
 }
-
-// .dark-mode::-webkit-scrollbar-button {
-//     background-color: adjust-color($color: v.$dark-background, $lightness: 10%, $alpha: 1.0);
-// }

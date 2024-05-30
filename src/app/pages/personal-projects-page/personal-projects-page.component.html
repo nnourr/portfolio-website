@@ -1,0 +1,9 @@
+<app-navbar [currPage]="2"></app-navbar>
+<div [@fadeTransitionAnimation] class="absolute right-0 top-[7vh] flex h-[90%] w-full flex-col md:h-[93vh]">
+    <h1 class="heading m-6 mt-8 h-6 w-fit underline md:ml-24" [ngClass]="{'dark-mode': darkMode$ | async}">Personal Projects:</h1>
+    <div #scrollTarget class="flex h-auto w-full flex-col gap-8 overflow-y-auto pb-48 md:mt-6 md:snap-y md:snap-mandatory md:gap-12 md:py-48" [ngClass]="{'dark-mode': darkMode$ | async}">
+        <div #personalProjects class="flex h-auto snap-start items-start justify-center md:py-6" *ngFor="let project of projects; let i = index">
+            <app-project-container class="h-full min-h-[60vh] w-full p-0 px-6 md:h-full md:w-4/5" [highlight$]="isVisible$[i] || firstVisible" [reverse]="i%2 === 1" [project]="project" [darkMode$]="darkMode$"></app-project-container>
+        </div>
+    </div>
+</div>
