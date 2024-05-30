@@ -28,7 +28,6 @@
 
 .detail-button {
     @include v.underline-button;
-    // font-size: 2.5vh; 
     &.open {
         &::after {
             transition: 0.3s margin;
