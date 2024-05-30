@@ -25,44 +25,61 @@ export const WorkExperience: WorkExperienceInfo[] = [
         introduction: 'At ecobee, I was as a <u>Software Engineer</u> on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the <u>backend services</u> for ecobee\'s <u>home security</u> projects. This work term report will cover the <u>first 4 months</u> of my employment during the winter semester.',
         aboutEmployer: 'ecobee is a <u>eco-friendly smart home company</u>, aiming to create products that promote <u>comfort, security and sustainability</u>. They started with just thermostats, but have now introduced an <u>indoor camera, smart doorbell and various sensors</u> to compose their home monitoring division.',
         learningGoals: ['Learn more about software architecture and infrastructure in a complex, hexagonal context', 'Improve my leadership by leaving a positive impact on the team\'s culture or processes', 'Become comfortable with the Go programming language'],
-        learningGoalsReflection: `While architecture and infrastructure are certainly separate parts of the software engineering ecosystem, they also tend to work in collaboration and are especially important at a company like ecobee with so many interconnected devices across many mediums. As a result, I was eager to delve into this topic as my first goal. 
-        For my second goal, I could immediately see how incredibly collaborative, trusting and positive the HMB team was, meaning it was the perfect opportunity for me to for me to hone my leadership and leave an impact on the team.
-        Lastly, I wanted to learn Go as I had understood it to be the language used for most of HMB's services.`,
+        learningGoalsReflection: `While architecture and infrastructure are distinct parts of software engineering, they collaborate closely, especially at ecobee with its interconnected devices. This made delving into this topic my first goal.
+        Secondly, the HMB team's collaborative and positive environment presented a perfect opportunity to hone my leadership skills and make an impact.
+        Lastly, I aimed to learn Go, the primary language for HMB's services.`,
         experience: [
           { 
             heading: 'Miro and Architecture Overview',
             body:  `I started my HMB journey in a meeting with my "onboarding buddy" and sprint lead, getting to know each other and mapping out a very high level overview of ecobee's architecture in Miro. This Miro board evolved over the course of my term, and diagraming in general has proven to be one of the most helpful skills I've developed this term.
-            It was also around this time that I started learning go using the extremely helpful <a href='gobyexample.com'>gobyexample.com</a>, and by the time I received my first ticket, I was already relatively familiar with this programming language.`
+            It was also around this time that I started learning go using the extremely helpful <a href='https://gobyexample.com' target='_blank'>gobyexample.com</a>, and by the time I received my first ticket, I was already relatively familiar with this programming language.`
           },
           { 
-            heading: 'My First Ticket And Introduction To Team Processes',
+            heading: 'Bug Fixes and Architecture Decision Records',
             body: `This ticket was to investigate and fix a bug brought to our attention by one of our customers, and it immediately challenged me to grasp the nitty-gritty details of our pub-sub based event-driven architecture.
-            Ultimately, after some thorough investigation and some back and fourth with my onboarding buddy, we concluded that the bug is not as simple as we though but will in fact require a sizeable system redesign to fix. I was then tasked with creating an Architecture Decision Record (ADR) to document the problem, containing context, reproduction steps and details on the root cause. 
-            I then documented our simple and straightforward options, and why none of them work. The ADR ended with an inspirational proposal to restructure this particular flow to fix the root cause of the problem and improve our user experience. This ADR was presented at our weekly "Tech Topics", an open forum where the team discusses things we've been working on. 
+            Ultimately, after some thorough investigation and some back and fourth with my onboarding buddy, we concluded that the bug is not as simple as we though but will in fact require a sizeable system redesign to fix. 
+            I was then tasked with creating an Architecture Decision Record (ADR) to document the problem, containing context, reproduction steps and details on the root cause. 
+            I then documented our simple and straightforward options, and why none of them work. The ADR ended with an inspirational proposal to restructure this particular flow to fix the root cause of the problem and improve our user experience. 
+            This ADR was presented at our weekly "Tech Topics", an open forum where the team discusses things we've been working on. 
             Ultimately however, we decided that the scope of the change was rather large and so I created a Jira epic to address the issue and we left it at that.`
           },
           {
-            heading: 'GKE Upgrades and Leadership',
+            heading: 'GKE Upgrades',
             body: `At the time, we were running an outdated version of Google Kubernetes Engine (GKE), Google's Kubernetes management service. I had not worked with Kubernetes before, so this was an exciting opportunity to address my software infrastructure goal and learn something new. 
-            Thankfully I was paired with a teammate who had a lot more experience with GKE, but we both still had a lot to learn. In order to perform this upgrade we needed to upgrade our NGINX version, identify deprecated GKE APIs on our Helm chart (such as the v1beta2 version of HPA), upgrade them then perform the upgrade for each of our clusters.
+            Thankfully I was paired with a teammate who had a lot more experience with GKE, but we both still had a lot to learn. In order to perform this upgrade we needed to upgrade our NGINX-ingress, identify deprecated GKE APIs (such as the v1beta2 version of HPA), upgrade them and then perform the upgrade for each of our clusters.
             We also wrote upgrade plan documents for each step of the process, providing team members with context, a detailed list of steps for us and future maintainers to reference, a risk assessment and a rollback plan in case things go south. 
             Writing these documents enforced a deep understanding of GKE and it's inner workings. To aid our upgrade process we also took advantage of various metrics, both built into Google Cloud and other collected through Prometheus and displayed on Grafana. 
-            These metrics, combined with testing the upgrades on our staging environment gave us ample information to provide a detailed and informed assessment of the upgrade's intended outcome, health and signs of failure.
+            These metrics, combined with testing the upgrades on our staging environment gave us ample information to provide a detailed and informed assessment of the upgrade's intended outcome, health and signs of failure.<br><br>
+          `},
+          {
+            heading: 'Leadership and Team Process',
+            body: `It was during my GKE upgrade task that I got my first leadership opportunity. At ecobee, "on-call members" guard the health of our services, receiving alerts outside business hours in times of instability. 
+            As a result, they are heavily affected by the health of our production environments. 
+            In a handover meeting, an upcoming on-call member expressed concerns about an NGINX upgrade, citing unfamiliarity with the process, unclear risks, and lack of confidence in our rollback command. 
+            Recognizing this as a communication issue, I organized meetings to address it. We focused on verifying changes for production, supporting on-call staff, and improving release communication. 
+            The result was a comprehensive document with strategies to enhance communication and support, including using Outlook for non-blocking event notifications, visible metrics, and up-to-date runbooks.<br><br>
+
+            Since then, our on-call and release process has significantly improved, leading to higher satisfaction among our team, a more stable production environment, and happier customers!`
+          }, {
+            heading: 'Large New Initiative',
+            body: `During the GKE Upgrade cycle, a new project had started HMB was in charge of. This was an entirely new initiative, spanning across many teams throughout the organization. As this project was so large, we needed an extensive plan, including 
+            a system design to integrate all the various moving parts. Being part of the design discussion, I gained greater insight into the technical and communicative challenges involved in such a wide spanning project. We spent hours in a room whiteboarding
+            our architecture, considering the main project as well as how it will integrate with our business reporting, website and customer support.<br><br>
             
-            It was during this momentous task that I got my first leadership opportunity. At ecobee we have "on-call members", a rotation of team members who are in charge of maintaining the health of our services. They get paged for alerts outside of business hours, 
-            and thus are strongly affected by the stability of out production environments. During one of our on-call handover meetings, a retrospective about last week's on-call rotation and an outline of any future scheduled infrastructure changes, an upcoming
-            on-call member expressed his concerns over the NGINX upgrade we were planning to perform in production. He expressed that he didn't feel familiar with the upgrade process, didn't understand the risks fully and also didn't have confidence in our rollback command.
-            Ultimately, he didn't feel comfortable tackling any issues that might arise in production as a result of our upgrade. Immediately, this struck me as a communicative problem with our release process, as on-call members are the first line of defense against
-            production instability and a negative customer experience. As a result, they need to respond quickly and effectively with confidence. After discussing more during the on-call meeting, it was clear that this issue needed more careful and considerate analysis,
-            and so I took the initiative to organize a set of meetings to discuss the matter. We landed on three main discussion points: How we can better verify that a change is ready for production, how can we better support on-call folks and we can better
-            communicate and coordinate our releases. The end result was a comprehensive document outlining areas we as a team can improve, with a vow to increase communication around impacting changes, such as using non-blocking events in Outlook to signal 
-            impacting changes, ensuring impacting changes are visible through clear and accessible metrics and providing keeping runbooks up to date to aid on-call members in the event of an incident.
-            
-            Since then our on-call process has improved significantly, resulting in increased satisfaction among our on-call team, the production environment, and importantly our customers!`
+            We then got started on the project, specifically amending a service owned by another team. This service is written in TypeScript using NESTjs, a NODEjs backend framework. 
+            I got started on the Repo layer of its hexagonal architecture, writing entities, DTOs and services for our new objects. I then moved to the Transport layer, modifying a webhook controller to add our new desired functionality.
+            This involved building providers to support our changes, as well as an extensive suite of unit and end-to-end tests written in Jest, achieving 100% code coverage.
+            My code was written with an emphasis on effective and helpful error and handling and reporting, allowing potential problems to be identified and remediated in production environments.`
           }
         ],
-        conclusion: '',
-        acknowledgments: ''
+        conclusion: `In conclusion, I'm very proud of my co-op term at ecobee. In it's intensely multifaceted environment, I was constantly challenged with complex technical and communicative problems. While I was unable to gain GO programming experience, 
+        I was compensated in infrastructure deep-dives and immense leadership opportunities. I'm proud of the impact I've had on our process, as well as my contributions to our GKE upgrade documentation. Most of all, I'm proud to have a voice,
+        always speaking at team retros, organizing events with my fellow co-ops, reviewing PRs and making suggestions. This work term, I not only became a better developer, but also a better employee and team-member`,
+        acknowledgments: `First of all, thank you Genia, my manager, for being the blinding beacon of inspiration that you are. I would not have had the impact I did if it wasn't for your leadership.
+        Thank you Pray, my on-boarding buddy, for your relentless understanding of everything ecobee has ever done expressed exclusively and exquisitely in Miro boards.
+        Thank you Anton, every time we huddled I came out feeling like a more capable and well-rounded developer.
+        Thank you Chen for dealing with me throughout the GKE upgrade and having my back every time I take staging down on accident.
+        Thank you Judy for being the only Beaver in the office during the new office party.`
       }
     },
     {
