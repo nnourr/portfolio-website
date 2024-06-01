@@ -22,7 +22,7 @@ export const WorkExperience: WorkExperienceInfo[] = [
         'Created ADRs to investigate known bugs, involving identification of the root-cause, presenting solutions and discussing action items with the team',
       ],
       details: {
-        introduction: 'At ecobee, I was as a Software Engineer on the Home Monitoring Backend (HMB) team for 8 months, starting from January 2024 until August 2024. The HMB team is responsible for developing the backend services for ecobee\'s home security projects. This work term report will cover the first 4 months of my employment during the winter semester.',
+        introduction: 'At ecobee, I was hired as a Software Engineer on the Home Monitoring Backend (HMB) team for 8 months, from January 2024 until August 2024. The HMB team is responsible for developing the backend services for ecobee\'s home security products. This work term report will cover the first 4 months of my employment during the winter semester.',
         aboutEmployer: 'ecobee is a eco-friendly smart home company, aiming to create products that promote comfort, security and sustainability. They started with just thermostats, but have now introduced an indoor camera, smart doorbell and various sensors to compose their home monitoring division.',
         learningGoals: ['Learn more about software architecture and infrastructure in a complex, hexagonal context', 'Improve my leadership by leaving a positive impact on the team\'s culture or processes', 'Become comfortable with the Go programming language'],
         learningGoalsReflection: `While architecture and infrastructure are distinct parts of software engineering, they collaborate closely, especially at ecobee with its interconnected devices. This made delving into this topic my first goal.
@@ -63,7 +63,7 @@ export const WorkExperience: WorkExperienceInfo[] = [
           }, {
             heading: 'Large New Initiative',
             body: `During the GKE Upgrade cycle, a new project had started HMB was in charge of. This was an entirely new initiative, spanning across many teams throughout the organization. As this project was so large, we needed an extensive plan, including 
-            a system design to integrate all the various moving parts. Being part of the design discussion, I gained greater insight into the technical and communicative challenges involved in such a wide spanning project. We spent hours in a room whiteboarding
+            a system design to integrate all the various moving parts. Being part of the design discussion, I gained greater insight into the technical and communication challenges involved in such a wide spanning project. We spent hours in a room whiteboarding
             our architecture, considering the main project as well as how it will integrate with our business reporting, website and customer support.<br><br>
             
             We then got started on the project, specifically amending a service owned by another team. This service is written in TypeScript using NESTjs, a NODEjs backend framework. 
