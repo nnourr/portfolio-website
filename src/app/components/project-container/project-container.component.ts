@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ProjectContainer } from 'src/app/models/project-container.model';
 
 @Component({
@@ -14,19 +14,20 @@ export class ProjectContainerComponent {
   @Input() darkMode$: Observable<boolean>;
   @Input() highlight$: boolean;
 
-  expanded = false
+  expanded = new BehaviorSubject<boolean>(false)
   
   open () {
-    this.expanded = true
+    this.expanded.next(true)
   }
   
   close () {
-    this.expanded = false
+    this.expanded.next(false)
   }
   
   scroll(el: HTMLElement) {
     el.scrollIntoView({behavior: 'smooth'});
   }
   
-  constructor() { }
+  constructor() {
+  }
 }

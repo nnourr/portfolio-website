@@ -5,6 +5,6 @@ export const fadeTransitionAnimation =
     transition('* <=> *', [
         animateChild(),
         style({ opacity: 0}),
-        animate('300ms ease-in', style({ opacity: 1 }))
+        animate('300ms 0ms ease-in', style({ opacity: 1 }))
     ])
   ]);

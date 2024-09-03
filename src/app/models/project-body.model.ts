@@ -1,4 +1,5 @@
 export class ProjectBody {
-    heading: string
-    body: string
+    heading?: string
+    body?: string
+    list?: string[]
 }
