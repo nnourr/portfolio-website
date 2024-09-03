@@ -8,3 +8,4 @@ export const fadeTransitionAnimation =
         animate('300ms 0ms ease-in', style({ opacity: 1 }))
     ])
   ]);
+  
