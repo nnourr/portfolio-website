@@ -29,7 +29,7 @@ u {
     font-size: 3rem;
     font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
-    background-color: white;
+    background-color: v.$light-background;;
     &.dark-mode {
         background-color: v.$dark-background;
         color: v.$light-background;

@@ -12,10 +12,12 @@
         </div>
     </div>
     <div class="flex h-full w-3/5 flex-col">
-        <div class="background row-span-5 mb-4 h-full overflow-y-auto rounded-md" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick': highlight$, 'delay-300': highlight$ }">
+        <div class="background mb-4 h-full overflow-y-auto rounded-md" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick': highlight$, 'delay-300': highlight$ }">
             <div *ngFor="let content of project.body ">
-                <h2 class="subheading underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async }">{{content.heading}}</h2>
-                <h2 class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }" [innerHTML]="content.body"></h2><br>
+                <h2 class="subheading underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async, 'hidden': !!!content.heading}">{{content.heading}}</h2>
+                <h2 class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async, 'hidden': !!!content.body }" [innerHTML]="content.body"></h2>
+                <ul class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async, 'hidden': !!!content.list}"><li *ngFor="let item of content.list" [innerHTML]="item"></li></ul>
+                <br>
             </div>
         </div>
         <p class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }"><span class="subheading underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async }">Tech:</span> <span *ngFor="let tech of project.tech; let i = index"> {{tech}}<span *ngIf="i !== project.tech.length - 1">,</span></span>
@@ -24,24 +26,26 @@
         </p>
     </div>
 </div>
-<div #top class="m-0  h-fit w-full rounded-md border-b-8 border-solid border-dark-background bg-light-background md:hidden" [ngClass]="{'dark-mode !bg-dark-background': darkMode$ | async, 'highlight-thick': (highlight$ || expanded), 'delay-300': (highlight$ || expanded),  'no-underline': (!expanded && !highlight$)}">
-    <div class="h-32 w-full overflow-hidden rounded-t-md" [ngClass]="{'highlight-thick': (highlight$ || expanded), 'delay-300': (highlight$ || expanded)}">
-        <img [src]="project.media" class="h-auto w-full object-fill">
+<div #top class="m-0  h-fit w-full rounded-md border-b-8 border-solid border-dark-background bg-light-background md:hidden" [ngClass]="{'dark-mode !bg-dark-background': darkMode$ | async, 'highlight-thick': (highlight$ || (expanded|async)), 'delay-300': (highlight$ || (expanded|async)),  'no-underline': ((expanded|async)===false && !highlight$)}">
+    <div class="h-full w-full overflow-hidden rounded-t-md delay-0" [ngClass]="{'highlight-thick': (highlight$ || (expanded|async))}">
+        <img [src]="project.media" class="h-auto w-full object-cover" [ngClass]="{'!h-16': (expanded|async)}">
     </div>
     <a [href]="project.githubLink" target="_blank">
         <h1 class="heading2 btn underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async} ">{{project.title}}</h1>
     </a>
-    <div class="flex h-full flex-col p-3" >
-        <div #textContainer class="relative row-span-5 h-full max-h-48 overflow-y-hidden rounded-md" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick delay-300': (highlight$ || expanded), 'max-h-[70vh] !overflow-y-auto': expanded}">
+    <div class="flex h-full flex-col p-3 pt-0" >
+        <div #textContainer class="relative row-span-5 h-full max-h-48 overflow-y-hidden rounded-md" [ngClass]="{ 'dark-mode': darkMode$ | async, 'highlight-thick': (highlight$ || (expanded|async)), 'max-h-[50vh] !overflow-y-auto': (expanded|async)}">
             <div *ngFor="let content of project.body ">
                 <h2  class="subheading underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async }">{{content.heading}}</h2>
-                <p class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }" [innerHTML]="content.body"></p><br>
+                <p class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }" [innerHTML]="content.body"></p>
+                <ul class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async, 'hidden': !!!content.list}"><li *ngFor="let item of content.list" [innerHTML]="item"></li></ul>
+                <br>
             </div>
-            <span class="sticky bottom-0 block w-full bg-light-background font-mono text-accent" (click)="scroll(textContainer); open()" *ngIf="!expanded" [ngClass]="{ 'dark-mode !bg-dark-background': darkMode$ | async }">more...</span>
-            <span class="sticky bottom-0 block w-full bg-light-background font-mono text-accent" (click)="scroll(top); close()" *ngIf="expanded" [ngClass]="{ 'dark-mode !bg-dark-background': darkMode$ | async }">less...</span>
+            <span class="sticky bottom-0 block w-full bg-light-background font-mono text-accent" (click)="scroll(textContainer); open()" *ngIf="(expanded|async) === false" [ngClass]="{ 'dark-mode !bg-dark-background': darkMode$ | async }">more...</span>
+            <span class="sticky bottom-0 block w-full bg-light-background font-mono text-accent" (click)="scroll(top); close()" *ngIf="(expanded|async)" [ngClass]="{ 'dark-mode !bg-dark-background': darkMode$ | async }">less...</span>
         </div>
     </div>
-    <div class="p-3" *ngIf="!expanded">
+    <div class="p-3" *ngIf="(expanded|async) === false">
         <p class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }"><span class="subheading underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async }">Tech:</span> <span *ngFor="let tech of project.tech; let i = index"> {{tech}}<span *ngIf="i !== project.tech.length - 1">,</span></span>
         </p>
         <p class="body-text" [ngClass]="{ 'dark-mode': darkMode$ | async }"><span class="subheading underline decoration-accent" [ngClass]="{ 'dark-mode': darkMode$ | async }">Skills Learnt:</span> <span *ngFor="let skill of project.skillsLearnt; let i = index"> {{skill}}<span *ngIf="i !== project.skillsLearnt.length - 1">,</span></span>
