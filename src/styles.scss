@@ -29,7 +29,7 @@ u {
     font-size: 3rem;
     font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
-    background-color: v.$light-background;
+    background-color: white;
     &.dark-mode {
         background-color: v.$dark-background;
         color: v.$light-background;
@@ -38,7 +38,9 @@ u {
 
 .heading2 {
     @extend .heading;
-    font-size: 24px;
+    font-size: 2.5rem;
+    line-height: normal;
+    background-color: unset;
 }
 
 .btn {
@@ -86,7 +88,7 @@ ul {
 }
 
 .highlight-thick {
-    border-bottom: 8px solid rgba(v.$accent-color, 1);
+    border-bottom: 4px solid rgba(v.$accent-color, 0.6);
 }
 
 .no-underline * {
@@ -153,5 +155,14 @@ a {
     }
     .heading {
         font-size: 24px;
+    }
+    .heading2 {
+        font-size: 32px;
+    }
+    .highlight-thick {
+        border-bottom: 4px solid rgba(v.$accent-color, 1);
+    }
+    .subheading {
+        font-size: 20px;
     }
 }

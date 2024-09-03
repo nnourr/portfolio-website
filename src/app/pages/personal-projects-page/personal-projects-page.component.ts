@@ -29,8 +29,23 @@ export class PersonalProjectsPageComponent implements AfterViewInit {
   firstVisible = true
 
   projects: ProjectContainer[] = [{
+    title: 'Music Circle',
+    tech: ['React', 'ExpressJS', 'Google Cloud Run', 'Docker', 'Firebase', 'Tailwind'],
+    skillsLearnt: [ 'React Hooks', `OAuth 2.0`, 'CI/CD', 'User Experience Design'],
+    body: [{
+      heading: 'Intention:', body: 'The intention of this project was to integrate my experience with web-scrapping, ingesting APIs and my love for Rocket League all in one project. It was also an opportunity to learn microservice architecture, document-oriented databases and computer vision.'
+    }, {
+      heading: 'Implementation', body: "Rocket League is a popular competitive online game where rocket powered cars play a game of football. For this project I collected clips of goals scored using Reddit's API, OpenCV to detect when a goal has been scored, MoviePy to edit the videos and Selenium to upload the videos to TikTok. All of my information was stored using Firebase, and each stage of the process was implemented as a microservice on Google Cloud Run, with Flask as the web framework and Docker to manage the environment. <br><br>The goal detection was dependent on how the score changes immediately after a goal was changed. Therefore, all I had to do was find the initial score and watch for an increase. The moment an increase was detected, I know a goal has been scored. <br><br>I also developed a website to manage the videos that were being created, allowing me to re-edit the videos if the goal was detected incorrectly. It also allowed me to adjust the parameters used to detect said goal, allowing me finer control over the goal detection in particularly difficult cases."
+    },  {
+      heading: 'Optimizations', body: "Initially, I was linearly scanning through each frame until I found an initial match, then looked at the consecutive number. This was very slow, O(n), and even worse practically because I had to check for the player and the opponent sides. This is why I did the following optimizations: <ul><li>Multithreading to check the player and opponent sides simultaneously.</li></li>Only checking every 2 frames. While this reduced precision, it was well worth the sacrifice as it meant much faster processing.</li><li>Reducing the time complexity. I realized that this was effectively just a search through all the frames, so re-factored it as a binary search, reducing the time complexity to O(log n)</li></ul>This resulted in a 95% time reduction."
+    }],
+    media: 'assets/musiccircle.png',
+    externalMedia: 'music-circle.nnourr.tech',
+    externalMediaText: 'Visit Music Circle!',
+    githubLink: 'https://github.com/nnourr/music-circle-react'
+  },{
     title: 'RL Reddit to TikTok Web Scrapper',
-    tech: ['Python Flask', 'Google Cloud', 'Docker', 'Firebase', 'Pandas', 'OpenCV', 'Selenium', 'Reddit'],
+    tech: ['Python Flask', 'Google Cloud', 'Docker', 'Firebase', 'Pandas', 'OpenCV', 'Selenium', 'Reddit API'],
     skillsLearnt: [ 'Microservice Architecture', 'Docker', 'Computer Vision', 'Multithreading'],
     body: [{
       heading: 'Intention:', body: 'The intention of this project was to integrate my experience with web-scrapping, ingesting APIs and my love for Rocket League all in one project. It was also an opportunity to learn microservice architecture, document-oriented databases and computer vision.'
