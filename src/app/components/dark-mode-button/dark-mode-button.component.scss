@@ -37,25 +37,3 @@ button {
         fill: v.$dark-background;
     }
 }
-
-// @media (pointer: coarse) {
-//     button {
-//         &.dark-mode {
-//             background-color: unset;
-//             &:hover {
-//                 background-color: unset;
-//                 &:hover path {
-//                     stroke: unset;
-//                     fill: unset;
-//                 }
-//             }
-//         }
-//         &:hover {
-//             background-color: unset;
-//         }
-//         &:hover path {
-//             fill: unset;
-//         }
-//     }
-// }
-    
