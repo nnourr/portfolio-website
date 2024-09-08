@@ -21,13 +21,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build the Angular project
-        run: npm run build -- --output-path=dist --base-href="/portfolio-website/"
+        run: npm run build -- --output-path=dist
 
       - name: Create CNAME file
         run: echo "nnourr.tech" > dist/CNAME
