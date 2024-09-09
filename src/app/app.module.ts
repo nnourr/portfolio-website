@@ -14,6 +14,8 @@ import { WorkExperienceContainerComponent } from './components/work-experience-c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonalProjectsPageComponent } from './pages/personal-projects-page/personal-projects-page.component';
 import { ProjectContainerComponent } from './components/project-container/project-container.component';
+import { EcobeeSummerComponent } from './pages/work-experience-page/ecobee-summer/ecobee-summer.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProjectContainerComponent } from './components/project-container/projec
     InProgressComponent,
     WorkExperienceContainerComponent,
     PersonalProjectsPageComponent,
-    ProjectContainerComponent
+    ProjectContainerComponent,
+    EcobeeSummerComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

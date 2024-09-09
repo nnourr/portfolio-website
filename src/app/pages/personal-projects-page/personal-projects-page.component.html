@@ -1,12 +1,12 @@
 <app-navbar [currPage]="2"></app-navbar>
 <div [@fadeTransitionAnimation] class="absolute right-0 top-[7vh] flex h-[93dvh] w-full flex-col">
     <h1 class="heading mx-6 mb-0 mt-8 hidden w-fit underline md:ml-24 md:block" [ngClass]="{'dark-mode': darkMode$ | async}">Personal Projects:</h1>
-    <div #scrollTarget class="flex h-full w-full snap-x snap-mandatory gap-8 overflow-y-auto  px-40 md:snap-y md:flex-col md:gap-12 md:py-48" [ngClass]="{'dark-mode': darkMode$ | async}">
+    <div #scrollTarget class="flex size-full snap-x snap-mandatory gap-8 overflow-y-auto px-40  md:snap-y md:flex-col md:gap-12 md:py-48" [ngClass]="{'dark-mode': darkMode$ | async}">
         <div #personalProjects class="flex h-auto snap-center items-center justify-center md:snap-start md:py-6" *ngFor="let project of projects; let i = index">
             <app-project-container class="max-h-[80dvh] min-h-[60dvh] w-[90vw] md:h-[32rem] md:w-[82rem]" [highlight$]="isVisible$[i] || firstVisible" [reverse]="i%2 === 1" [project]="project" [darkMode$]="darkMode$"></app-project-container>
         </div>  
     </div>
-    <div class="absolute bottom-10 right-[50%] flex h-fit translate-x-1/2 gap-2 rounded-xl bg-light-background/60 px-4 py-2 outline outline-2 outline-accent/50  md:bottom-[65%] md:right-[calc(50vw-40rem)] md:flex-col md:px-2 md:py-4 xl:right-[calc(50vw-44rem)]" [ngClass]="{'!bg-dark-background/60': darkMode$|async}">
-        <div *ngFor="let project of projects; let i = index" class="h-3 w-3 rounded-full bg-accent/50" [ngClass]="{'!bg-accent': isVisible$[i]}"></div>
+    <div class="absolute bottom-10 right-1/2 flex h-fit translate-x-1/2 gap-2 rounded-xl bg-light-background/60 px-4 py-2 outline outline-2 outline-accent/50  md:bottom-[65%] md:right-[calc(50vw-40rem)] md:flex-col md:px-2 md:py-4 xl:right-[calc(50vw-44rem)]" [ngClass]="{'!bg-dark-background/60': darkMode$|async}">
+        <div *ngFor="let project of projects; let i = index" class="size-3 rounded-full bg-accent/50" [ngClass]="{'!bg-accent': isVisible$[i]}"></div>
     </div>
 </div>

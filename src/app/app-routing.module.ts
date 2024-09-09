@@ -4,10 +4,12 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { InProgressComponent } from './components/in-progress/in-progress.component';
 import { WorkExperiencePageComponent } from './pages/work-experience-page/work-experience-page.component';
 import { PersonalProjectsPageComponent } from './pages/personal-projects-page/personal-projects-page.component';
+import { EcobeeSummerComponent } from './pages/work-experience-page/ecobee-summer/ecobee-summer.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'work-experience', component: WorkExperiencePageComponent },
+  { path: 'work-experience/ecobeesummer', component: EcobeeSummerComponent},
   { path: 'personal-projects', component: PersonalProjectsPageComponent},
   { path: '',   redirectTo: 'home', pathMatch: 'full' },
 ];

@@ -1,0 +1,14 @@
+<app-navbar [currPage]="2"></app-navbar>
+<div [@fadeTransitionAnimation] class="absolute right-0 top-[7vh] flex h-[93dvh] w-full justify-center overflow-y-auto">
+    <div class="background w-[100ch] bg-light-background" [ngClass]="{'dark-mode !bg-dark-background': darkMode$ | async}">
+        <div class="relative h-80 w-full bg-[url(assets/ecobee-banner.webp)] bg-cover bg-center shadow-accent-solid shadow-accent">
+            <div class="absolute bottom-0 left-0 z-10 overflow-hidden rounded-tr-2xl border-2 border-light-background !border-r-accent !border-t-accent bg-light-background" [ngClass]="{'dark-mode !bg-dark-background !border-dark-background': darkMode$ | async}">
+                <h1 class="heading !bg-transparent px-7 underline" [ngClass]="{'dark-mode': darkMode$ | async}">ecobee</h1>
+                <h2 class="heading2 !bg-transparent px-7 !text-2xl underline" [ngClass]="{'dark-mode': darkMode$ | async}">May 2024 - August 2024</h2>
+            </div>
+        </div>
+        <div class="p-7">
+            <p class="font-roboto !text-xl" [ngClass]="{ 'dark-mode': darkMode$ | async }">At ecobee, I was hired as a Software Engineer on the Home Monitoring Backend (HMB) team for 8 months, from January 2024 until August 2024. The HMB team is responsible for developing the backend services for ecobee's home security products. This work term report will cover the first 4 months of my employment during the winter semester.</p>
+        </div>
+    </div>
+</div>

@@ -28,7 +28,7 @@ u {
     text-decoration-thickness: 2px;
     font-size: 3rem;
     font-weight: 900;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto Mono', Courier, monospace;
     background-color: v.$light-background;;
     &.dark-mode {
         background-color: v.$dark-background;
@@ -69,7 +69,7 @@ ul {
 
 .body-text {
     @extend .subheading;
-    font-size: 16px !important;
+    font-size: 16px;
     font-weight: 400;
     text-decoration: none;
 }

@@ -13,7 +13,13 @@ module.exports = {
             },
             screens: {
                 xl: "2080px",
-            }
+            },
+            boxShadow: {
+              'accent-solid': 'inset 0 -2px 0',
+            },
+    fontFamily: {
+        'roboto': ['Roboto Mono', 'sans-serif'],
+      }
         }
     },
     plugins: [],
