@@ -6,6 +6,7 @@ import { fadeTransitionAnimation } from 'src/app/animations';
 import { ProjectBody } from 'src/app/models/project-body.model';
 import { ProjectContainer } from 'src/app/models/project-container.model';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
+import { CurrPage } from '../../enums/curr-page';
 
 @Component({
   selector: 'app-personal-projects-page',
@@ -29,6 +30,7 @@ export class PersonalProjectsPageComponent implements AfterViewInit {
   isVisible$: boolean[] = [] 
   firstVisible = true  
   isMobile: boolean
+  currentPage = CurrPage.PersonalProjectsPage
 
   projects: ProjectContainer[] = [{
     title: 'Music Circle',

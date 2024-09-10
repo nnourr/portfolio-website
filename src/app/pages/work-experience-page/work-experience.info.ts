@@ -16,6 +16,7 @@ export const WorkExperience: WorkExperienceInfo[] = [
       date: 'Jan 2024 - Aug 2024 (8 months)',
       position: 'Backend Software Engineer Co-Op',
       tech: 'Go, Nestjs, GKE, nginx',
+      blogPath:'ecobeeInternship',
       highlights: [
         'Lead a multi-faceted GKE upgrade, cooperating with my team to manage risk on a tight deadline.',
         'Took initiative to orchestrate team-wide discussions and implement process changes to improve developer QoL and production stability.',
@@ -88,6 +89,7 @@ export const WorkExperience: WorkExperienceInfo[] = [
       customImageStyle: 'width: 60%;',
       companyUrl: 'https://www.rbc.com/about-rbc.html',
       companyName: 'Royal Bank of Canada',
+      blogPath:'RBCInternship',
       reference: 'evan.timms@rbc.com',
       date: 'May 2023 - Aug 2023 (4 months)',
       position: 'Applications Developer Co-Op',
@@ -140,6 +142,7 @@ export const WorkExperience: WorkExperienceInfo[] = [
       image: Images.system1.light,
       imageDarkMode: Images.system1.dark,
       companyUrl: 'https://system1.com/',
+      blogPath:'System1Internship',
       companyName: 'System1',
       reference: 'chris.dekker@system1.com',
       date: 'Sept 2022 - Dec 2022 (4 months)',
@@ -186,6 +189,7 @@ export const WorkExperience: WorkExperienceInfo[] = [
       companyUrl: 'https://www.egyptianbanks.com/',
       companyName: 'Egyptian Banks Company',
       date: 'May 2022 - Aug 2022 (4 months)',
+      blogPath:'EBCInternship',
       position: 'Full Stack Software Engineer Co-Op',
       tech: 'Angular, Java Spring, MSSQL',
       highlights: [

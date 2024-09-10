@@ -29,6 +29,7 @@ export class WorkExperiencePageComponent implements OnInit {
   currPage = CurrPage.WorkExperiencePage
   preLoadArr = new Array()
   workExperiences: WorkExperienceInfo[] = WorkExperience
+  currentPage = CurrPage.WorkExperiencePage
 
   constructor(router: Router, darkModeService: DarkModeService, deviceService: DeviceDetectorService) {
     this._router = router

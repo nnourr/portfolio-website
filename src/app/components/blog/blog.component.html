@@ -1,4 +1,3 @@
-<app-navbar [currPage]="2"></app-navbar>
 <div [@fadeTransitionAnimation] class="absolute right-0 top-[10dvh] flex h-[90dvh] w-full lg:pl-[15%] box-border overflow-y-auto" [ngClass]="{'dark-mode':darkMode$|async}">
     <div class="w-full h-fit lg:w-[90ch] relative bg-light-background" [ngClass]="{'dark-mode !bg-dark-background': darkMode$ | async}">
         <div class="fixed hidden lg:block z-40 left-[calc(15%-18ch)] h-auto bg-inherit">
@@ -9,10 +8,12 @@
             <button *ngFor="let heading of blogContent.headings; let i = index" class="relative !w-full !text-left !self-start !py-0 !px-2 box-content min-w-[36px] body-text" (click)="scrollToHeader(heading)" [ngClass]="{'dark-mode':darkMode$|async}" [innerHTML]="(i+1) + '. ' +heading"></button>
         </div>
         <div class="relative h-80 w-full border-b-2 border-accent">
-            <img [src]="blogContent.bannerImage" class="object-cover w-full h-full">
+            <img [src]="blogContent.bannerImage" [class]="'object-cover w-full h-full ' + imageStyle">
             <div class="absolute -bottom-[3px] left-0 z-10 overflow-hidden rounded-tr-2xl border-2 border-light-background !border-r-accent !border-t-accent bg-light-background" [ngClass]="{'dark-mode !bg-dark-background !border-dark-background': darkMode$ | async}">
-                <h1 class="heading !text-5xl !leading-snug !bg-transparent px-7 underline" [ngClass]="{'dark-mode': darkMode$ | async}" [innerHTML]="blogContent.title"></h1>
-                <h2 class="heading2 !bg-transparent px-7 !text-2xl underline" [ngClass]="{'dark-mode': darkMode$ | async}" [innerHTML]="blogContent.date"></h2>
+                <a [href]="blogContent.titleUrl" target="_blank">
+                    <h1 class="heading !text-5xl !leading-snug !bg-transparent lg:px-12 px-7 underline" [ngClass]="{'dark-mode': darkMode$ | async}" [innerHTML]="blogContent.title"></h1>
+                </a>
+                <h2 class="heading2 !bg-transparent lg:px-12 px-7 !text-2xl underline" [ngClass]="{'dark-mode': darkMode$ | async}" [innerHTML]="blogContent.date"></h2>
             </div>
         </div>
         <div class="p-7 lg:p-12 pb-52">

@@ -8,18 +8,15 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   darkMode$: Observable<boolean>
-  @Input() currPage: CurrPage = CurrPage.WorkExperiencePage;
+  @Input() currPage: CurrPage;
   pages = CurrPage;
   collapsed:boolean = true;
   collapseButtonText = "="
 
   constructor(darkModeService: DarkModeService) {
     this.darkMode$ = darkModeService.darkMode$;
-  }
-
-  ngOnInit(): void {
   }
 
   openNavBar() {

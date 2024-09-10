@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
 import Typed, { TypedOptions } from 'typed.js';
+import { CurrPage } from '../../enums/curr-page';
 
 @Component({
   selector: 'app-in-progress',
@@ -16,6 +17,8 @@ export class InProgressComponent implements OnInit {
     this.darkMode$ = darkModeService.darkMode$;
   }
   @Input() fullPage?: boolean = true;
+
+  currentPage = CurrPage.InProgressPage
 
   ngOnInit(): void {
     let options: TypedOptions = {

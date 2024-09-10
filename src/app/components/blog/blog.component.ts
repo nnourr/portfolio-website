@@ -16,6 +16,7 @@ export class BlogComponent {
   darkMode$: Observable<boolean>
   isMobile: boolean;
   @Input() blogContent: Blog;
+  @Input() imageStyle?: string;
 
  constructor(darkModeService: DarkModeService, deviceService: DeviceDetectorService, private _location: Location) {
     this.darkMode$ = darkModeService.darkMode$;    
