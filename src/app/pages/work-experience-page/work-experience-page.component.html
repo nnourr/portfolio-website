@@ -1,4 +1,4 @@
-<app-navbar [currPage]="1"></app-navbar>
+<app-navbar [currPage]="currentPage"></app-navbar>
 <div @fadeTransitionAnimation>
     <div class="center">
         <h1 class="heading mx-6 mb-4 mt-8 w-fit self-start underline md:ml-24" [ngClass]="{'dark-mode': darkMode$| async}">Work Experience:</h1>
@@ -6,7 +6,7 @@
             <app-work-experience-container #companies *ngFor="let experience of workExperiences; let i = index"  [highlight$]="isVisible$[i]" [experienceInfo]="experience" [ngClass]="{'work-container': true, 'snap-center': isMobile}" [darkMode$]="darkMode$"></app-work-experience-container>
         </div>
         <div *ngIf="isMobile" class="absolute bottom-[7%] flex h-6 items-center justify-between gap-2 rounded-xl bg-light-background/60 px-4 py-2 outline outline-2 outline-accent/50" [ngClass]="{'!bg-dark-background/60': darkMode$|async}">
-            <div *ngFor="let experience of workExperiences; let i = index" class="h-3 w-3 rounded-full bg-accent/50" [ngClass]="{'!bg-accent': isVisible$[i]|async}" (click)="scrollToExperience(i)"></div>
+            <div *ngFor="let experience of workExperiences; let i = index" class="size-3 rounded-full bg-accent/50" [ngClass]="{'!bg-accent': isVisible$[i]|async}" (click)="scrollToExperience(i)"></div>
         </div>
     </div>
 </div>

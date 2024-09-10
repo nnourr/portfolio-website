@@ -13,7 +13,9 @@
             <li *ngFor="let highlight of experienceInfo.highlights">{{highlight}}</li>
         </ul>
     </div>
-    <button (click)="openDetails()" class="absolute bottom-2 right-4" [ngClass]="{'detail-button':true, 'open': true, 'dark-mode':darkMode$|async}">See Details    </button>
+    <a [routerLink]="'/blog/' + experienceInfo.blogPath">
+        <button class="absolute bottom-2 right-4" [ngClass]="{'detail-button':true, 'open': true, 'dark-mode':darkMode$|async}">See More    </button>
+    </a>
     <div class="absolute -right-1/4 top-0 h-24 w-48 rounded-full bg-accent/20 blur-3xl" [ngClass]="{'opacity-10' : (darkMode$|async) === false}"></div>
     <div class="absolute -left-12 bottom-0 h-32 w-64 rounded-full bg-accent/20 blur-3xl" [ngClass]="{'opacity-10' : (darkMode$|async) === false}"></div>
 </div>

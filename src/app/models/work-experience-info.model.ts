@@ -5,6 +5,7 @@ export class WorkExperienceInfo {
     imageDarkMode?: string;
     customImageStyle?: string;
     companyUrl: string;
+    blogPath: string;
     companyName: string;
     date: string;
     reference?: string;

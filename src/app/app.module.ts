@@ -14,10 +14,14 @@ import { WorkExperienceContainerComponent } from './components/work-experience-c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonalProjectsPageComponent } from './pages/personal-projects-page/personal-projects-page.component';
 import { ProjectContainerComponent } from './components/project-container/project-container.component';
-import { EcobeeSummerComponent } from './pages/work-experience-page/ecobee-summer/ecobee-summer.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EcobeeBlogComponent } from './pages/work-experience-page/blog/ecobee/ecobee.blog';
+import { RBCBlogComponent } from './pages/work-experience-page/blog/RBC/rbc.blog';
+import { EBCBlogComponent } from './pages/work-experience-page/blog/EBC/EBC.blog';
+import { System1BlogComponent } from './pages/work-experience-page/blog/System1/system1.blog';
+import { BlogPageComponent } from './pages/work-experience-page/blog/blog.page';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     WorkExperienceContainerComponent,
     PersonalProjectsPageComponent,
     ProjectContainerComponent,
-    EcobeeSummerComponent,
+    EcobeeBlogComponent,
+    RBCBlogComponent,
+    EBCBlogComponent,
+    BlogPageComponent,
+    System1BlogComponent,
     BlogComponent,
     CarouselComponent
   ],
