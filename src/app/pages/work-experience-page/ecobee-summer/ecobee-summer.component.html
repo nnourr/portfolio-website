@@ -1,1 +1,113 @@
-<app-blog></app-blog>
+<app-blog [blogContent]="blogContent">
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        At ecobee, I was hired as a Software Engineer on the Home Monitoring Backend (HMB) team for 8 months, from January 2024 until August 2024. 
+        At HMB I've touched two major product initiatives, led process discussions, executed cloud infrastructure upgrades and even led a sprint!
+        This Work Term Report will cover the last 4 months of my ecobee journey, from June 2024 till August 2024.
+    </p>
+    <br>
+    <h1 class="heading2 !text-2xl underline" [ngClass]="{ 'dark-mode': darkMode$ | async }" id="Hardware Service Bundles">Hardware Service Bundles</h1>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        Hardware Service Bundles (HWSB) was a major product initiative to sell our security hardware with an included ecobee SmartSecurity subscription.
+        For this project, I was in charge of updating the Activation Code state using Google Pub/Sub event handlers in combination with custom client methods for our activation code and subscriptions provider.
+        To facilitate better customer engagement metrics, I also enabled Amplitude events on our NextJs front-end, allowing product managers to track user flows 
+        and discover any problems in our UX.  
+        <br>
+        <br>
+        This project involved cross-functional collaboration across 8+ plus teams, and I was able to demonstrate my excellent communication skills through
+        PRs on other team's Github repositories and though defining tickets and project scope by communicating with project managers.
+        <br>
+        <br>
+        Currently, we sell over 9+ Hardware Service Bundles every day, with lots of potential to grow. Check them out at <a class="text-accent/70" href="https://www.ecobee.com/en-ca/bundles-exclusives/" target="_blank">https://www.ecobee.com/en-ca/bundles-exclusives/</a>
+    </p>
+    <br>
+    <h1 class="heading2 !text-2xl underline" [ngClass]="{ 'dark-mode': darkMode$ | async }" id="Third Party Device Integration">Third Party Device Integration</h1>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        Once the dev work for HWSB was complete, me and my team moved on to our next product initiative, integrating a third party device with our smart security ecosystem.
+        <br>
+        <br>
+        As part of the integration, we needed to keep track of the device's complex state using a collection of webhooks from the third party provider. 
+        The complexity grew when we found there wasn't perfect parity between the states we need to display to the user and the state we receive from the third party.
+        Faced with this problem, I created a state diagram detailing all possible states and how the device can go from one to another, 
+        facilitating further discussion and allowing us to identify various edge cases and future challenges.
+        <br>
+        <br>
+        I then implemented support for one of these states, modifying our existing domain, decoder and service layers in our GO domain driven architecture. 
+        Part of this implementation involved handling a new webhook payload, which had a field shared by other payloads, but as a different type.
+        Unfortunately, this broke our existing decoder design, so I was tasked with designing a workaround. 
+        The result was a new decoder that exploited GO's polymorphic capabilities to decode a variety of webhook payloads with minimal configuration.
+        <br>
+        <br>
+        While this integration is still in the works, we expect around 5000 devices to be connected within the first 1-2 months after release.
+    </p>
+    <br>
+    <h1 class="heading2 !text-2xl underline" [ngClass]="{ 'dark-mode': darkMode$ | async }" id="SCRUM Lead">SCRUM Lead</h1>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        I've always been inspired by the various SCRUM leads I worked with throughout my internships, so I made it my goal this term to become one myself.
+    </p>
+    <br>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        At ecobee, the responsibilities of a SCRUM lead involve:
+    </p>
+    <ul class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        <li>Facilitating scope discussion during sprint planning.</li>
+        <li>Leading our daily standup meetings.</li>
+        <li>Orchestrating sprint retrospectives.</li>
+        <li>Delivering updates to upper management and project managers.</li>
+        <li>Ensuring the team is on-track and happy.</li>
+    </ul>
+    <br>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        With help from the current SCRUM master, I slowly took on more responsibility and attended more skip meetings until I was able to lead the entirety of my last sprint!
+        In our sprint retro before this one, we had discussed a problem where our Jira epics did not contain all the tickets required to complete the epic requirements. 
+        To address this issue, I introduced a new team ritual to audit the epics involved in the next sprint to ensure their completeness. 
+        I also encouraged discussion around the definition of completeness to ensure everyone was on the same page.
+        <br>
+        <br>
+        I was also able to use my relative inexperience to my advantage by asking a lot of questions. 
+        This allowed more senior team members to challenge their assumptions, forcing us to discover gaps in our process much earlier. 
+        <br>
+        <br>
+        Leading a sprint was an eye opening experience, and I'm grateful for the opportunity to apply the communication and leadership skills I gained thought my minor in Project Management and my previous internships.
+    </p>
+    <br>
+    <h1 class="heading2 !text-2xl underline" [ngClass]="{ 'dark-mode': darkMode$ | async }" id="Co-Op Presentation">Co-Op Presentation</h1>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        I was simultaneously excited and anxious about my first time doing an end of term co-op presentation. 
+        I would be presenting with some of my fellow co-ops in front of all ecobee engineers and engineering managers, discussing my contributions and learnings during my time at ecobee.
+        While I only had one day to prepare, I'm extremely proud of what I was able to create in such little time. 
+        <br>
+        <br>
+        I would like to share with you some slides discussing a new concept I had learned, which I've coined "Responsibility Based Error Responding":
+    </p>
+    <br>
+    <app-carousel [images]="['assets/ecobeeSlides/ (1).JPG', 'assets/ecobeeSlides/ (2).JPG', 'assets/ecobeeSlides/ (3).JPG', 'assets/ecobeeSlides/ (4).JPG', 'assets/ecobeeSlides/ (5).JPG']"></app-carousel>
+    <br>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        My presentation was praised for it's well thought out analogies, lightheartedness and coherence with the ecobee brand.
+    </p>
+    <br>
+    <h1 class="heading2 !text-2xl underline" [ngClass]="{ 'dark-mode': darkMode$ | async }" id="Learning Goals">Learning Goals</h1>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        My learning goals for this term were:
+    </p>
+    <ul class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        <li>Contribute to the GO codebase.</li>
+        <li>Perform an end of term co-op presentation.</li>
+        <li>Lead a sprint.</li>
+    </ul>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        As you can see, I was successful in achieving my goals this term!
+    </p>
+    <br>
+    <h1 class="heading2 !text-2xl underline" [ngClass]="{ 'dark-mode': darkMode$ | async }" id="Acknowledgements">Acknowledgements</h1>
+    <p class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        I would like to thank:
+    </p>
+    <ul class="body-text !text-lg" [ngClass]="{ 'dark-mode': darkMode$ | async }">
+        <li>Dave Arnold & Eugenia Kondratova for being incredible managerial role-models and constant sources of inspiration.</li>
+        <li>Pray Mishra for being an infinitely helpful and friendly on-boarding buddy and sprint lead.</li>
+        <li>Anton Nguyen for dealing with all the headaches I caused and teaching by example what a staff software engineer should be.</li>
+        <li>Chen Zhang for sticking by me with through all those cloud upgrades we did.</li>
+        <li>Prasanth Pillai teaching me how to use questions to facilitate discussion (the hard way).</li>
+    </ul>
+</app-blog>

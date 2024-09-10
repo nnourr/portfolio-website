@@ -23,6 +23,10 @@ u {
     }
 }
 
+.underline-button {
+    @include v.underline-button
+}
+
 .heading {
     text-decoration-thickness: 2px;
     font-size: 3rem;
@@ -118,7 +122,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: adjust-color($color: v.$light-background, $lightness: -10%, $alpha: 1.0);
+    background-color: adjust-color($color: v.$light-background, $lightness: -20%, $alpha: 1.0);
     border-radius: $scrollbarWidth;
     -webkit-border-radius: $scrollbarWidth;
     -moz-border-radius: $scrollbarWidth;

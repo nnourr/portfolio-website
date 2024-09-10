@@ -16,6 +16,8 @@ import { PersonalProjectsPageComponent } from './pages/personal-projects-page/pe
 import { ProjectContainerComponent } from './components/project-container/project-container.component';
 import { EcobeeSummerComponent } from './pages/work-experience-page/ecobee-summer/ecobee-summer.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { BlogComponent } from './components/blog/blog.component';
     PersonalProjectsPageComponent,
     ProjectContainerComponent,
     EcobeeSummerComponent,
-    BlogComponent
+    BlogComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

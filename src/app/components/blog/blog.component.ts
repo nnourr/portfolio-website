@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { fadeTransitionAnimation } from '../../animations';
 import { Router } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Observable } from 'rxjs';
 import { DarkModeService } from '../../services/dark-mode.service';
+import {Location} from '@angular/common';
+import { Blog } from '../../models/blog.model';
 
 @Component({
   selector: 'app-blog',
@@ -12,11 +14,26 @@ animations: [fadeTransitionAnimation],
 }) 
 export class BlogComponent {
   darkMode$: Observable<boolean>
-  private _router: Router;
   isMobile: boolean;
- constructor(router: Router, darkModeService: DarkModeService, deviceService: DeviceDetectorService) {
-    this._router = router;
+  @Input() blogContent: Blog;
+
+ constructor(darkModeService: DarkModeService, deviceService: DeviceDetectorService, private _location: Location) {
     this.darkMode$ = darkModeService.darkMode$;    
     this.isMobile = deviceService.isMobile()
+  }
+
+  scrollToHeader(heading: string) {
+    const headingElem = document.getElementById(heading)
+    if (!!headingElem) {
+      headingElem.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
+  }
+
+  goBack() {
+   this._location.back() 
   }
 }
