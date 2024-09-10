@@ -8,3 +8,4 @@ import { CurrPage } from "../../../enums/curr-page";
   export class BlogPageComponent {
     currentPage = CurrPage.BlogPage
   }
+  

@@ -10,7 +10,7 @@ import { WorkExperienceDetails } from '../../../../models/work-experience-detail
 })
 export class EBCBlogComponent {
   blogContent: Blog = {
-    bannerImage: 'assets/ecobee-banner.webp',
+    bannerImage: 'assets/ebc-banner.jpg',
     date:'May 2022 - August 2022',
     title: 'EBC',
     titleUrl: 'https://www.egyptianbanks.com/',

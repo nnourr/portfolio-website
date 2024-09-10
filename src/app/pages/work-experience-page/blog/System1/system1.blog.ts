@@ -10,7 +10,7 @@ import { WorkExperienceDetails } from '../../../../models/work-experience-detail
 })
 export class System1BlogComponent {
   blogContent: Blog = {
-    bannerImage: 'assets/ecobee-banner.webp',
+    bannerImage: 'assets/system1-banner.jpg',
     date:'September 2022 - December 2022',
     title: 'System1',
     titleUrl: 'https://www.system1.com',
