@@ -18,8 +18,8 @@ export class CarouselComponent implements OnInit, OnDestroy {
     if (!!imageToScrollTo) {
       imageToScrollTo.scrollIntoView({
         behavior: "smooth",
-        block: "start",
-        inline: "nearest"
+        block: "nearest",
+        inline: "nearest",
       });
     }
   }
