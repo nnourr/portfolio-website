@@ -28,7 +28,7 @@
   <ng-template #imageAndNetwork>
     <img *ngIf="!mobile" [ngClass]="{ 'w-full max-w-[500px] rounded-[2rem] justify-self-end self-center opacity-100 max-h-[30vh] min-h-[230px] object-cover shadow-[rgb(227,45,145)_20px_20px_0px] transform-none md:w-2/3 md:-translate-x-5 md:shadow-[rgb(227,45,145)_40px_20px_0px] md:hover:shadow-[rgb(227,45,145)_60px_20px_0px] md:hover:-translate-x-8 transition-all duration-300': true, 'animate-in': showAnimation }" src="assets/headshotcropped.png" />
     <div class="flex w-full max-w-[500px] flex-col items-center justify-center self-end justify-self-end md:w-2/3">
-      <div [ngClass]="{ 'flex flex-col h-fit w-fit m-0 p-0 bg-transparent ml-[0.3rem] md:bg-custom-white md:p-6 gap-4 md:rounded-[2rem] md:ml-0 md:m-auto': true, 'animate-in': showAnimation, '!text-white md:!bg-dark-background !bg-transparent': darkMode$ | async }">
+      <div [ngClass]="{ 'flex flex-col h-fit w-fit m-0 p-0 bg-transparent ml-[0.3rem] md:bg-custom-white md:p-6 gap-4 md:rounded-[2rem]': true, 'animate-in': showAnimation, '!text-white md:!bg-dark-background !bg-transparent': darkMode$ | async }">
         <h3 class="m-0 font-courier text-[3vh] !font-black text-inherit underline decoration-accent decoration-2">let's connect:</h3>
         <ul class="group m-0 flex h-[6.5vh] max-h-[3.2rem] w-full list-none flex-row flex-wrap justify-between p-0" [ngClass]="{ 'dark-mode': darkMode$ | async, 'animate-in-list': showAnimation}" aria-hidden="true">
           <li>
