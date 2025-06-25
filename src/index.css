@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Gabarito:wght@400..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  /* Custom Brand Colors */
+  --color-accent: #e32d91;
+  --color-bg: #e2dfe1;
+  --color-contrast: #202020;
+  --color-secondary: #ffffff;
+  --font-courier: 'Courier Prime', 'Courier New', Courier, monospace;
+  --inset-shadow-glow:
+    inset 15px 0 15px -10px var(--color-secondary),
+    inset -15px 0 15px -10px var(--color-secondary);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer theme {
+  * {
+    @variant dark {
+      --color-bg: #202020;
+      --color-contrast: #e2dfe1;
+      --color-secondary: #111111;
+    }
+  }
+}

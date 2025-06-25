@@ -4,10 +4,7 @@
       "headshot",
       "tailwindcss"
     ],
-    "files.autoSave": "onFocusChange",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    },
+    "files.autoSave": "off",
     "editor.formatOnSave": false,
     "javascript.format.enable": false,
     "eslint.options": {

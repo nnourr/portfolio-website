@@ -1,194 +1,172 @@
-# Portfolio Website
+# React + Vite + TypeScript + Tailwind CSS v4
 
-A modern, responsive portfolio website built with Angular and styled with Tailwind CSS. This website showcases professional experience, personal projects, and provides an elegant way to connect with visitors.
+This is a modern React application built with:
 
-## 👨‍💻 About Me
+- ⚡ **Vite** - Lightning fast build tool and dev server
+- 🔷 **TypeScript** - Type safety and better developer experience
+- 🎨 **Tailwind CSS v4** - Utility-first CSS framework (latest version)
+- ⚛️ **React 18** - Latest React features with hooks
 
-Hi, I'm **Noureldeen Ahmed** - a software engineering graduate with 3 years of experience doing what I love. This portfolio website represents my journey in software development, showcasing the projects I've worked on and the technologies I'm passionate about.
+## 🚀 Getting Started
 
-### Professional Background
-- **Experience**: 3+ years in software engineering
-- **Education**: Software Engineering Graduate
-- **Passion**: Building useful, impactful software solutions
-- **Expertise**: Full-stack development with modern web technologies
+### Prerequisites
 
-### What You'll Find Here
-This portfolio serves as a comprehensive showcase of my:
-- **Professional Experience**: Including work at companies like RBC, ecobee, System1, and EBC
-- **Personal Projects**: Creative solutions and technical experiments
-- **Technical Skills**: Demonstrated through real-world applications
-- **Professional Journey**: My growth and evolution as a software engineer
+- Node.js (v20.13.1 or higher)
+- npm or yarn
 
-I believe in creating software that not only works well but also provides meaningful value to users. Every project in this portfolio reflects my commitment to clean code, user experience, and continuous learning.
+### Installation
 
-## 🌟 Features
+1. **Install dependencies:**
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Dark Mode**: Toggle between light and dark themes
-- **Smooth Animations**: Custom CSS animations and transitions
-- **Modern Typography**: Clean fonts with Courier New and Roboto Mono
-- **Interactive Elements**: Hover effects and dynamic content
-- **Professional Layout**: Grid-based design with optimized spacing
-- **Contact Integration**: Direct links to email, GitHub, and LinkedIn
-
-## 🚀 Technologies Used
-
-- **Frontend Framework**: Angular
-- **Styling**: Tailwind CSS
-- **Fonts**: Courier New, Roboto Mono
-- **Build Tool**: Angular CLI
-
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/portfolio-website.git
-   cd portfolio-website
-   ```
-
-2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Start the development server**
+2. **Start the development server:**
+
    ```bash
-   ng serve
+   npm run dev
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:4200`
+3. **Open your browser and visit:** `http://localhost:5173`
 
-## 🛠️ Development
-
-### Available Scripts
-
-- `ng serve` - Start development server
-- `ng build` - Build the project for production
-- `ng test` - Run unit tests
-- `ng lint` - Run linting
-
-### Project Structure
+## 📁 Project Structure
 
 ```
-src/
-├── app/
-│   ├── components/          # Reusable components
-│   │   ├── background/
-│   │   ├── blog/
-│   │   ├── carousel/
-│   │   ├── dark-mode-button/
-│   │   ├── info-buttons/
-│   │   ├── navbar/
-│   │   ├── project-container/
-│   │   └── work-experience-container/
-│   ├── pages/              # Main pages
-│   │   ├── home-page/
-│   │   ├── personal-projects-page/
-│   │   └── work-experience-page/
-│   ├── models/             # TypeScript interfaces
-│   ├── services/           # Angular services
-│   └── enums/              # TypeScript enums
-├── assets/                 # Static assets
-└── styles.scss            # Global styles
+portfolio-website/
+├── public/
+├── src/
+│   ├── App.tsx          # Main App component with Tailwind CSS
+│   ├── main.tsx         # Entry point
+│   ├── index.css        # Tailwind CSS v4 with custom colors
+│   └── vite-env.d.ts    # Vite type definitions
+├── index.html           # HTML template
+├── package.json         # Dependencies and scripts
+├── tsconfig.json        # TypeScript configuration
+├── tsconfig.app.json    # App-specific TypeScript config
+├── tsconfig.node.json   # Node-specific TypeScript config
+├── vite.config.ts       # Vite configuration with Tailwind plugin
+└── README.md
 ```
 
-### Tailwind Configuration
+## 🔧 Configuration Details
 
-The project uses a custom Tailwind configuration with:
+### Vite Configuration
 
-- **Custom Colors**: Accent color `rgb(227, 45, 145)`, custom backgrounds
-- **Custom Fonts**: Courier New and Roboto Mono font families
-- **Responsive Breakpoints**: Mobile-first design with `md:` breakpoint
-- **Custom Shadows**: Accent-colored shadows for visual elements
+The `vite.config.ts` includes the Tailwind CSS v4 plugin:
 
-### Key Components
+```typescript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import tailwindcss from '@tailwindcss/vite';
 
-- **Home Page**: Main landing page with introduction and contact links
-- **Dark Mode Service**: Global theme management
-- **Info Buttons**: Navigation and action buttons
-- **Responsive Layout**: Mobile and desktop optimized layouts
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});
+```
 
-## 🎨 Customization
+### Tailwind CSS v4 Setup
 
-### Colors
+Unlike previous versions, Tailwind CSS v4 uses a simple import statement and theme configuration in `src/index.css`:
 
-Update the color scheme in `tailwind.config.js`:
+```css
+@import 'tailwindcss';
 
-```javascript
-colors: {
-  'accent': 'rgb(227, 45, 145)',
-  'dark-background': 'rgb(22, 22, 22)',
-  'light-background': '#f5f5f5',
-  'custom-white': 'rgb(226, 223, 225)',
+@theme {
+  /* Custom Brand Colors */
+  --color-brand-50: oklch(0.97 0.02 240);
+  --color-brand-500: oklch(0.59 0.25 240);
+  --color-brand-900: oklch(0.19 0.1 240);
+
+  /* Custom Accent Colors */
+  --color-accent-primary: #ff6b6b;
+  --color-accent-secondary: #4ecdc4;
+  --color-accent-success: #51cf66;
 }
 ```
 
-### Fonts
+No configuration files needed! Tailwind v4 automatically detects your template files.
 
-Modify font families in the Tailwind config:
+## 🎨 Custom Colors in Tailwind CSS v4
 
-```javascript
-fontFamily: {
-  'roboto': ['Roboto Mono', 'sans-serif'],
-  'courier': ['Courier New', 'Courier', 'monospace'],
-}
+Based on the [official documentation](https://tailwindcss.com/docs/colors) and recent [developer insights](https://medium.com/@dvasquez.422/custom-colours-in-tailwind-css-v4-acc3322cd2da), adding custom colors in Tailwind v4 has changed significantly:
+
+### **Key Changes:**
+
+- **No more `tailwind.config.js`** - Configuration now happens in CSS
+- **`@theme` directive** - Define colors directly in your CSS file
+- **OKLCH color space** - Better color consistency and perceptual uniformity
+- **Simple import** - Just `@import "tailwindcss";`
+
+### **Color Usage Examples:**
+
+The app demonstrates various Tailwind CSS features with custom colors:
+
+- **Brand Colors:** `bg-brand-500`, `text-brand-100`, `hover:bg-brand-700`
+- **Accent Colors:** `bg-accent-primary`, `text-accent-warning`
+- **Custom Neutrals:** `bg-neutral-dark`, `text-neutral-light`
+- **Responsive Design:** `grid-cols-1 md:grid-cols-3`
+- **Effects:** `hover:scale-110`, `transition-transform`
+- **Gradients:** `bg-gradient-to-r from-brand-400 to-accent-secondary`
+
+## 📦 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+
+## 🏗️ Building for Production
+
+```bash
+npm run build
 ```
 
-### Animations
+This creates a `dist/` folder with optimized files ready for deployment.
 
-Custom animations are defined in component SCSS files:
-- `text-shrink`: Text size animation
-- `fade-in`: Opacity transitions
-- `animate-in-list`: Staggered list item animations
+## 🌟 Features
 
-## 📱 Responsive Design
+✅ **TypeScript** - Full type safety  
+✅ **Hot Module Replacement** - Instant updates during development  
+✅ **Tailwind CSS v4** - Latest utility-first CSS framework with custom colors  
+✅ **Fast Builds** - Vite's lightning-fast build system  
+✅ **Modern React** - React 19 with hooks  
+✅ **ESLint** - Code linting and formatting  
+✅ **Custom Color Palette** - OKLCH and hex color support
 
-The website follows a mobile-first approach:
+## 🔄 What's Different in Tailwind CSS v4
 
-- **Base styles**: Mobile devices (< 768px)
-- **md: prefix**: Tablet and desktop (≥ 768px)
-- **Flexible layouts**: Grid and flexbox for different screen sizes
-- **Optimized typography**: Viewport-based font sizing
-
-## 🌙 Dark Mode
-
-Dark mode is implemented using:
-- Angular service for state management
-- Conditional CSS classes
-- Tailwind's dark mode utilities
-- Smooth transitions between themes
-
-## 📧 Contact Information
-
-The website includes direct links to:
-- Email: [nnourr.me@nnourr.me](mailto:nnourr.me@nnourr.me)
-- GitHub: [github.com/nnourr](https://github.com/nnourr)
-- LinkedIn: [linkedin.com/in/nnourr](https://linkedin.com/in/nnourr)
+1. **Simplified Installation:** Just install `tailwindcss` and `@tailwindcss/vite`
+2. **No Config File Needed:** Automatic template detection
+3. **CSS-based Configuration:** Use `@theme` directive in CSS files
+4. **OKLCH Color Space:** Better color consistency
+5. **Vite Plugin:** Direct integration with Vite
 
 ## 🚀 Deployment
 
-### Build for Production
+This app can be deployed to any static hosting service:
 
-```bash
-ng build --prod
-```
-
-The build artifacts will be stored in the `dist/` directory.
+- **Vercel:** `vercel --prod`
+- **Netlify:** Drag and drop the `dist/` folder
+- **GitHub Pages:** Use GitHub Actions
+- **Any static hosting:** Upload the `dist/` folder
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-## 📞 Support
+## 📚 Learn More
 
-If you have any questions or issues, please open an issue on GitHub or contact me directly through the website.
+- [Vite Documentation](https://vite.dev/)
+- [React Documentation](https://react.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
+- [Tailwind CSS v4 Documentation](https://tailwindcss.com/docs)
+- [Custom Colors in Tailwind v4](https://medium.com/@dvasquez.422/custom-colours-in-tailwind-css-v4-acc3322cd2da)
 
 ---
 
-Built with ❤️ by Noureldeen Ahmed
-
+Happy coding! 🎉
