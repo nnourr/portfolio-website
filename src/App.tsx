@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import Background from './components/Background';
 import QuickButton from './components/QuickButton';
 import Section from './components/Section';
+import Glass from './components/Glass';
+import TopBar from './components/TopBar';
 
 function App() {
   const [active, setActive] = useState(false);
@@ -32,17 +34,9 @@ function App() {
   return (
     <Background className={`${active && 'dark'} font-courier`}>
       {/* top bar */}
-      <div className={`fixed top-0 left-0 z-10 w-full`}>
-        <div
-          className={`transform transition-all duration-300 ease-out ${showTopBar ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} text-contrast m-auto my-4 flex h-fit w-[98%] items-center gap-2 rounded-xl px-4 py-2 shadow-xl inset-shadow-sm inset-shadow-white/20 outline-1 outline-white/10 backdrop-blur-xs`}
-        >
-          <h1 className="decoration-accent w-min text-2xl font-black text-nowrap underline">
-            Noureldeen Ahmed
-          </h1>
-          <div className="bg-accent text-accent h-6 w-full rounded-full decoration-0" />
-        </div>
-      </div>
-      <div className="inset-shadow-glow text-contrast m-auto my-4 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-3xl px-4 py-3 backdrop-blur-xs">
+      <TopBar showTopBar={showTopBar} />
+      {/* main content */}
+      <div className="inset-shadow-glow text-contrast m-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 py-2 backdrop-blur-xs">
         <h1 className="w-min text-5xl font-black" ref={titleRef}>
           <span className="decoration-accent underline">Noureldeen</span>
           <div className="flex items-center gap-2">

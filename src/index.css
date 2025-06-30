@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Gabarito:wght@400..900&display=swap');
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
 @theme {
   /* Custom Brand Colors */
   --color-accent: #e32d91;
+  --color-pale-accent: #91476f;
   --color-bg: #f0eff0;
   --color-contrast: #202020;
   --color-secondary: #ffffff;
@@ -22,5 +24,11 @@
       --color-contrast: #e2dfe1;
       --color-secondary: #111111;
     }
+  }
+}
+
+@layer utilities {
+  .text-decoration-inherit {
+    text-decoration: inherit;
   }
 }
