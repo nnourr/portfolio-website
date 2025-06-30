@@ -9,7 +9,7 @@ const Background: React.FC<BackgroundProps> = ({
 }) => {
   return (
     <div
-      className={` ${className} h-fit overflow-hidden relative z-0 bg-bg before:absolute before:h-[100%] before:w-full before:top-0 before:-left-0 dark:before:mask-[url("/circuit-board.svg")] dark:before:mask-size-[40vh] before:mask-[url("/tic-tac.svg")] before:mask-size-[8vh] before:bg-accent/15 before:stroke-accent/50 before:-z-10`}
+      className={` ${className} bg-bg before:bg-accent/15 before:stroke-accent/50 relative z-0 h-fit overflow-hidden before:absolute before:top-0 before:-left-0 before:-z-10 before:h-[100%] before:w-full before:mask-[url("/tic-tac.svg")] before:mask-size-[8vh] dark:before:mask-[url("/circuit-board.svg")] dark:before:mask-size-[40vh]`}
     >
       <div className="z-10">{children}</div>
     </div>

@@ -31,50 +31,53 @@ function App() {
 
   return (
     <Background className={`${active && 'dark'} font-courier`}>
-      <div className={`fixed top-0 left-0 w-full z-10`}>
-        <div className={`transition-all duration-300 ease-out transform ${showTopBar ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} w-[98%] bg-bg/30 m-auto h-fit flex items-center gap-2 inset-shadow-sm inset-shadow-white/20 backdrop-blur-xs rounded-xl px-4 py-2 my-4 shadow-xl text-contrast outline-1 outline-white/10`}>
-          <h1 className="text-2xl font-black w-min text-nowrap underline decoration-accent">
+      {/* top bar */}
+      <div className={`fixed top-0 left-0 z-10 w-full`}>
+        <div
+          className={`transform transition-all duration-300 ease-out ${showTopBar ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} text-contrast m-auto my-4 flex h-fit w-[98%] items-center gap-2 rounded-xl px-4 py-2 shadow-xl inset-shadow-sm inset-shadow-white/20 outline-1 outline-white/10 backdrop-blur-xs`}
+        >
+          <h1 className="decoration-accent w-min text-2xl font-black text-nowrap underline">
             Noureldeen Ahmed
           </h1>
-          <div className="bg-accent rounded-full h-6 w-full text-accent decoration-0" />
+          <div className="bg-accent text-accent h-6 w-full rounded-full decoration-0" />
         </div>
       </div>
-      <div className="w-[95%] m-auto h-fit inset-shadow-glow min-h-screen backdrop-blur-xs rounded-3xl px-4 py-3 my-4 flex flex-col gap-4 text-contrast">
-        <h1 className="text-5xl font-black w-min" ref={titleRef}>
-          <span className="underline decoration-accent">Noureldeen</span>
-          <div className="flex gap-2 items-center">
-            <h1 className="text-5xl w-fit underline decoration-accent">
+      <div className="inset-shadow-glow text-contrast m-auto my-4 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-3xl px-4 py-3 backdrop-blur-xs">
+        <h1 className="w-min text-5xl font-black" ref={titleRef}>
+          <span className="decoration-accent underline">Noureldeen</span>
+          <div className="flex items-center gap-2">
+            <h1 className="decoration-accent w-fit text-5xl underline">
               Ahmed
             </h1>
-            <div className="bg-accent rounded-full h-8 w-full text-accent decoration-0">
+            <div className="bg-accent text-accent h-8 w-full rounded-full decoration-0">
               -
             </div>
           </div>
         </h1>
-        <div className="after:inset-shadow-glow after:absolute after:top-0 after:left-0 after:w-full after:h-full overflow-hidden relative opacity-90 rounded-2xl">
+        <div className="after:inset-shadow-glow relative overflow-hidden rounded-2xl opacity-90 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
           <img
             src="/headshotcropped.png"
             alt="me"
-            className="w-full h-44 object-cover"
+            className="h-44 w-full object-cover"
           />
         </div>
         <p className="text-xl font-bold">
           A Software Engineering graduate with 3 years of experience doing what
           I love.
         </p>
-        <div className="flex flex-col group/button w-fit gap-2">
+        <div className="group/button flex w-fit flex-col gap-2">
           <QuickButton
-            className="hover:!opacity-100 group-hover/button:opacity-60"
+            className="group-hover/button:opacity-60 hover:!opacity-100"
             onClick={() => {
               window.open('/Noureldeen_Ahmed_Resume.pdf', '_blank');
             }}
           >
             view resume
           </QuickButton>
-          <QuickButton className="hover:!opacity-100 group-hover/button:opacity-60">
+          <QuickButton className="group-hover/button:opacity-60 hover:!opacity-100">
             work experience
           </QuickButton>
-          <QuickButton className="hover:!opacity-100 group-hover/button:opacity-60">
+          <QuickButton className="group-hover/button:opacity-60 hover:!opacity-100">
             passion projects
           </QuickButton>
         </div>

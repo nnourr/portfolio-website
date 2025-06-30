@@ -5,8 +5,9 @@
       "tailwindcss"
     ],
     "files.autoSave": "off",
-    "editor.formatOnSave": false,
-    "javascript.format.enable": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "javascript.format.enable": true,
     "eslint.options": {
       "extensions": [ ".html", ".js", ".vue", ".jsx", ".ts" ]
     },
