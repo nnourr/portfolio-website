@@ -2,19 +2,19 @@ import Background from './components/Background';
 import QuickButton from './components/QuickButton';
 import Section from './components/Section';
 import TopBar from './components/TopBar';
-import Nav from './components/Nav';
-import { useScrollStore } from './stores/scrollStore';
+import NavBar from './components/NavBar';
 import { useScrollHandler } from './hooks/useScrollHandler';
+import BottomBar from './components/BottomBar';
 
 function App() {
-  const { isScrolling, showTopBar } = useScrollStore();
   useScrollHandler();
 
   return (
     <Background className={`font-courier pb-24`}>
-      <Nav hide={isScrolling} />
+      <NavBar />
+      <BottomBar />
       {/* top bar */}
-      <TopBar showTopBar={showTopBar} />
+      <TopBar />
       {/* main content */}
       <div className="text-contrast inset-shadow-glow dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs">
         <div className="after:inset-shadow-glow animate-in fade-in relative overflow-hidden rounded-2xl opacity-90 duration-400 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
@@ -24,7 +24,7 @@ function App() {
             className="h-44 w-full object-cover"
           />
         </div>
-        <p className="animate-in fade-in text-xl font-bold duration-400">
+        <p className="animate-in fade-in w-full text-xl font-bold duration-400">
           A Software Engineering graduate with 3 years of experience doing what
           I love.
         </p>
