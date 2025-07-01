@@ -7,7 +7,6 @@ import Nav from './components/Nav';
 
 function App() {
   const [showTopBar, setShowTopBar] = useState(false);
-  const titleRef = useRef<HTMLHeadingElement>(null);
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
@@ -96,7 +95,7 @@ function App() {
       <Nav hide={isScrolling} />
       {/* top bar */}
       {/* main content */}
-      <TopBar showTopBar={showTopBar} ref={titleRef} />
+      <TopBar showTopBar={showTopBar} />
       <div className="text-contrast inset-shadow-glow mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs">
         <div className="after:inset-shadow-glow animate-in fade-in relative overflow-hidden rounded-2xl opacity-90 duration-400 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
           <img
