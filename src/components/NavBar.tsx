@@ -3,6 +3,7 @@ import Glass from './Glass';
 import { CyclingIcon } from './CyclingIcon';
 import { faHome, faRocket } from '@fortawesome/free-solid-svg-icons';
 import type { BarItem } from '../models/BarItem';
+import { useScrollStore } from '../stores/scrollStore';
 
 // Work experience cycling icons (company SVGs)
 export const workExperienceIcons = [
@@ -34,15 +35,29 @@ export const navLinks: BarItem[] = [
 ];
 
 export default function NavBar() {
+  const { isScrolling: hide, setIsScrolling } = useScrollStore();
   return (
-    <div className="fixed top-[50svh] right-4 z-50 h-fit -translate-y-1/2">
+    <div
+      className={`fixed top-[50svh] z-50 h-fit -translate-y-1/2 transition-all duration-300 ${
+        !hide ? 'right-4 w-14' : 'right-2 w-3'
+      }`}
+      onClick={() => setTimeout(() => setIsScrolling(false), 10)}
+    >
       <Glass layered={true}>
-        <div className="text-contrast z-20 flex flex-col items-center gap-5 px-3 py-4 text-3xl">
+        <div
+          className={`text-contrast z-20 flex flex-col justify-start gap-5 py-4 text-3xl transition-all duration-300 ${
+            !hide
+              ? 'items-center px-3 opacity-100'
+              : 'items-start px-1 opacity-40'
+          }`}
+        >
           {navLinks.map(link => (
             <a
               key={link.key}
-              href={link.href}
-              className="flex flex-col items-center gap-1"
+              href={hide ? undefined : link.href}
+              className={`flex items-center gap-1 ${
+                !hide ? 'flex-col' : 'flex-row-reverse'
+              }`}
             >
               {link.key === 'work-exp' ? (
                 <CyclingIcon
@@ -54,7 +69,11 @@ export default function NavBar() {
               ) : (
                 <FontAwesomeIcon icon={link.icon} />
               )}
-              <div className="bg-accent h-1 w-4/5 rounded-full" />
+              <div
+                className={`bg-accent rounded-full ${
+                  !hide ? 'h-1 w-4/5' : 'h-3/4 w-1'
+                }`}
+              />
             </a>
           ))}
         </div>
