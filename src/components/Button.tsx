@@ -2,7 +2,7 @@ import Glass from './Glass';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -15,13 +15,13 @@ const Button: React.FC<ButtonProps> = ({
   size = 'md',
   ...props
 }) => {
-  const baseClasses =
-    'font-bold rounded-lg w-fit transition-[transform_50ms,opacity_300ms] active:scale-95 relative overflow-hidden';
+  const baseClasses = 'p-0 m-0';
 
   const variantClasses = {
     primary: 'bg-bg/30 inset-shadow-glow/50',
     secondary: 'bg-contrast',
     outline: 'border-2 border-accent ',
+    ghost: 'px-0 py-0',
   };
 
   const sizeClasses = {
@@ -39,20 +39,25 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       {...props}
-      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${disabledClasses} ${className}`}
+      className={`${disabledClasses} ${className} ${baseClasses}`}
     >
-      <div className="flex gap-2 opacity-0">{children}</div>
-      {variant === 'primary' && (
-        <>
-          <div className="bg-accent/30 absolute -top-4 left-0 -z-10 h-7 w-2 rounded-xs blur-sm" />
-          <div className="bg-accent/30 absolute right-0 -bottom-2 -z-10 h-7 w-2 rounded-xs blur-sm" />
-        </>
+      {variant === 'ghost' ? (
+        children
+      ) : (
+        <Glass
+          className={`underline-[inherit] ${variantClasses[variant]} ${sizeClasses[size]} *:text-decoration-inherit active:scale-95-sm relative top-0 left-0 z-0 w-fit overflow-hidden rounded-lg font-bold shadow-none transition-[transform_50ms,opacity_300ms]`}
+        >
+          {variant === 'primary' && (
+            <>
+              <div className="bg-accent/30 absolute -top-4 left-0 -z-10 h-7 w-2 rounded-xs blur-sm" />
+              <div className="bg-accent/30 absolute right-0 -bottom-2 -z-10 h-7 w-2 rounded-xs blur-sm" />
+            </>
+          )}
+          <div className="text-contrast z-50 flex h-full w-full items-center gap-2">
+            {children}
+          </div>
+        </Glass>
       )}
-      <Glass className="underline-[inherit] text-decoration-inherit !absolute top-0 left-0 z-0 w-full">
-        <div className="flex h-full w-full items-center gap-2 pl-3">
-          {children}
-        </div>
-      </Glass>
     </button>
   );
 };

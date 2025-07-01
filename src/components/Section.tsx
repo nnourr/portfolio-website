@@ -1,11 +1,12 @@
 interface SectionProps {
   title: string;
   children: React.ReactNode;
+  className?: string;
 }
 
-function Section({ title, children }: SectionProps) {
+function Section({ title, children, className }: SectionProps) {
   return (
-    <section className="flex flex-col">
+    <section className={`flex flex-col ${className || ''}`}>
       <div className="flex items-center gap-2">
         <h2 className="decoration-accent text-2xl font-bold underline decoration-2">
           {title}

@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>nnourr</title>
   </head>
-  <body>
+  <body style="background-color: #000">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <div class="glass-distortion"></div>
     <svg style="display: none">
+      <defs>
+        <clipPath id="l-shape-clip" clipPathUnits="objectBoundingBox">
+          <!-- Simple circle for testing -->
+          <circle cx="0.5" cy="0.5" r="0.3" />
+        </clipPath>
+        <mask id="l-shape-mask">
+          <rect width="100%" height="100%" fill="black" />
+          <path
+            d="M139.959 0C146.586 0 151.96 5.37258 151.96 12V103.98C151.96 103.991 151.969 104 151.98 104C151.991 104 152 104.009 152 104.02V129C152 135.627 146.627 141 140 141H12C5.37258 141 0 135.627 0 129V116C0 109.373 5.37258 104 12 104C41.1991 104 77.6941 104 96.9784 104C103.606 104 108.96 98.6274 108.96 92V12C108.96 5.37258 114.333 0 120.96 0H139.959Z"
+            fill="white"
+          />
+        </mask>
+      </defs>
       <filter
         id="glass-distortion"
         x="0%"

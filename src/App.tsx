@@ -2,64 +2,114 @@ import { useEffect, useRef, useState } from 'react';
 import Background from './components/Background';
 import QuickButton from './components/QuickButton';
 import Section from './components/Section';
-import Glass from './components/Glass';
 import TopBar from './components/TopBar';
+import Nav from './components/Nav';
 
 function App() {
-  const [active, setActive] = useState(false);
   const [showTopBar, setShowTopBar] = useState(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  console.log(active);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!titleRef.current) return;
-      const titlePos = titleRef.current?.getBoundingClientRect().bottom;
+    let scrollEndTimer: number;
+    let isTouchDown = false;
+    let isMouseDown = false;
+    let scrollStartY = 0;
+    let hasReachedThreshold = false;
 
-      // Trigger dark mode when user scrolls past 50% of the page
-      if (titlePos + 20 < 0) {
+    const pollForScrollEnd = () => {
+      // Only set scrolling to false if user is not touching/pressing
+      if (!isTouchDown && !isMouseDown) {
+        setIsScrolling(false);
+        hasReachedThreshold = false; // Reset threshold when scrolling ends
+      } else {
+        // Keep polling if user is still touching
+        scrollEndTimer = setTimeout(pollForScrollEnd, 50);
+      }
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
         setShowTopBar(true);
       } else {
         setShowTopBar(false);
       }
+
+      // Check if we've scrolled 200px from start position
+      const currentScrollY = window.scrollY;
+      const scrollDistance = Math.abs(currentScrollY - scrollStartY);
+
+      if (!hasReachedThreshold && scrollDistance >= 50) {
+        hasReachedThreshold = true;
+      }
+
+      // Only set scrolling to true if we've reached the threshold
+      if (hasReachedThreshold) {
+        setIsScrolling(true);
+
+        // Clear existing timer
+        clearTimeout(scrollEndTimer);
+
+        // Start polling after 150ms of no scrolling
+        scrollEndTimer = setTimeout(pollForScrollEnd, 50);
+      }
+    };
+
+    const handleMouseDown = () => {
+      isMouseDown = true;
+      scrollStartY = window.scrollY; // Capture start position
+      clearTimeout(scrollEndTimer);
+    };
+
+    const handleMouseUp = () => {
+      isMouseDown = false;
+    };
+
+    const handleTouchStart = () => {
+      isTouchDown = true;
+      scrollStartY = window.scrollY; // Capture start position
+      clearTimeout(scrollEndTimer);
+    };
+
+    const handleTouchEnd = () => {
+      isTouchDown = false;
     };
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
+      clearTimeout(scrollEndTimer);
     };
-  }, [titleRef.current]);
+  }, []);
 
   return (
-    <Background className={`${active && 'dark'} font-courier`}>
+    <Background className={`font-courier pb-24`}>
+      <Nav hide={isScrolling} />
       {/* top bar */}
-      <TopBar showTopBar={showTopBar} />
       {/* main content */}
-      <div className="inset-shadow-glow text-contrast m-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 py-2 backdrop-blur-xs">
-        <h1 className="w-min text-5xl font-black" ref={titleRef}>
-          <span className="decoration-accent underline">Noureldeen</span>
-          <div className="flex items-center gap-2">
-            <h1 className="decoration-accent w-fit text-5xl underline">
-              Ahmed
-            </h1>
-            <div className="bg-accent text-accent h-8 w-full rounded-full decoration-0">
-              -
-            </div>
-          </div>
-        </h1>
-        <div className="after:inset-shadow-glow relative overflow-hidden rounded-2xl opacity-90 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
+      <TopBar showTopBar={showTopBar} ref={titleRef} />
+      <div className="text-contrast inset-shadow-glow mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs">
+        <div className="after:inset-shadow-glow animate-in fade-in relative overflow-hidden rounded-2xl opacity-90 duration-400 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
           <img
             src="/headshotcropped.png"
             alt="me"
             className="h-44 w-full object-cover"
           />
         </div>
-        <p className="text-xl font-bold">
+        <p className="animate-in fade-in text-xl font-bold duration-400">
           A Software Engineering graduate with 3 years of experience doing what
           I love.
         </p>
-        <div className="group/button flex w-fit flex-col gap-2">
+        <div className="group/button animate-in fade-in flex w-fit flex-col gap-2 duration-400">
           <QuickButton
             className="group-hover/button:opacity-60 hover:!opacity-100"
             onClick={() => {
@@ -75,7 +125,7 @@ function App() {
             passion projects
           </QuickButton>
         </div>
-        <Section title="about me">
+        <Section title="about me" className="animate-in fade-in duration-400">
           <div className="flex flex-col gap-2 text-sm">
             <p>
               I'm a builder, tinkerer, and full-stack developer who loves
