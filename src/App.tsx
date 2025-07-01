@@ -16,7 +16,7 @@ function App() {
       {/* top bar */}
       <TopBar />
       {/* main content */}
-      <div className="text-contrast inset-shadow-glow dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs">
+      <div className="text-contrast inset-shadow-glow dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs md:w-3xl">
         <div className="after:inset-shadow-glow animate-in fade-in relative overflow-hidden rounded-2xl opacity-90 duration-400 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
           <img
             src="/headshotcropped.png"
@@ -45,6 +45,28 @@ function App() {
           </QuickButton>
         </div>
         <Section title="about me" className="animate-in fade-in duration-400">
+          <div className="flex flex-col gap-2 text-sm">
+            <p>
+              I'm a builder, tinkerer, and full-stack developer who loves
+              turning wild ideas into real, working software. I've helped teams
+              ship subscription flows handling $150,000+ in annual revenue,
+              innovative AI-based learning platforms and cybersecurity
+              dashboards.
+            </p>
+            <p>
+              Recently, I built Plant Together, the Google Docs of Software
+              Design tools, used by 50+ classmates for 50+ designs.
+            </p>
+            <p>
+              No matter what I'm working on, I'm all about fast feedback, clean
+              code, and having fun.
+            </p>
+          </div>
+        </Section>
+        <Section
+          title="work experience"
+          className="animate-in fade-in duration-400"
+        >
           <div className="flex flex-col gap-2 text-sm">
             <p>
               I'm a builder, tinkerer, and full-stack developer who loves
