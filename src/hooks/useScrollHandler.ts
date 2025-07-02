@@ -27,10 +27,7 @@ export const useScrollHandler = () => {
         scrollStartY = currentScrollY; // Reset start point for next down scroll
       } else if (scrollDirection === 'down') {
         // User scrolled down - check if we've moved 50px down from start point
-        const scrollDistance = currentScrollY - scrollStartY;
-        if (scrollDistance >= 50) {
-          setIsScrolling(true);
-        }
+        setIsScrolling(true);
       }
 
       previousScrollY = currentScrollY;

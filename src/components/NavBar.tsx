@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Glass from './Glass';
 import { CyclingIcon } from './CyclingIcon';
-import { faHome, faRocket } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGraduationCap,
+  faHome,
+  faRocket,
+} from '@fortawesome/free-solid-svg-icons';
 import type { BarItem } from '../models/BarItem';
 import { useScrollStore } from '../stores/scrollStore';
 
@@ -9,6 +13,7 @@ import { useScrollStore } from '../stores/scrollStore';
 export const workExperienceIcons = [
   '/ecobee.svg',
   '/rbc.svg',
+  '/lmai.svg',
   '/system1.svg',
   '/ebc.svg',
 ];
@@ -27,6 +32,12 @@ export const navLinks: BarItem[] = [
     label: 'Work Experience',
   },
   {
+    href: '#education',
+    icon: faGraduationCap,
+    key: 'education',
+    label: 'Education',
+  },
+  {
     href: '#passion-proj',
     icon: faRocket,
     key: 'passion-proj',
@@ -39,15 +50,15 @@ export default function NavBar() {
   return (
     <div
       className={`fixed top-[50svh] z-50 h-fit -translate-y-1/2 transition-all duration-300 ${
-        !hide ? 'right-4 w-14' : 'right-2 w-3'
+        !hide ? 'right-4 w-13' : 'right-2 w-3'
       }`}
       onClick={() => setTimeout(() => setIsScrolling(false), 10)}
     >
       <Glass layered={true}>
         <div
-          className={`text-contrast z-20 flex flex-col justify-start gap-5 py-4 text-3xl transition-all duration-300 ${
+          className={`text-contrast z-20 flex flex-col justify-start gap-5 py-3 text-3xl transition-all duration-300 ${
             !hide
-              ? 'items-center px-3 opacity-100'
+              ? 'items-center px-2 opacity-90'
               : 'items-start px-1 opacity-40'
           }`}
         >
@@ -70,7 +81,7 @@ export default function NavBar() {
                 <FontAwesomeIcon icon={link.icon} />
               )}
               <div
-                className={`bg-accent rounded-full ${
+                className={`bg-accent rounded-full opacity-75 ${
                   !hide ? 'h-1 w-4/5' : 'h-3/4 w-1'
                 }`}
               />

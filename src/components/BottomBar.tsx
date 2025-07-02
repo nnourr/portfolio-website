@@ -38,7 +38,7 @@ export default function BottomBar() {
         className={`flex w-full items-end justify-center gap-4 text-3xl transition-all duration-150 ${!hide ? 'mb-10 opacity-100' : 'mb-4 opacity-90'}`}
       >
         <Glass layered={true} className={`${!hide ? 'h-full' : 'h-1/4'}`}>
-          <div className="text-contrast z-20 flex flex-row items-end gap-5 px-5 py-2">
+          <div className="text-contrast z-20 flex flex-row items-end gap-5 px-5 py-2 opacity-90">
             {socialLinks.map(link => (
               <a
                 key={link.key}
@@ -47,7 +47,7 @@ export default function BottomBar() {
                 className="z-20 flex flex-col items-center gap-1"
               >
                 <FontAwesomeIcon className="aspect-square" icon={link.icon} />
-                <div className="bg-accent h-1 w-4/5 rounded-full" />
+                <div className="bg-accent h-1 w-4/5 rounded-full opacity-75" />
               </a>
             ))}
           </div>
@@ -58,7 +58,7 @@ export default function BottomBar() {
               !hide && document.documentElement.classList.toggle('dark');
             }}
             variant="ghost"
-            className="z-20 flex flex-row items-end px-3 py-2"
+            className="z-20 flex flex-row items-end px-3 py-2 opacity-90"
           >
             <div className="text-contrast flex flex-col items-center gap-0.5">
               <FontAwesomeIcon
@@ -66,7 +66,7 @@ export default function BottomBar() {
                 key="moon"
                 className="z-50 aspect-square"
               />
-              <div className="bg-accent h-1 w-4/5 rounded-full" />
+              <div className="bg-accent h-1 w-4/5 rounded-full opacity-75" />
             </div>
           </Button>
         </Glass>

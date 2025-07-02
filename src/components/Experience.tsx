@@ -1,51 +1,71 @@
 interface ExperienceProps {
   company: string;
   position: string;
-  dateRange: string;
-  description: string;
+  startDate: string;
+  endDate: string;
   logoSrc?: string;
   className?: string;
+  companyLink?: string;
+  children?: React.ReactNode;
 }
 
 function Experience({
   company,
   position,
-  dateRange,
-  description,
+  startDate,
+  endDate,
   logoSrc,
   className = '',
+  companyLink,
+  children,
 }: ExperienceProps) {
   return (
-    <div className={`flex flex-col gap-3 rounded-lg p-4 ${className}`}>
+    <div className={`text-contrast ${className}`}>
       {/* Header with logo, company info, and date */}
-      <div className="flex items-start justify-between">
-        <div className="flex items-start gap-3">
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center gap-3">
           {/* Company Logo */}
           {logoSrc && (
-            <div className="flex-shrink-0">
+            <div className="aspect-square h-8 flex-shrink-0">
               <img
                 src={logoSrc}
                 alt={`${company} logo`}
-                className="h-12 w-12 rounded object-contain"
+                className="aspect-square h-full object-contain dark:invert"
               />
             </div>
           )}
 
           {/* Company and Position */}
           <div className="flex flex-col">
-            <h3 className="text-lg font-bold text-white">{company}</h3>
-            <p className="text-sm text-gray-300">{position}</p>
+            <h3 className="decoration-accent/50 leading-tight font-bold underline">
+              {companyLink ? (
+                <a href={companyLink} target="_blank">
+                  {company}
+                </a>
+              ) : (
+                company
+              )}
+            </h3>
+            <p className="text-contrast/70 text-sm">{position}</p>
           </div>
         </div>
 
         {/* Date Range */}
-        <div className="flex-shrink-0 text-right text-sm text-gray-400">
-          {dateRange}
+        <div className="text-right text-sm text-nowrap">
+          {startDate} -<br /> {endDate}
         </div>
       </div>
 
       {/* Description */}
-      <div className="text-sm leading-relaxed text-gray-300">{description}</div>
+      <div className="text-sm leading-relaxed">
+        {children}
+        <a
+          className="text-accent ml-1 text-nowrap"
+          onClick={() => alert('Blog coming soon!')}
+        >
+          read more
+        </a>
+      </div>
     </div>
   );
 }

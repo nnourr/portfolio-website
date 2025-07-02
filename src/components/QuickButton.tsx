@@ -2,16 +2,12 @@ import Button, { type ButtonProps } from './Button';
 
 const QuickButton: React.FC<ButtonProps> = ({
   children,
-  onClick,
   className = '',
-  disabled = false,
   ...props
 }) => {
   return (
     <Button
-      onClick={onClick}
       className={`${className} decoration-accent group relative flex items-center gap-2 underline decoration-2 backdrop-blur-md`}
-      disabled={disabled}
       variant="primary"
       size="md"
       {...props}
