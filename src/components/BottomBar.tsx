@@ -1,4 +1,4 @@
-import { faEnvelope, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from './Button';
 import Glass from './Glass';
@@ -64,7 +64,12 @@ export default function BottomBar() {
               <FontAwesomeIcon
                 icon={faMoon}
                 key="moon"
-                className="z-50 aspect-square"
+                className="z-50 aspect-square dark:hidden"
+              />
+              <FontAwesomeIcon
+                icon={faSun}
+                key="sun"
+                className="z-50 hidden aspect-square dark:block"
               />
               <div className="bg-accent h-1 w-4/5 rounded-full opacity-75" />
             </div>
