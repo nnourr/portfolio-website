@@ -11,7 +11,7 @@ export default function Glass({
 }) {
   return (
     <div
-      className={`${className} outline-secondary/50 relative flex overflow-hidden rounded-2xl font-semibold text-black shadow-[0_6px_6px_rgba(0,0,0,0.2),0_0_20px_rgba(0,0,0,0.1)] outline-1 transition-all duration-400 ease-[cubic-bezier(0.68,-0.55,0.27,1.25)]`}
+      className={`${className} outline-secondary/50 relative flex overflow-hidden rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.2),0_0_20px_rgba(0,0,0,0.1)] outline-1 transition-all duration-400 ease-[cubic-bezier(0.68,-0.55,0.27,1.25)]`}
       style={style}
     >
       <div
