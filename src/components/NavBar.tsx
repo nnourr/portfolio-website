@@ -49,17 +49,15 @@ export default function NavBar() {
   const { isScrolling: hide, setIsScrolling } = useScrollStore();
   return (
     <div
-      className={`fixed top-[50svh] z-50 h-fit -translate-y-1/2 transition-all duration-300 ${
-        !hide ? 'right-4 w-13' : 'right-2 w-3'
+      className={`fixed top-[50svh] right-2 z-50 h-fit -translate-y-1/2 transition-all duration-300 ${
+        !hide ? 'w-11' : 'w-3'
       }`}
       onClick={() => setTimeout(() => setIsScrolling(false), 10)}
     >
       <Glass layered={true}>
         <div
-          className={`text-contrast z-20 flex flex-col justify-start gap-5 py-3 text-3xl transition-all duration-300 ${
-            !hide
-              ? 'items-center px-2 opacity-90'
-              : 'items-start px-1 opacity-40'
+          className={`text-contrast z-20 flex flex-col justify-start gap-5 py-3 text-xl transition-all duration-300 ${
+            !hide ? 'items-center px-2.5' : 'items-start px-1'
           }`}
         >
           {navLinks.map(link => (
@@ -74,14 +72,14 @@ export default function NavBar() {
                 <CyclingIcon
                   icons={workExperienceIcons}
                   intervalMs={2000}
-                  animationType="scale"
-                  className="h-[30px] w-[30px] object-contain dark:invert"
+                  animationType="fade"
+                  className="aspect-square h-[20px] object-contain dark:invert"
                 />
               ) : (
                 <FontAwesomeIcon icon={link.icon} />
               )}
               <div
-                className={`bg-accent rounded-full opacity-75 ${
+                className={`bg-accent rounded-full opacity-50 ${
                   !hide ? 'h-1 w-4/5' : 'h-3/4 w-1'
                 }`}
               />

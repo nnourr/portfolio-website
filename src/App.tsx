@@ -18,7 +18,7 @@ function App() {
       {/* top bar */}
       <TopBar />
       {/* main content */}
-      <div className="text-contrast inset-shadow-glow dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-sm md:w-3xl dark:backdrop-blur-xs">
+      <div className="text-contrast bg-secondary/40 dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-md md:w-3xl dark:backdrop-blur-xs">
         <div className="after:inset-shadow-glow animate-in fade-in relative overflow-hidden rounded-2xl opacity-90 duration-400 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
           <img
             src="/headshotcropped.png"
@@ -59,19 +59,17 @@ function App() {
         <Section title="about me" className="animate-in fade-in duration-400">
           <div className="flex flex-col gap-2 text-sm">
             <p>
-              I'm a builder, tinkerer, and full-stack developer who loves
-              turning wild ideas into real, working software. I've helped teams
-              ship subscription flows handling $150,000+ in annual revenue,
-              innovative AI-based learning platforms and cybersecurity
-              dashboards.
+              I'm a builder, tinkerer, and <strong>full-stack developer</strong>{' '}
+              who loves turning wild ideas into real, working software. I've
+              helped teams ship subscription flows handling{' '}
+              <strong>$2M+</strong> in annual revenue, innovative{' '}
+              <strong>AI-based learning platforms</strong> and{' '}
+              <strong>cybersecurity dashboards</strong>.
             </p>
             <p>
-              Recently, I built Plant Together, the Google Docs of Software
-              Design tools, used by 50+ classmates for 50+ designs.
-            </p>
-            <p>
-              No matter what I'm working on, I'm all about fast feedback, clean
-              code, and having fun.
+              No matter what I'm working on, I'm all about{' '}
+              <strong>fast feedback</strong>, <strong>clean code</strong>, and
+              having fun.
             </p>
           </div>
         </Section>
@@ -80,7 +78,7 @@ function App() {
           id="work-exp"
           className="animate-in fade-in duration-400"
         >
-          <div className="mt-4 flex flex-col gap-2">
+          <div className="mt-2 flex flex-col gap-2">
             <Experience
               logoSrc={'/lmai.svg'}
               company={'LearningModeAI'}
@@ -89,13 +87,13 @@ function App() {
               startDate={'Jan 2025'}
               endDate={'present'}
             >
-              <p>
-                LearningModeAI is revolutionizing asynchronous learning with AI.
-                As a Founding Engineer, I built a scalable microservice
-                architecture using AWS, Redis, and Docker. During this time, I
-                mentored six junior developers by leading code reviews and
-                organizing regular knowledge-sharing sessions.
-              </p>
+              <ul className="marker:text-accent list-inside list-none">
+                <li>
+                  Built an innovative learning platform with <strong>Go</strong>
+                  , <strong>AWS</strong>, <strong>React</strong>,{' '}
+                  <strong>Redis</strong>, <strong>Docker</strong>
+                </li>
+              </ul>
             </Experience>
             <Experience
               logoSrc={'/ecobee.svg'}
@@ -105,15 +103,17 @@ function App() {
               endDate={'Aug 2024'}
               companyLink={'https://ecobee.com'}
             >
-              <p>
-                At ecobee, I wrote Go services to enable smart lock support for
-                1000s of users and launch product bundles, delivering $2M+ in
-                annual revenue. I improved our GCP infrastructure to reduce
-                staging costs by 20%, organized team-wide release discussions
-                that cut on-call incidents by 70%, and led sprints as SCRUM
-                master where I introduced rituals that cut incomplete epics by
-                40%.
-              </p>
+              <ul className="marker:text-accent list-inside list-none">
+                <li>
+                  Delivered <strong>$2M+</strong> in annual revenue.
+                </li>
+                <li>
+                  Cut on-call incidents by <strong>70%</strong>.
+                </li>
+                <li>
+                  Reduced staging costs by <strong>20%</strong>.
+                </li>
+              </ul>
             </Experience>
             <Experience
               logoSrc={'/rbc.svg'}
@@ -123,16 +123,14 @@ function App() {
               endDate={'Aug 2023'}
               companyLink={'https://rbc.com'}
             >
-              <p>
-                While at RBC, I worked on a brand new cyber security resilience
-                dashboard. I developed a Django REST API to support it's
-                data-driven features and implemented DRF-Spectacular to
-                auto-generate accurate documentation. On the frontend, I built
-                8+ Vue.js components, including a Priority Tag used to flag
-                critical issues, and created a mock data API using Faker for
-                realistic, end-to-end testing of complex data ingestion
-                pipelines.
-              </p>
+              <ul className="marker:text-accent list-inside list-none">
+                <li>
+                  Built <strong>8+ scalable Vue</strong> components.
+                </li>
+                <li>
+                  Developed data-driven <strong>Django APIs</strong>.
+                </li>
+              </ul>
             </Experience>
             <Experience
               logoSrc={'/system1.svg'}
@@ -142,13 +140,14 @@ function App() {
               endDate={'Dec 2022'}
               companyLink={'https://system1.com'}
             >
-              <p>
-                During my time at System1, I worked on a full stack Angular and
-                .NET advertising platform and improved backend performance by
-                optimizing Snowflake queries, cutting response times by up to
-                40%. I created a reusable, end-to-end file validation system
-                that prevented cyber attacks across the full stack.
-              </p>
+              <ul className="marker:text-accent list-inside list-none">
+                <li>
+                  Cut query times by <strong>40%</strong>
+                </li>
+                <li>
+                  Built end-to-end <strong>file validation</strong>.
+                </li>
+              </ul>
             </Experience>
             <Experience
               logoSrc={'/ebc.svg'}
@@ -158,15 +157,11 @@ function App() {
               endDate={'Dec 2022'}
               companyLink={'https://www.egyptianbanks.com/'}
             >
-              <p>
-                For EBC, I built a model Automatic Clearing House system to
-                manage electronic bank transactions between financial
-                institutions. I developed the full stack using Java Spring Boot,
-                Angular, and SQL Server. This project helped me strengthen my
-                understanding of production-level engineering practices,
-                especially around REST API design, DTO/entity modeling, and
-                test-driven development.
-              </p>
+              <ul className="marker:text-accent list-inside list-none">
+                <li>
+                  Built an <strong>ACH system</strong> for banks.
+                </li>
+              </ul>
             </Experience>
           </div>
         </Section>
@@ -182,8 +177,9 @@ function App() {
             endDate="2025"
             companyLink="https://uoguelph.ca"
             logoSrc="/uog.svg"
+            className="mt-2"
           >
-            <ul className="marker:text-accent list-inside list-disc">
+            <ul className="marker:text-accent list-inside list-none">
               <li>Major in Software Engineering</li>
               <li>Minor in Project Management</li>
               <li>Graduated with Honors</li>
@@ -208,11 +204,14 @@ function App() {
               endDate={'present'}
             >
               <p>
-                LearningModeAI is revolutionizing asynchronous learning with AI.
-                As a Founding Engineer, I built a scalable microservice
-                architecture using AWS, Redis, and Docker. During this time, I
-                mentored six junior developers by leading code reviews and
-                organizing regular knowledge-sharing sessions.
+                <strong>LearningModeAI</strong> is revolutionizing asynchronous
+                learning with <strong>AI</strong>. As a{' '}
+                <strong>Founding Engineer</strong>, I built a scalable{' '}
+                <strong>microservice architecture</strong> using{' '}
+                <strong>AWS</strong>, <strong>Redis</strong>, and{' '}
+                <strong>Docker</strong>. During this time, I mentored{' '}
+                <strong>six junior developers</strong> by leading code reviews
+                and organizing regular knowledge-sharing sessions.
               </p>
             </Experience>
           </div>

@@ -23,7 +23,7 @@ function Experience({
     <div className={`text-contrast ${className}`}>
       {/* Header with logo, company info, and date */}
       <div className="flex items-start justify-between gap-2">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           {/* Company Logo */}
           {logoSrc && (
             <div className="aspect-square h-8 flex-shrink-0">
@@ -46,7 +46,7 @@ function Experience({
                 company
               )}
             </h3>
-            <p className="text-contrast/70 text-sm">{position}</p>
+            <p className="text-contrast/70 text-xs">{position}</p>
           </div>
         </div>
 
@@ -57,10 +57,10 @@ function Experience({
       </div>
 
       {/* Description */}
-      <div className="text-sm leading-relaxed">
+      <div className="text-xs leading-relaxed">
         {children}
         <a
-          className="text-accent ml-1 text-nowrap"
+          className="text-accent text-nowrap"
           onClick={() => alert('Blog coming soon!')}
         >
           read more

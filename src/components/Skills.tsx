@@ -124,7 +124,7 @@ function Skills({ className = '' }: SkillsProps) {
         {filteredSkills.map(skill => (
           <div
             key={skill.name}
-            className="bg-accent/50 rounded-md px-3 py-0.5 text-sm font-bold"
+            className="bg-accent/20 rounded-md px-3 py-0.5 text-sm"
           >
             {skill.name}
           </div>
