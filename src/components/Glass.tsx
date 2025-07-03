@@ -19,7 +19,7 @@ export default function Glass({
         style={{ filter: 'url(#glass-distortion)' }}
       ></div>
       {layered && (
-        <div className="bg-secondary/80 absolute inset-0 top-1/2 left-1/2 z-20 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-2xl blur-lg"></div>
+        <div className="bg-secondary/100 absolute inset-0 top-1/2 left-1/2 z-20 h-[calc(100%-1rem)] w-full -translate-x-1/2 -translate-y-1/2 rounded-2xl blur-lg"></div>
       )}
       <div className="from-secondary/20 to-secondary/20 absolute inset-0 z-0 bg-gradient-to-r from-0% via-transparent via-20% to-100%"></div>
       {children}

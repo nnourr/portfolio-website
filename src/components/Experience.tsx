@@ -23,7 +23,7 @@ function Experience({
     <div className={`text-contrast ${className}`}>
       {/* Header with logo, company info, and date */}
       <div className="flex items-start justify-between gap-2">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           {/* Company Logo */}
           {logoSrc && (
             <div className="aspect-square h-8 flex-shrink-0">
@@ -57,7 +57,7 @@ function Experience({
       </div>
 
       {/* Description */}
-      <div className="text-xs leading-relaxed">
+      <div className="text-sm leading-relaxed">
         {children}
         <a
           className="text-accent text-nowrap"

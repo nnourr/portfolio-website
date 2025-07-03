@@ -7,7 +7,7 @@ const QuickButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <Button
-      className={`${className} decoration-accent group relative flex items-center gap-2 underline decoration-2 backdrop-blur-md`}
+      className={`${className} decoration-accent group relative flex w-fit items-center gap-2 rounded-md underline decoration-2`}
       variant="primary"
       size="md"
       {...props}

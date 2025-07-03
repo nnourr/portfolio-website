@@ -6,6 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import Pill from './Pill';
 
 interface Skill {
   name: string;
@@ -122,12 +123,7 @@ function Skills({ className = '' }: SkillsProps) {
       {/* Skills grid */}
       <div className="flex flex-wrap gap-2 gap-y-1">
         {filteredSkills.map(skill => (
-          <div
-            key={skill.name}
-            className="bg-accent/20 rounded-md px-3 py-0.5 text-sm"
-          >
-            {skill.name}
-          </div>
+          <Pill key={skill.name}>{skill.name}</Pill>
         ))}
       </div>
     </div>

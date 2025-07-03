@@ -20,12 +20,12 @@ const Button: React.FC<ButtonProps> = ({
   const variantClasses = {
     primary: 'bg-bg/30 inset-shadow-glow/50',
     secondary: 'bg-contrast',
-    outline: 'border-2 border-accent ',
+    outline: 'border-1 border-secondary',
     ghost: 'px-0 py-0',
   };
 
   const sizeClasses = {
-    sm: 'px-2 py-1 text-base',
+    sm: 'px-2 py-1 text-sm',
     md: 'px-3 text-lg',
     lg: 'px-4 py-1 text-xl',
   };
