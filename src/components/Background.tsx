@@ -12,15 +12,29 @@ const Background: React.FC<BackgroundProps> = ({
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    let currentScrollY = 0;
     let ticking = false;
+    let lastCallTime = 0;
+    const throttleDelay = 16; // Throttle scroll detection
 
+    // Smooth animation tick
+    const tick = () => {
+      setScrollY(currentScrollY);
+      ticking = false;
+    };
+
+    // Throttled scroll handler - just captures scroll position
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
+      const now = Date.now();
+      if (now - lastCallTime >= throttleDelay) {
+        currentScrollY = window.scrollY;
+        lastCallTime = now;
+
+        // Request animation frame for smooth rendering
+        if (!ticking) {
+          requestAnimationFrame(tick);
+          ticking = true;
+        }
       }
     };
 
@@ -32,20 +46,14 @@ const Background: React.FC<BackgroundProps> = ({
   }, []);
 
   // Calculate parallax offset (background moves slower than scroll)
-  const parallaxOffset = scrollY * 0.5; // Adjust this multiplier to change parallax intensity
+  const parallaxOffset = scrollY * 0.2; // Adjust this multiplier to change parallax intensity
 
   return (
-    <div className={` ${className} bg-bg relative z-0 h-fit overflow-hidden`}>
-      {/* Parallax background layer - Light mode */}
+    <div
+      className={` ${className} bg-bg after:bg-pale-accent/10 dark:after:bg-pale-accent/15 relative z-0 h-fit overflow-hidden after:absolute after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:blur-xl`}
+    >
       <div
-        className="bg-pale-accent/20 stroke-pale-accent/50 pointer-events-none fixed -top-[1400vh] left-0 -z-10 h-[1500vh] w-full mask-[url('/tic-tac.svg')] mask-size-[8vh] md:mask-size-[6vh] dark:hidden"
-        style={{
-          transform: `translateY(${parallaxOffset}px)`,
-        }}
-      />
-      {/* Parallax background layer - Dark mode */}
-      <div
-        className="bg-pale-accent/20 stroke-pale-accent/50 pointer-events-none fixed -top-[1400vh] left-0 -z-10 hidden h-[1500vh] w-full mask-[url('/circuit-board.svg')] mask-size-[50vh] transition-transform duration-75 ease-linear dark:block"
+        className="bg-pale-accent/20 pointer-events-none fixed -top-[1400vh] left-0 -z-10 h-[1500vh] w-full mask-[url('/circuit-board.svg')] mask-size-[50vh] transition-transform duration-75 ease-linear"
         style={{
           transform: `translateY(${parallaxOffset}px)`,
         }}

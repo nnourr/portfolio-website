@@ -14,6 +14,7 @@ import { useDarkMode } from '../hooks/useDarkMode';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import type { BarItem } from '../models/BarItem';
+import { useBarHideStore } from '../stores/barHideStore';
 
 export const socialLinks: BarItem[] = [
   {
@@ -36,12 +37,12 @@ export const socialLinks: BarItem[] = [
   },
 ];
 export default function BottomBar() {
-  const { isScrolling: hide, setIsScrolling } = useScrollStore();
+  const { hide, setOpen } = useBarHideStore();
   const { toggle: toggleDarkMode } = useDarkMode();
   return (
     <div
       className={`fixed bottom-0 z-50 mx-auto flex w-full justify-center rounded-3xl transition-all duration-150`}
-      onClick={() => setTimeout(() => setIsScrolling(false), 10)}
+      onClick={() => setTimeout(setOpen, 10)}
     >
       <div
         className={`mb-12 flex w-fit items-end justify-center gap-4 text-xl`}

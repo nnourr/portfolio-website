@@ -7,7 +7,7 @@ interface ScrollState {
   setShowTopBar: (showTopBar: boolean) => void;
 }
 
-export const useScrollStore = create<ScrollState>((set, get) => {
+export const useScrollStore = create<ScrollState>(set => {
   let inactivityTimeout: NodeJS.Timeout | null = null;
 
   const setIsScrolling = (isScrolling: boolean) => {

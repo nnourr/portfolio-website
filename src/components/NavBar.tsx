@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import type { BarItem } from '../models/BarItem';
 import { useScrollStore } from '../stores/scrollStore';
+import { useBarHideStore } from '../stores/barHideStore';
 
 // Work experience cycling icons (company SVGs)
 export const workExperienceIcons = [
@@ -46,13 +47,13 @@ export const navLinks: BarItem[] = [
 ];
 
 export default function NavBar() {
-  const { isScrolling: hide, setIsScrolling } = useScrollStore();
+  const { hide, setOpen } = useBarHideStore();
   return (
     <div
       className={`fixed top-[50svh] right-2 z-50 h-fit -translate-y-1/2 transition-all duration-300 ${
         !hide ? 'w-11' : 'w-3'
       }`}
-      onClick={() => setTimeout(() => setIsScrolling(false), 10)}
+      onClick={() => setTimeout(setOpen, 10)}
     >
       <Glass layered={true}>
         <div
