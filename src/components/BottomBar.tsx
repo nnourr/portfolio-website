@@ -63,7 +63,7 @@ export default function BottomBar() {
             ))}
           </div>
         </Glass>
-        <Glass layered={true} className={`${!hide ? 'h-full' : 'h-1/4'} `}>
+        <Glass layered={true} className={`${!hide ? 'h-full' : 'h-3'} `}>
           <div
             className={`text-contrast z-20 flex flex-row gap-5 px-3 ${
               !hide ? 'items-center py-2.5' : 'items-end py-1'
@@ -74,20 +74,19 @@ export default function BottomBar() {
                 !hide && document.documentElement.classList.toggle('dark');
               }}
               variant="ghost"
+              className="text-contrast flex flex-col items-center gap-1"
             >
-              <div className="text-contrast flex flex-col items-center gap-0.5">
-                <FontAwesomeIcon
-                  icon={faMoon}
-                  key="moon"
-                  className="z-50 aspect-square dark:hidden!"
-                />
-                <FontAwesomeIcon
-                  icon={faSun}
-                  key="sun"
-                  className="z-50 hidden! aspect-square dark:block!"
-                />
-                <div className="bg-accent h-1 w-4/5 rounded-full opacity-50" />
-              </div>
+              <FontAwesomeIcon
+                icon={faMoon}
+                key="moon"
+                className="z-50 aspect-square dark:hidden!"
+              />
+              <FontAwesomeIcon
+                icon={faSun}
+                key="sun"
+                className="z-50 hidden! aspect-square dark:block!"
+              />
+              <div className="bg-accent h-1 w-4/5 rounded-full opacity-50" />
             </Button>
           </div>
         </Glass>

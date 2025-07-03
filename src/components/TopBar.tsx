@@ -6,7 +6,7 @@ const TopBar = () => {
   return (
     <div className="fixed top-0 left-0 z-50 mt-4 flex w-full justify-center">
       <div
-        className={`${showTopBar ? 'translate-y-0 opacity-100' : 'w-0 -translate-y-[200%] opacity-0'} bg-secondary absolute -top-[8rem] left-0 -z-10 h-24 w-full blur-2xl transition-all duration-150`}
+        className={`${showTopBar ? 'translate-y-0 opacity-100' : 'w-0 -translate-y-[200%] opacity-0'} bg-secondary absolute -top-[7rem] left-0 -z-10 h-24 w-full blur-2xl transition-all duration-150`}
       />
       <h1
         className={`animate-in fade-in decoration-accent z-50 underline ${showTopBar ? 'mt-4 flex w-[80%] px-4 py-2 text-2xl' : 'w-min text-5xl'} text-contrast relative font-black duration-200 active:scale-x-85 active:scale-y-95`}

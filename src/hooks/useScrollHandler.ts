@@ -6,7 +6,9 @@ export const useScrollHandler = () => {
 
   useEffect(() => {
     let previousScrollY = window.scrollY;
-    let scrollStartY = window.scrollY;
+
+    // Start initial timer by showing bar
+    setIsScrolling(false);
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -22,11 +24,10 @@ export const useScrollHandler = () => {
       const scrollDirection = currentScrollY > previousScrollY ? 'down' : 'up';
 
       if (scrollDirection === 'up') {
-        // User scrolled up - immediately set isScrolling to false
+        // User scrolled up - show bar (will auto-hide after 1s)
         setIsScrolling(false);
-        scrollStartY = currentScrollY; // Reset start point for next down scroll
       } else if (scrollDirection === 'down') {
-        // User scrolled down - check if we've moved 50px down from start point
+        // User scrolled down - immediately hide
         setIsScrolling(true);
       }
 
