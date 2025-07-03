@@ -44,7 +44,7 @@ function Project({
       {/* Header */}
       <div className="flex flex-col">
         <h3
-          className="decoration-accent text-xl leading-tight font-bold underline decoration-2"
+          className="decoration-accent w-fit text-xl leading-tight font-bold underline decoration-2"
           onClick={() => {
             window.open(links[0].url, '_blank');
           }}
@@ -58,7 +58,7 @@ function Project({
       </div>
 
       {/* Project Image */}
-      <div className="relative opacity-90 transition-all duration-300 ease-in-out active:scale-95">
+      <div className="relative opacity-90 transition-all duration-300 ease-in-out active:scale-x-85 active:scale-y-95">
         <img
           src={imageSrc}
           alt={imageAlt}
