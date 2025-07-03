@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from './Button';
 import Glass from './Glass';
 import { useScrollStore } from '../stores/scrollStore';
+import { useDarkMode } from '../hooks/useDarkMode';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import type { BarItem } from '../models/BarItem';
@@ -36,6 +37,7 @@ export const socialLinks: BarItem[] = [
 ];
 export default function BottomBar() {
   const { isScrolling: hide, setIsScrolling } = useScrollStore();
+  const { toggle: toggleDarkMode } = useDarkMode();
   return (
     <div
       className={`fixed bottom-0 z-50 mx-auto flex w-full justify-center rounded-3xl transition-all duration-150`}
@@ -71,7 +73,7 @@ export default function BottomBar() {
           >
             <Button
               onClick={() => {
-                !hide && document.documentElement.classList.toggle('dark');
+                !hide && toggleDarkMode();
               }}
               variant="ghost"
               className="text-contrast flex flex-col items-center gap-1"
