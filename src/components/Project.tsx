@@ -43,7 +43,12 @@ function Project({
     <div className={`flex flex-col gap-2 ${className}`}>
       {/* Header */}
       <div className="flex flex-col">
-        <h3 className="decoration-accent text-xl leading-tight font-bold underline decoration-2">
+        <h3
+          className="decoration-accent text-xl leading-tight font-bold underline decoration-2"
+          onClick={() => {
+            window.open(links[0].url, '_blank');
+          }}
+        >
           {title}
         </h3>
         <span className="text-contrast/70 text-sm">

@@ -18,10 +18,10 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = 'p-0 m-0';
 
   const variantClasses = {
-    primary: 'bg-bg/30 inset-shadow-glow/50',
-    secondary: 'bg-contrast',
-    outline: 'border-1 border-secondary',
-    ghost: 'px-0 py-0',
+    primary: 'inset-shadow-glow/50 shadow-md',
+    secondary: 'bg-contrast shadow-none',
+    outline: 'border-1 border-secondary shadow-none',
+    ghost: 'px-0 py-0 shadow-none',
   };
 
   const sizeClasses = {
@@ -45,7 +45,7 @@ const Button: React.FC<ButtonProps> = ({
         children
       ) : (
         <Glass
-          className={`underline-[inherit] ${variantClasses[variant]} ${sizeClasses[size]} *:text-decoration-inherit active:scale-95-sm relative top-0 left-0 z-0 w-fit overflow-hidden rounded-lg font-bold shadow-none transition-[transform_50ms,opacity_300ms]`}
+          className={`underline-[inherit] ${variantClasses[variant]} ${sizeClasses[size]} *:text-decoration-inherit active:scale-95-sm relative top-0 left-0 z-0 w-fit overflow-hidden rounded-lg font-bold transition-[transform_50ms,opacity_300ms]`}
         >
           {variant === 'primary' && (
             <>

@@ -23,11 +23,11 @@ function App() {
       <TopBar />
       {/* main content */}
       <div className="text-contrast bg-secondary/40 dark:bg-secondary/20 dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-md md:w-3xl dark:backdrop-blur-xs">
-        <div className="after:inset-shadow-glow animate-in fade-in relative overflow-hidden rounded-2xl opacity-90 duration-400 after:absolute after:top-0 after:left-0 after:h-full after:w-full">
+        <div className="after:inset-shadow-glow animate-in fade-in relative rounded-2xl opacity-90 shadow-md duration-400 after:absolute after:top-0 after:left-0 after:h-full after:w-full after:rounded-2xl">
           <img
             src="/headshotcropped.png"
             alt="me"
-            className="h-44 w-full object-cover"
+            className="h-44 w-full rounded-2xl object-cover"
           />
         </div>
         <p className="animate-in fade-in w-full text-xl font-bold duration-400">
