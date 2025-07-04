@@ -93,14 +93,17 @@ function Skills({ className = '' }: SkillsProps) {
       : skills.filter(skill => skill.category === selectedCategory);
 
   return (
-    <div id="skills" className={`flex flex-col gap-4 ${className}`}>
+    <div
+      id="skills"
+      className={`md:bg-secondary/30 flex flex-col gap-4 md:rounded-2xl md:px-6 md:py-4 md:shadow-md md:backdrop-blur-xs ${className}`}
+    >
       {/* Header with title and dropdown */}
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <h2 className="decoration-accent cursor-default text-2xl font-bold underline decoration-2 md:text-3xl">
             skills
           </h2>
-          <div className="bg-accent aspect-square h-4 rounded-full"></div>
+          <div className="bg-accent h-4 w-4 rounded-full transition-all duration-300 ease-in-out active:h-3 active:w-12"></div>
         </div>
 
         <Select

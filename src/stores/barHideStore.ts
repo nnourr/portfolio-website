@@ -3,6 +3,8 @@ import { create } from 'zustand';
 interface BarHideState {
   hide: boolean;
   setOpen: () => void;
+  keepOpen: () => void;
+  close: () => void;
 }
 
 export const useBarHideStore = create<BarHideState>(set => {
@@ -24,8 +26,25 @@ export const useBarHideStore = create<BarHideState>(set => {
     }, 2000);
   };
 
+  const keepOpen = () => {
+    if (inactivityTimeout) {
+      clearTimeout(inactivityTimeout);
+    }
+
+    set({ hide: false });
+  };
+
+  const close = () => {
+    if (inactivityTimeout) {
+      clearTimeout(inactivityTimeout);
+    }
+    set({ hide: true });
+  };
+
   return {
     hide: false,
     setOpen,
+    keepOpen,
+    close,
   };
 });

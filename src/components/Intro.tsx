@@ -3,7 +3,7 @@ import QuickButton from './QuickButton';
 
 export default function Intro() {
   return (
-    <div className="mx-auto mt-24 hidden w-5xl max-w-11/12 md:flex lg:mt-32">
+    <div className="3xl:mt-32 mx-auto mt-24 hidden w-5xl max-w-11/12 md:flex">
       <Glass
         className="z-10 w-3/5 rounded-e-none px-8 py-4 lg:w-1/2 lg:py-2"
         layered={true}
@@ -13,9 +13,11 @@ export default function Intro() {
         <div className="z-20 flex flex-col gap-2">
           <h1 className="decoration-accent w-min text-6xl font-bold underline decoration-[6px] underline-offset-4 lg:text-7xl">
             <span>Noureldeen</span>
-            <span className={`flex w-full items-center justify-center gap-2`}>
+            <span className={`flex w-full items-center justify-start gap-2`}>
               Ahmed
-              <div className={`bg-accent mb-2 h-12 w-full rounded-full`} />
+              <div
+                className={`bg-accent mb-2 h-12 w-full origin-left rounded-full transition-all duration-300 ease-in-out active:h-10 active:w-32`}
+              />
             </span>
           </h1>
           <p className="font-sans text-xl font-bold lg:text-2xl">

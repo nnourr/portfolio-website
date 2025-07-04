@@ -22,7 +22,7 @@ function App() {
       <TopBar />
       <BottomBar />
       <Intro />
-      <div className="text-contrast bg-secondary/40 dark:bg-secondary/20 dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs md:mt-8 md:w-2xl md:px-8 md:py-6 md:shadow-lg">
+      <div className="text-contrast bg-secondary/40 dark:bg-secondary/20 dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs md:mt-8 md:w-2xl md:bg-transparent! md:px-0 md:py-0 md:shadow-none md:inset-shadow-none! md:backdrop-blur-none!">
         <div className="flex flex-col gap-4 md:hidden">
           <div className="after:inset-shadow-glow animate-in fade-in relative rounded-2xl opacity-90 shadow-md duration-400 ease-in-out after:absolute after:top-0 after:left-0 after:h-full after:w-full after:rounded-2xl active:scale-x-85 active:scale-y-95">
             <img
@@ -63,7 +63,7 @@ function App() {
           </div>
         </div>
         <Section title="about me" className="animate-in fade-in duration-400">
-          <div className="flex flex-col gap-2 font-sans text-base">
+          <div className="flex flex-col gap-2 font-sans text-base md:px-4 md:pb-2">
             <p>
               I'm a builder, tinkerer, and <strong>full-stack developer</strong>{' '}
               who loves turning wild ideas into real, working software. I've
@@ -85,7 +85,7 @@ function App() {
           id="work-exp"
           className="animate-in fade-in duration-400"
         >
-          <div className="mt-2 flex flex-col gap-2 md:gap-4">
+          <div className="mt-2 flex flex-col gap-6 md:gap-2">
             <Experience
               logoSrc={'/lmai.svg'}
               company={'LearningModeAI'}
@@ -93,6 +93,7 @@ function App() {
               position={'Founding Engineer'}
               startDate={'Jan 2025'}
               endDate={'present'}
+              blogLink={'https://blog.example.com'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>
@@ -109,6 +110,7 @@ function App() {
               startDate={'Jan 2024'}
               endDate={'Aug 2024'}
               companyLink={'https://ecobee.com'}
+              blogLink={'https://blog.example.com'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>
@@ -129,6 +131,7 @@ function App() {
               startDate={'May 2023'}
               endDate={'Aug 2023'}
               companyLink={'https://rbc.com'}
+              blogLink={'https://blog.example.com'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>
@@ -146,6 +149,7 @@ function App() {
               startDate={'Sept 2022'}
               endDate={'Dec 2022'}
               companyLink={'https://system1.com'}
+              blogLink={'https://blog.example.com'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>
@@ -163,6 +167,7 @@ function App() {
               startDate={'Sept 2022'}
               endDate={'Dec 2022'}
               companyLink={'https://www.egyptianbanks.com/'}
+              blogLink={'https://blog.example.com'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>
@@ -211,8 +216,8 @@ function App() {
           id="passion-proj"
           className="animate-in fade-in duration-400"
         >
-          <span>this is my favorite section :)</span>
-          <div className="mt-4 flex flex-col gap-3 md:mt-2 md:gap-5">
+          <span className="md:px-4">this is my favorite section :)</span>
+          <div className="mt-4 flex flex-col gap-6 md:mt-2 md:flex-row md:flex-wrap md:gap-5">
             <Project
               title="Plant Together"
               startDate="Jan 2025"
@@ -340,7 +345,7 @@ function App() {
               imageSrc="/explorenasa.png"
               reverse
               imageAlt="Explore NASA"
-              techStack={['React', 'netlify', 'NASA API']}
+              techStack={['React', 'Netlify', 'NASA API']}
               links={[
                 {
                   label: 'github',

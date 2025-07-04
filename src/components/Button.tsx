@@ -15,7 +15,8 @@ const Button: React.FC<ButtonProps> = ({
   size = 'md',
   ...props
 }) => {
-  const baseClasses = 'p-0 m-0';
+  const baseClasses =
+    'p-0 m-0 hover:scale-105 transition-all duration-150 ease-in-out';
 
   const variantClasses = {
     primary: 'bg-bg/30 inset-shadow-glow/50 shadow-md',

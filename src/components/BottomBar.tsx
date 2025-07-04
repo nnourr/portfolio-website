@@ -37,7 +37,7 @@ export const socialLinks: BarItem[] = [
   },
 ];
 export default function BottomBar() {
-  const { hide, setOpen } = useBarHideStore();
+  const { hide, setOpen, keepOpen, close } = useBarHideStore();
   const { toggle: toggleDarkMode } = useDarkMode();
   return (
     <div
@@ -45,7 +45,15 @@ export default function BottomBar() {
       onClick={() => setTimeout(setOpen, 10)}
     >
       <div
-        className={`mb-12 flex w-fit items-end justify-center gap-4 text-xl`}
+        className="absolute right-1/2 bottom-4 h-16 w-52 translate-x-1/2 md:bottom-2 md:h-20 md:w-64"
+        onMouseEnter={keepOpen}
+        onMouseLeave={close}
+        onClick={() => setTimeout(setOpen, 10)}
+      />
+      <div
+        className={`mb-12 flex w-fit items-end justify-center gap-4 text-xl md:mb-8 md:text-3xl`}
+        onMouseEnter={keepOpen}
+        onMouseLeave={close}
       >
         <Glass layered={true} className={`${!hide ? 'h-full' : 'h-3'}`}>
           <div
@@ -58,18 +66,18 @@ export default function BottomBar() {
                 key={link.key}
                 href={hide ? undefined : link.href}
                 target="_blank"
-                className="z-20 flex flex-col items-center gap-1"
+                className="md:hover:bg-secondary group z-20 flex origin-bottom flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:px-2"
               >
                 <FontAwesomeIcon className="aspect-square" icon={link.icon} />
-                <div className="bg-accent h-1 w-4/5 rounded-full opacity-50" />
+                <div className="bg-accent h-1 w-4/5 rounded-full opacity-50 group-hover:opacity-90" />
               </a>
             ))}
           </div>
         </Glass>
         <Glass layered={true} className={`${!hide ? 'h-full' : 'h-3'} `}>
           <div
-            className={`text-contrast z-20 flex flex-row gap-5 px-3 ${
-              !hide ? 'items-center py-2.5' : 'items-end py-1'
+            className={`text-contrast z-20 flex flex-row gap-5 ${
+              !hide ? 'items-center' : 'items-end'
             }`}
           >
             <Button
@@ -77,24 +85,26 @@ export default function BottomBar() {
                 !hide && toggleDarkMode();
               }}
               variant="ghost"
-              className="text-contrast flex flex-col items-center gap-1"
+              className={`md:hover:bg-contrast group z-20 flex flex-col items-center gap-1 px-3 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-lg ${
+                !hide ? 'py-2.5' : 'py-1'
+              }`}
             >
               <FontAwesomeIcon
                 icon={faMoon}
                 key="moon"
-                className="z-50 aspect-square dark:hidden!"
+                className="z-50 aspect-square md:group-hover:invert dark:hidden!"
               />
               <FontAwesomeIcon
                 icon={faSun}
                 key="sun"
-                className="z-50 hidden! aspect-square dark:block!"
+                className="z-50 hidden! aspect-square md:group-hover:invert dark:block!"
               />
-              <div className="bg-accent h-1 w-4/5 rounded-full opacity-50" />
+              <div className="bg-accent h-1 w-4/5 rounded-full opacity-50 md:group-hover:opacity-90" />
             </Button>
           </div>
         </Glass>
       </div>
-      <div className="bg-secondary absolute -bottom-16 left-0 h-24 w-full blur-xl" />
+      <div className="bg-secondary absolute -bottom-16 left-0 h-24 w-full blur-xl md:h-20" />
     </div>
   );
 }

@@ -36,7 +36,7 @@ function Project({
 }: ProjectProps) {
   return (
     <div
-      className={`flex flex-col gap-2 ${className} ${reverse && 'md:gap-0'}`}
+      className={`flex flex-col gap-2 ${className} ${reverse && 'md:gap-0'} md:hover:bg-secondary/40 rounded-xl transition-all duration-300 ease-in-out md:px-4 md:py-2`}
     >
       {/* Header */}
       <div className="flex flex-col">
@@ -88,7 +88,7 @@ function Project({
                 key={link.label}
                 variant="outline"
                 size="sm"
-                className="flex items-center gap-2 transition-opacity hover:opacity-70"
+                className="flex items-center gap-2"
                 onClick={() => window.open(link.url, '_blank')}
               >
                 <FontAwesomeIcon icon={link.icon} />

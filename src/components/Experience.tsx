@@ -6,6 +6,7 @@ interface ExperienceProps {
   logoSrc?: string;
   className?: string;
   companyLink?: string;
+  blogLink?: string;
   children?: React.ReactNode;
 }
 
@@ -17,10 +18,13 @@ function Experience({
   logoSrc,
   className = '',
   companyLink,
+  blogLink,
   children,
 }: ExperienceProps) {
   return (
-    <div className={`text-contrast ${className}`}>
+    <div
+      className={`text-contrast md:hover:bg-secondary/40 rounded-xl transition-all duration-300 ease-in-out md:px-4 md:py-2 ${className}`}
+    >
       {/* Header with logo, company info, and date */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2 md:gap-4">
@@ -59,12 +63,15 @@ function Experience({
       {/* Description */}
       <div className="font-sans text-sm leading-relaxed md:ml-14 md:w-1/2 md:text-base">
         {children}
-        <a
-          className="text-accent md:outline-contrast/20 md:text-accent cursor-pointer text-nowrap md:rounded-full md:px-2 md:outline-1"
-          onClick={() => alert('Blog coming soon!')}
-        >
-          read more
-        </a>
+        {blogLink && (
+          <a
+            href={blogLink}
+            target="_blank"
+            className="text-accent hover:text-accent/75 cursor-pointer transition-all duration-150 ease-in-out"
+          >
+            read more
+          </a>
+        )}
       </div>
     </div>
   );
