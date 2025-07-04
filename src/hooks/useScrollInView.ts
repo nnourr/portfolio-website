@@ -13,7 +13,11 @@ export const useScrollInView = <T extends HTMLElement = HTMLElement>(
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<T>(null);
 
-  const { threshold = 0.1, rootMargin = '-50px', triggerOnce = true } = options;
+  const {
+    threshold = 0.1,
+    rootMargin = '-100px',
+    triggerOnce = true,
+  } = options;
 
   useEffect(() => {
     const element = ref.current;

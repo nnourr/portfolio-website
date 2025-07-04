@@ -12,7 +12,7 @@ function Section({ title, children, className, ...props }: SectionProps) {
   return (
     <section
       ref={ref}
-      className={`md:bg-secondary/30 flex scroll-m-24 flex-col transition-all duration-700 ease-out md:rounded-2xl md:px-2 md:py-4 md:shadow-md md:backdrop-blur-xs ${
+      className={`md:bg-secondary/30 flex scroll-m-24 flex-col transition-all duration-700 ease-out md:scroll-m-52 md:rounded-2xl md:px-2 md:py-4 md:shadow-md md:backdrop-blur-xs ${
         isInView
           ? 'md:translate-x-0 md:opacity-100'
           : 'md:translate-x-20 md:opacity-0'
