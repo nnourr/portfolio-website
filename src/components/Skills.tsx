@@ -7,6 +7,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import Pill from './Pill';
+import { useScrollInView } from '../hooks/useScrollInView';
 
 interface Skill {
   name: string;
@@ -86,6 +87,7 @@ interface SkillsProps {
 function Skills({ className = '' }: SkillsProps) {
   const [selectedCategory, setSelectedCategory] =
     useState<CategoryFilter>('all');
+  const { ref, isInView } = useScrollInView<HTMLDivElement>();
 
   const filteredSkills =
     selectedCategory === 'all'
@@ -94,8 +96,13 @@ function Skills({ className = '' }: SkillsProps) {
 
   return (
     <div
+      ref={ref}
       id="skills"
-      className={`md:bg-secondary/30 flex flex-col gap-4 md:rounded-2xl md:px-6 md:py-4 md:shadow-md md:backdrop-blur-xs ${className}`}
+      className={`md:bg-secondary/30 flex flex-col gap-4 transition-all duration-700 ease-out md:rounded-2xl md:px-6 md:py-4 md:shadow-md md:backdrop-blur-xs ${
+        isInView
+          ? 'md:translate-x-0 md:opacity-100'
+          : 'md:translate-x-20 md:opacity-0'
+      } ${className}`}
     >
       {/* Header with title and dropdown */}
       <div className="flex items-center justify-between gap-4">

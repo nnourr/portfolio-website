@@ -62,7 +62,7 @@ function App() {
             </QuickButton>
           </div>
         </div>
-        <Section title="about me" className="animate-in fade-in duration-400">
+        <Section title="about me">
           <div className="flex flex-col gap-2 font-sans text-base md:px-4 md:pb-2">
             <p>
               I'm a builder, tinkerer, and <strong>full-stack developer</strong>{' '}
@@ -80,11 +80,7 @@ function App() {
           </div>
         </Section>
         <Separator className="mx-auto w-3/4!" />
-        <Section
-          title="work experience"
-          id="work-exp"
-          className="animate-in fade-in duration-400"
-        >
+        <Section title="work experience" id="work-exp">
           <div className="mt-2 flex flex-col gap-6 md:gap-2">
             <Experience
               logoSrc={'/lmai.svg'}
@@ -178,11 +174,7 @@ function App() {
           </div>
         </Section>
         <Separator className="mx-auto w-3/4!" />
-        <Section
-          title="education"
-          id="education"
-          className="animate-in fade-in duration-400"
-        >
+        <Section title="education" id="education">
           <Experience
             company="University of Guelph"
             position="Bachelor of Computing"
@@ -209,13 +201,9 @@ function App() {
           </Experience>
         </Section>
         <Separator className="mx-auto w-3/4!" />
-        <Skills className="animate-in fade-in duration-400" />
+        <Skills />
         <Separator className="mx-auto w-3/4!" />
-        <Section
-          title="passion projects"
-          id="passion-proj"
-          className="animate-in fade-in duration-400"
-        >
+        <Section title="passion projects" id="passion-proj">
           <span className="md:px-4">this is my favorite section :)</span>
           <div className="mt-4 flex flex-col gap-6 md:mt-2 md:flex-row md:flex-wrap md:gap-5">
             <Project

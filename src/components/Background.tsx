@@ -39,7 +39,9 @@ const Background: React.FC<BackgroundProps> = ({
     };
 
     // Add scroll event listener
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (window.innerWidth > 1024) {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
 
     // Cleanup
     return () => window.removeEventListener('scroll', handleScroll);
@@ -53,7 +55,7 @@ const Background: React.FC<BackgroundProps> = ({
       className={` ${className} bg-bg after:bg-pale-accent/10 dark:after:bg-pale-accent/10 relative z-0 h-fit overflow-hidden after:absolute after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:blur-xl md:after:hidden`}
     >
       <div
-        className="bg-pale-accent/10 dark:bg-pale-accent/15 pointer-events-none fixed -top-[1400vh] left-0 -z-10 h-[1500vh] w-full mask-[url('/circuit-board.svg')] mask-size-[50vh] transition-transform duration-75 ease-linear"
+        className="bg-pale-accent/10 dark:bg-pale-accent/15 pointer-events-none fixed -top-[500vh] left-0 -z-10 h-[600vh] w-full mask-[url('/circuit-board.svg')] mask-size-[50vh] transition-transform duration-75 ease-linear"
         style={{
           transform: `translateY(${parallaxOffset}px)`,
         }}
