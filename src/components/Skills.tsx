@@ -97,7 +97,7 @@ function Skills({ className = '' }: SkillsProps) {
       {/* Header with title and dropdown */}
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <h2 className="decoration-accent text-2xl font-bold underline decoration-2">
+          <h2 className="decoration-accent cursor-default text-2xl font-bold underline decoration-2 md:text-3xl">
             skills
           </h2>
           <div className="bg-accent aspect-square h-4 rounded-full"></div>
@@ -107,7 +107,7 @@ function Skills({ className = '' }: SkillsProps) {
           value={selectedCategory}
           onValueChange={value => setSelectedCategory(value as CategoryFilter)}
         >
-          <SelectTrigger className="border-accent/30 w-48 border-2 bg-transparent transition-all duration-300 active:scale-95">
+          <SelectTrigger className="border-accent/30 w-48 cursor-pointer border-2 bg-transparent transition-all duration-300 active:scale-95">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -121,7 +121,7 @@ function Skills({ className = '' }: SkillsProps) {
       </div>
 
       {/* Skills grid */}
-      <div className="flex flex-wrap gap-2 gap-y-1">
+      <div className="flex flex-wrap gap-2 gap-y-1 md:gap-y-2">
         {filteredSkills.map(skill => (
           <Pill key={skill.name}>{skill.name}</Pill>
         ))}

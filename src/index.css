@@ -10,9 +10,13 @@
   --color-contrast: #202020;
   --color-secondary: #ffffff;
   --font-courier: 'Courier Prime', 'Courier New', Courier, monospace;
+  --font-sans: 'Space Grotesk', sans-serif;
   --inset-shadow-glow:
     inset 15px 0 15px -10px var(--color-secondary),
     inset -15px 0 15px -10px var(--color-secondary);
+
+  /* Custom Shadow */
+  --shadow-glass: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -35,6 +39,16 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 80%, transparent);
+  color: var(--color-secondary);
+}
+
+::-moz-selection {
+  background-color: color-mix(in srgb, var(--color-accent) 80%, transparent);
+  color: var(--color-secondary);
 }
 
 @theme inline {
@@ -124,4 +138,10 @@ html {
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* global.css */
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
 }

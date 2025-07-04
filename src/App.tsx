@@ -11,57 +11,59 @@ import Project from './components/Project';
 import { Separator } from './components/ui/separator';
 import { faGithub, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { faFileAlt, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import Intro from './components/Intro';
 
 function App() {
   useScrollHandler();
 
   return (
-    <Background className={`font-courier pb-24`}>
+    <Background className={`font-courier text-contrast pb-24`}>
       <NavBar />
-      <BottomBar />
-      {/* top bar */}
       <TopBar />
-      {/* main content */}
-      <div className="text-contrast bg-secondary/40 dark:bg-secondary/20 dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-md md:w-3xl dark:backdrop-blur-xs">
-        <div className="after:inset-shadow-glow animate-in fade-in relative rounded-2xl opacity-90 shadow-md duration-400 ease-in-out after:absolute after:top-0 after:left-0 after:h-full after:w-full after:rounded-2xl active:scale-x-85 active:scale-y-95">
-          <img
-            src="/headshotcropped.png"
-            alt="me"
-            className="h-44 w-full rounded-2xl object-cover"
-          />
-        </div>
-        <p className="animate-in fade-in w-full text-xl font-bold duration-400">
-          A Software Engineering graduate with 3 years of experience doing what
-          I love.
-        </p>
-        <div className="group/button animate-in fade-in flex w-fit flex-col gap-2 duration-400">
-          <QuickButton
-            className="group-hover/button:opacity-60 hover:!opacity-100"
-            onClick={() => {
-              window.open('/Noureldeen_Ahmed_Resume.pdf', '_blank');
-            }}
-          >
-            view resume
-          </QuickButton>
-          <QuickButton
-            className="group-hover/button:opacity-60 hover:!opacity-100"
-            onClick={() => {
-              window.location.href = '#work-exp';
-            }}
-          >
-            work experience
-          </QuickButton>
-          <QuickButton
-            className="group-hover/button:opacity-60 hover:!opacity-100"
-            onClick={() => {
-              window.location.href = '#passion-proj';
-            }}
-          >
-            passion projects
-          </QuickButton>
+      <BottomBar />
+      <Intro />
+      <div className="text-contrast bg-secondary/40 dark:bg-secondary/20 dark:inset-shadow-glow/20 mx-auto my-2 flex h-fit min-h-screen w-[95%] flex-col gap-4 rounded-xl px-4 pt-28 pb-4 backdrop-blur-xs md:mt-8 md:w-2xl md:px-8 md:py-6 md:shadow-lg">
+        <div className="flex flex-col gap-4 md:hidden">
+          <div className="after:inset-shadow-glow animate-in fade-in relative rounded-2xl opacity-90 shadow-md duration-400 ease-in-out after:absolute after:top-0 after:left-0 after:h-full after:w-full after:rounded-2xl active:scale-x-85 active:scale-y-95">
+            <img
+              src="/headshotcropped.png"
+              alt="me"
+              className="h-44 w-full rounded-2xl object-cover"
+            />
+          </div>
+          <p className="animate-in fade-in w-full font-sans text-xl font-bold duration-400">
+            A Software Engineering graduate with 3 years of experience doing
+            what I love.
+          </p>
+          <div className="group/button animate-in fade-in flex w-fit flex-col gap-2 duration-400">
+            <QuickButton
+              className="group-hover/button:opacity-60 hover:!opacity-100"
+              onClick={() => {
+                window.open('/Noureldeen_Ahmed_Resume.pdf', '_blank');
+              }}
+            >
+              view resume
+            </QuickButton>
+            <QuickButton
+              className="group-hover/button:opacity-60 hover:!opacity-100"
+              onClick={() => {
+                window.location.href = '#work-exp';
+              }}
+            >
+              work experience
+            </QuickButton>
+            <QuickButton
+              className="group-hover/button:opacity-60 hover:!opacity-100"
+              onClick={() => {
+                window.location.href = '#passion-proj';
+              }}
+            >
+              passion projects
+            </QuickButton>
+          </div>
         </div>
         <Section title="about me" className="animate-in fade-in duration-400">
-          <div className="flex flex-col gap-2 text-sm">
+          <div className="flex flex-col gap-2 font-sans text-base">
             <p>
               I'm a builder, tinkerer, and <strong>full-stack developer</strong>{' '}
               who loves turning wild ideas into real, working software. I've
@@ -83,7 +85,7 @@ function App() {
           id="work-exp"
           className="animate-in fade-in duration-400"
         >
-          <div className="mt-2 flex flex-col gap-2">
+          <div className="mt-2 flex flex-col gap-2 md:gap-4">
             <Experience
               logoSrc={'/lmai.svg'}
               company={'LearningModeAI'}
@@ -186,10 +188,18 @@ function App() {
             className="mt-2"
           >
             <ul className="marker:text-accent list-inside list-none">
-              <li>Major in Software Engineering</li>
-              <li>Minor in Project Management</li>
-              <li>Graduated with Honors</li>
-              <li>GPA: 3.7/4.0</li>
+              <li>
+                Major in <strong>Software Engineering</strong>
+              </li>
+              <li>
+                Minor in <strong>Project Management</strong>
+              </li>
+              <li>
+                Graduated with <strong>Honors</strong>
+              </li>
+              <li>
+                GPA: <strong>3.7/4.0</strong>
+              </li>
             </ul>
           </Experience>
         </Section>
@@ -202,7 +212,7 @@ function App() {
           className="animate-in fade-in duration-400"
         >
           <span>this is my favorite section :)</span>
-          <div className="mt-4 flex flex-col gap-3">
+          <div className="mt-4 flex flex-col gap-3 md:mt-2 md:gap-5">
             <Project
               title="Plant Together"
               startDate="Jan 2025"
@@ -251,6 +261,7 @@ function App() {
               endDate="Aug 2024"
               imageSrc="/musiccircle.png"
               imageAlt="Music Circle"
+              reverse
               techStack={[
                 'React',
                 'ExpressJS',
@@ -327,6 +338,7 @@ function App() {
               title="Explore NASA"
               startDate="Jan 2022"
               imageSrc="/explorenasa.png"
+              reverse
               imageAlt="Explore NASA"
               techStack={['React', 'netlify', 'NASA API']}
               links={[

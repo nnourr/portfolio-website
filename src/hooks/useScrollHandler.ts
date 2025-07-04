@@ -3,6 +3,7 @@ import { useScrollStore } from '../stores/scrollStore';
 
 export const useScrollHandler = () => {
   const { setIsScrolling, setShowTopBar } = useScrollStore();
+  const isWide = window.innerWidth > 768;
 
   useEffect(() => {
     setIsScrolling(false);
@@ -10,7 +11,7 @@ export const useScrollHandler = () => {
       const currentScrollY = window.scrollY;
 
       // Handle top bar visibility
-      if (currentScrollY > 10) {
+      if (currentScrollY > (isWide ? 200 : 10)) {
         setShowTopBar(true);
       } else {
         setShowTopBar(false);
