@@ -5,10 +5,13 @@ import {
   faGraduationCap,
   faHome,
   faRocket,
+  faNewspaper,
 } from '@fortawesome/free-solid-svg-icons';
 import type { BarItem } from '../models/BarItem';
 import { useScrollStore } from '../stores/scrollStore';
 import { useBarHideStore } from '../stores/barHideStore';
+import { useNavigate, useLocation } from 'react-router-dom';
+import Button from './Button';
 
 // Work experience cycling icons (company SVGs)
 export const workExperienceIcons = [
@@ -25,30 +28,66 @@ export const navLinks: BarItem[] = [
     icon: faHome,
     key: 'home',
     label: 'Home',
+    sectionId: 'root',
   },
   {
     href: '#work-exp',
     icon: faRocket, // This will be overridden by cycling icons
     key: 'work-exp',
     label: 'Work Experience',
+    sectionId: 'work-exp',
   },
   {
     href: '#education',
     icon: faGraduationCap,
     key: 'education',
     label: 'Education',
+    sectionId: 'education',
   },
   {
     href: '#passion-proj',
     icon: faRocket,
     key: 'passion-proj',
     label: 'Passion Projects',
+    sectionId: 'passion-proj',
+  },
+  {
+    href: '#/blog',
+    icon: faNewspaper,
+    key: 'blog',
+    label: 'Blog',
+    route: '/blog',
   },
 ];
 
 export default function NavBar() {
   const { hide, setOpen, keepOpen, close } = useBarHideStore();
   const { showTopBar } = useScrollStore();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (link: BarItem) => {
+    if (link.route) {
+      // Navigate to the specified route
+      navigate(link.route);
+    } else if (link.sectionId) {
+      // Navigate to home if not already there
+      if (location.pathname !== '/') {
+        navigate('/');
+      }
+
+      // Scroll to the target element
+      setTimeout(
+        () => {
+          const element = document.getElementById(link.sectionId!);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        },
+        location.pathname !== '/' ? 100 : 0
+      );
+    }
+  };
   return (
     <div
       className={`pointer-events-none fixed top-0 right-0 z-50 h-full w-full transition-all duration-300 md:right-1/2 md:translate-x-1/2 xl:max-w-11/12 ${
@@ -76,9 +115,10 @@ export default function NavBar() {
             }`}
           >
             {navLinks.map(link => (
-              <a
+              <Button
+                variant="ghost"
                 key={link.key}
-                href={hide ? undefined : link.href}
+                onClick={() => !hide && handleNavigation(link)}
                 className={`group z-20 flex origin-right flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:py-2 ${
                   !hide ? 'flex-col' : 'flex-row-reverse'
                 }`}
@@ -98,7 +138,7 @@ export default function NavBar() {
                     !hide ? 'h-1 w-4/5' : 'h-3/4 w-1'
                   }`}
                 />
-              </a>
+              </Button>
             ))}
           </div>
         </Glass>

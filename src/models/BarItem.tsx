@@ -5,4 +5,6 @@ export interface BarItem {
   icon: IconDefinition;
   key: string;
   label: string;
+  sectionId?: string;
+  route?: string;
 }
