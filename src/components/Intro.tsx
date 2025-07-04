@@ -3,7 +3,7 @@ import QuickButton from './QuickButton';
 
 export default function Intro() {
   return (
-    <div className="3xl:mt-32 mx-auto mt-24 hidden w-5xl max-w-11/12 md:flex">
+    <div className="mx-auto mt-24 hidden w-5xl max-w-11/12 transition-all duration-300 ease-in-out active:scale-x-85 active:scale-y-95 md:flex">
       <Glass
         className="z-10 w-3/5 rounded-e-none px-8 py-4 lg:w-1/2 lg:py-2"
         layered={true}
