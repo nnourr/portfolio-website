@@ -9,6 +9,12 @@ on:
       - react-rewrite
   workflow_dispatch:
 
+# Required permissions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy-frontend:
     environment:
