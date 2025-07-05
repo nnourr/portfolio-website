@@ -29,9 +29,6 @@ jobs:
       - name: Build the Angular project
         run: npm run build -- --output-path=dist
 
-      - name: Create CNAME file
-        run: echo "nnourr.tech" > dist/CNAME
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
