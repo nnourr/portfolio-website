@@ -22,7 +22,7 @@ export default function NavBar({ children, className }: NavBarProps) {
         className="pointer-events-auto absolute top-[50svh] right-0 h-56 w-16 -translate-y-1/2 md:h-64 md:w-20"
         onMouseEnter={keepOpen}
         onMouseLeave={close}
-        onClick={() => setTimeout(setOpen, 10)}
+        onClick={() => setTimeout(setOpen, 50)}
       />
       <div
         className={`pointer-events-auto absolute top-[50svh] right-2 -translate-y-1/2 transition-all duration-300 ${
@@ -30,8 +30,8 @@ export default function NavBar({ children, className }: NavBarProps) {
         } ${!showTopBar && 'xl:right-8'} `}
         onMouseEnter={keepOpen}
         onMouseLeave={close}
-        onClick={() => setTimeout(setOpen, 10)}
-        onFocus={() => setTimeout(setOpen, 10)}
+        onClick={() => setTimeout(setOpen, 50)}
+        onFocus={() => setTimeout(setOpen, 50)}
       >
         <Glass layered={true}>
           <div

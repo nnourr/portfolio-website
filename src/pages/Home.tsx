@@ -17,7 +17,7 @@ function Home() {
   useShowTopBar();
 
   return (
-    <Background className={`font-courier text-contrast pb-24`}>
+    <Background className={`font-courier text-contrast`}>
       <HomeNavBar />
       <TopBar />
       <BottomBar />
@@ -147,7 +147,7 @@ function Home() {
               startDate={'Sept 2022'}
               endDate={'Dec 2022'}
               companyLink={'https://system1.com'}
-              blogLink={'https://blog.example.com'}
+              blogLink={'/blog/system1'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>
@@ -165,7 +165,7 @@ function Home() {
               startDate={'Sept 2022'}
               endDate={'Dec 2022'}
               companyLink={'https://www.egyptianbanks.com/'}
-              blogLink={'https://blog.example.com'}
+              blogLink={'/blog/ebc'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>

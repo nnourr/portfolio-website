@@ -8,7 +8,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import type { BarItem } from '../models/BarItem';
 import { useBarHideStore } from '../stores/barHideStore';
 
-export const socialLinks: BarItem[] = [
+const socialLinks: BarItem[] = [
   {
     href: 'https://github.com/nnourr',
     icon: faGithub,
@@ -34,14 +34,14 @@ export default function BottomBar() {
   return (
     <div
       className={`fixed bottom-0 z-50 mx-auto flex w-full justify-center rounded-3xl transition-all duration-150`}
-      onClick={() => setTimeout(setOpen, 10)}
-      onFocus={() => setTimeout(setOpen, 10)}
+      onClick={() => setTimeout(setOpen, 50)}
+      onFocus={() => setTimeout(setOpen, 50)}
     >
       <div
         className="absolute right-1/2 bottom-4 h-16 w-52 translate-x-1/2 md:bottom-2 md:h-20 md:w-64"
         onMouseEnter={keepOpen}
         onMouseLeave={close}
-        onClick={() => setTimeout(setOpen, 10)}
+        onClick={() => setTimeout(setOpen, 50)}
       />
       <div
         className={`mb-12 flex w-fit items-end justify-center gap-4 text-xl md:mb-8 md:text-2xl`}
@@ -75,7 +75,7 @@ export default function BottomBar() {
           >
             <Button
               onClick={() => {
-                !hide && toggleDarkMode();
+                if (!hide) toggleDarkMode();
               }}
               variant="ghost"
               className={`md:hover:bg-contrast group z-20 flex flex-col items-center gap-1 px-3 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-lg ${
@@ -90,7 +90,9 @@ export default function BottomBar() {
               <FontAwesomeIcon
                 icon={faSun}
                 key="sun"
-                className="z-50 hidden! aspect-square md:group-hover:invert dark:block!"
+                className={`z-50 hidden! aspect-square md:group-hover:invert dark:block! ${
+                  hide ? 'opacity-0' : 'opacity-100'
+                }`}
               />
               <div className="bg-accent h-1 w-4/5 rounded-full opacity-50 md:group-hover:opacity-90" />
             </Button>

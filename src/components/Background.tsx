@@ -1,3 +1,5 @@
+import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 
 interface BackgroundProps {
@@ -52,7 +54,7 @@ const Background: React.FC<BackgroundProps> = ({
 
   return (
     <div
-      className={` ${className} bg-bg after:bg-pale-accent/10 dark:after:bg-pale-accent/10 relative z-0 h-fit overflow-hidden after:absolute after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:blur-xl md:after:hidden`}
+      className={` ${className} bg-bg after:bg-pale-accent/10 dark:after:bg-pale-accent/10 relative z-0 h-fit overflow-hidden pb-20 after:absolute after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:blur-xl md:after:hidden`}
     >
       <div
         className="bg-pale-accent/10 dark:bg-pale-accent/15 pointer-events-none fixed -top-[500vh] left-0 -z-10 h-[600vh] w-full mask-[url('/circuit-board.svg')] mask-size-[50vh] transition-transform duration-75 ease-linear"
@@ -61,6 +63,14 @@ const Background: React.FC<BackgroundProps> = ({
         }}
       />
       <div className="z-10">{children}</div>
+
+      <div className="text-contrast mt-16 flex flex-col items-center gap-2 py-8 text-center">
+        <h3 className="font-sans text-xl font-bold md:text-2xl">
+          Thanks for making it this far! 🚀
+        </h3>
+        <p>connect with me</p>
+        <FontAwesomeIcon icon={faCircleArrowDown} className="animate-bounce" />
+      </div>
     </div>
   );
 };

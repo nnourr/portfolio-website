@@ -47,6 +47,18 @@ function BlogHome() {
                 </p>
               </div>
             </Link>
+            <Link
+              to="/blog/ebc"
+              className="block transition-all duration-300 ease-in-out active:scale-95"
+            >
+              <div className="bg-secondary/30 hover:bg-secondary/60 rounded-lg p-4 shadow-md transition-colors">
+                <h4 className="font-bold">Egyptian Banks Company</h4>
+                <p className="text-contrast/70 text-sm">
+                  4 months of building a pretend ACH system for Egypt's version
+                  of NCR.
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
         <Button

@@ -5,6 +5,7 @@ import BlogHome from './pages/Blog/BlogHome';
 import EcobeeBlog from './pages/Blog/ecobee';
 import RbcBlog from './pages/Blog/rbc';
 import System1Blog from './pages/Blog/system1';
+import EbcBlog from './pages/Blog/ebc';
 
 function AppRouter() {
   return (
@@ -16,6 +17,7 @@ function AppRouter() {
           <Route path="ecobee" element={<EcobeeBlog />} />
           <Route path="rbc" element={<RbcBlog />} />
           <Route path="system1" element={<System1Blog />} />
+          <Route path="ebc" element={<EbcBlog />} />
         </Route>
       </Routes>
     </HashRouter>

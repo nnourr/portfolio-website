@@ -34,7 +34,7 @@ function RbcBlog() {
           </h1>
           <div className="bg-accent h-4 w-4 rounded-full transition-all duration-300 ease-in-out active:h-3 active:w-12" />
         </div>
-        <div className="flex flex-col gap-4 font-sans text-base [&>h1]:scroll-m-24 [&>section]:flex [&>section]:flex-col [&>section]:gap-2">
+        <div className="flex flex-col gap-4 font-sans text-base [&>section]:flex [&>section]:flex-col [&>section]:gap-2 [&>section>h1]:scroll-m-24">
           <p>
             At RBC, I worked as an <strong>Applications Developer</strong> under
             JSOC (part of Global Cyber Security) for <strong>4 months</strong>,
