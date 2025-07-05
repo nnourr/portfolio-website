@@ -1,9 +1,24 @@
+import { useEffect } from 'react';
+import Button from '../../components/Button';
 import Section from '../../components/Section';
+import { useBarHideStore } from '../../stores/barHideStore';
 
 function EcobeeBlog() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const { setOpen } = useBarHideStore();
+  useEffect(() => {
+    setOpen();
+  }, []);
+
   return (
-    <Section title="ecobee" size="lg">
-      <div className="flex flex-col gap-4 font-sans text-base">
+    <Section title="ecobee" size="lg" animate={false}>
+      <div className="flex flex-col gap-4 font-sans text-base md:mt-4 md:px-8 [&>h1]:scroll-m-24">
         <p>
           At ecobee, I embarked on an adventure as a{' '}
           <strong>Software Engineer</strong> on the Home Monitoring Backend
@@ -46,6 +61,52 @@ function EcobeeBlog() {
             on critical flows.
           </li>
         </ul>
+
+        <h1
+          className="decoration-accent text-2xl font-semibold underline decoration-2"
+          id="Contents"
+        >
+          Contents
+        </h1>
+        <nav className="flex flex-col gap-1">
+          {[
+            { id: 'Highlights', title: 'Highlights' },
+            { id: 'Learning Goals', title: 'Learning Goals & Achievements' },
+            {
+              id: 'Infrastructure & Architecture',
+              title: 'Infrastructure & Architecture Deep-Dives',
+            },
+            {
+              id: 'GKE Upgrades',
+              title: 'GKE Upgrades & Infrastructure Leadership',
+            },
+            {
+              id: 'Leadership Impact',
+              title: 'Leadership & Team Process Improvements',
+            },
+            {
+              id: 'Hardware Service Bundles',
+              title: 'Hardware Service Bundles (HWSB)',
+            },
+            {
+              id: 'Third Party Device Integration',
+              title: 'Third Party Device Integration',
+            },
+            { id: 'SCRUM Lead', title: 'SCRUM Leadership' },
+            { id: 'Co-Op Presentation', title: 'Co-Op Presentation' },
+            { id: 'Conclusion', title: 'Conclusion' },
+            { id: 'Acknowledgements', title: 'Acknowledgements' },
+          ].map(({ id, title }) => (
+            <Button
+              variant="ghost"
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="text-accent origin-left text-left hover:underline dark:font-bold"
+            >
+              {title}
+            </Button>
+          ))}
+        </nav>
 
         <h1
           className="decoration-accent text-2xl font-semibold underline decoration-2"

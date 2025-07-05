@@ -1,5 +1,3 @@
-import Glass from './Glass';
-
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -16,11 +14,11 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseClasses =
-    'p-0 m-0 hover:scale-105 transition-all duration-150 ease-in-out';
+    'p-0 m-0 hover:scale-105 transition-all duration-150 ease-in-out ';
 
   const variantClasses = {
     primary: 'bg-bg/30 inset-shadow-glow/50 shadow-md',
-    secondary: 'bg-contrast shadow-none',
+    secondary: 'bg-transparent rounded-none shadow-none',
     outline: 'border-1 border-secondary shadow-none',
     ghost: 'px-0 py-0 shadow-none',
   };

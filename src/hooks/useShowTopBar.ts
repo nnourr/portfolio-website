@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
-import { useScrollStore } from '../stores/scrollStore';
+import { useTopBarStore } from '../stores/topBarStore';
 
-export const useScrollHandler = () => {
-  const { setIsScrolling, setShowTopBar } = useScrollStore();
+export const useShowTopBar = () => {
+  const { setShowTopBar } = useTopBarStore();
   const isWide = window.innerWidth > 768;
 
   useEffect(() => {
-    setIsScrolling(false);
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -23,5 +22,5 @@ export const useScrollHandler = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [setIsScrolling, setShowTopBar]);
+  }, [setShowTopBar]);
 };

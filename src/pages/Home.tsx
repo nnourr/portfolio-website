@@ -3,7 +3,7 @@ import QuickButton from '../components/QuickButton';
 import Section from '../components/Section';
 import TopBar from '../components/TopBar';
 import BottomBar from '../components/BottomBar';
-import { useScrollHandler } from '../hooks/useScrollHandler';
+import { useShowTopBar } from '../hooks/useShowTopBar';
 import Experience from '../components/Home/Experience';
 import Skills from '../components/Home/Skills';
 import Project from '../components/Home/Project';
@@ -14,7 +14,7 @@ import Intro from '../components/Home/Intro';
 import HomeNavBar from '../components/Home/HomeNavBar';
 
 function Home() {
-  useScrollHandler();
+  useShowTopBar();
 
   return (
     <Background className={`font-courier text-contrast pb-24`}>

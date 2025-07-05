@@ -3,6 +3,7 @@ import {
   faChevronDown,
   faChevronUp,
   faHome,
+  faNewspaper,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +11,8 @@ import type { BarItem } from '../../models/BarItem';
 import { useBlogNavigation } from '../../hooks/useBlogNavigation';
 import NavBar from '../NavBar';
 import Button from '../Button';
+import { useBarHideStore } from '../../stores/barHideStore';
+import { useEffect } from 'react';
 
 export default function BlogNavBar() {
   const navigate = useNavigate();
@@ -20,7 +23,13 @@ export default function BlogNavBar() {
     currentSectionIndex,
     isLastSection,
     isFirstSection,
+    sections,
   } = useBlogNavigation();
+
+  // Don't show the navbar if we only have 0 or 1 section (no navigation needed)
+  if (sections.length <= 1) {
+    return null;
+  }
 
   const blogNavLinks: BarItem[] = [
     {
@@ -29,6 +38,13 @@ export default function BlogNavBar() {
       key: 'home',
       label: 'Home',
       onClick: () => navigate('/'),
+    },
+    {
+      href: '/blog',
+      icon: faNewspaper,
+      key: 'blog',
+      label: 'Blog',
+      onClick: () => navigate('/blog'),
     },
     ...(showTopButton
       ? [
@@ -65,6 +81,11 @@ export default function BlogNavBar() {
       : []),
   ];
 
+  // Don't show if we only have the home button
+  if (blogNavLinks.length <= 1) {
+    return null;
+  }
+
   return (
     <NavBar>
       {({ hide }: { hide: boolean }) => (
@@ -74,7 +95,7 @@ export default function BlogNavBar() {
               variant="ghost"
               key={link.key}
               onClick={() => !hide && link.onClick?.()}
-              className={`group z-20 flex origin-right flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:py-2 ${
+              className={`group z-20 flex flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:py-2 ${
                 !hide ? 'flex-col' : 'flex-row-reverse'
               }`}
             >

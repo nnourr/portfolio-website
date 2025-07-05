@@ -1,8 +1,8 @@
+import { useTopBarStore } from '../stores/topBarStore';
 import Glass from './Glass';
-import { useScrollStore } from '../stores/scrollStore';
 
 const TopBar = () => {
-  const { showTopBar } = useScrollStore();
+  const { showTopBar } = useTopBarStore();
   return (
     <>
       <div

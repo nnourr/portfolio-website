@@ -1,15 +1,7 @@
-import {
-  faEnvelope,
-  faGraduationCap,
-  faHome,
-  faMoon,
-  faRocket,
-  faSun,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from './Button';
 import Glass from './Glass';
-import { useScrollStore } from '../stores/scrollStore';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -51,7 +43,7 @@ export default function BottomBar() {
         onClick={() => setTimeout(setOpen, 10)}
       />
       <div
-        className={`mb-12 flex w-fit items-end justify-center gap-4 text-xl md:mb-8 md:text-3xl`}
+        className={`mb-12 flex w-fit items-end justify-center gap-4 text-xl md:mb-8 md:text-2xl`}
         onMouseEnter={keepOpen}
         onMouseLeave={close}
       >

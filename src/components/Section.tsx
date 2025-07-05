@@ -5,6 +5,7 @@ interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   size?: 'md' | 'lg';
+  animate?: boolean;
 }
 
 const sizeClasses = {
@@ -17,6 +18,7 @@ function Section({
   children,
   className,
   size = 'md',
+  animate = true,
   ...props
 }: SectionProps) {
   const { ref, isInView } = useScrollInView<HTMLElement>();
@@ -25,18 +27,19 @@ function Section({
     <section
       ref={ref}
       className={`md:bg-secondary/30 flex scroll-m-24 flex-col transition-all duration-700 ease-out md:scroll-m-52 md:rounded-2xl md:px-2 md:py-4 md:shadow-md md:backdrop-blur-xs ${
-        isInView
+        animate &&
+        (isInView
           ? 'md:translate-x-0 md:opacity-100'
-          : 'md:translate-x-20 md:opacity-0'
+          : 'md:translate-x-20 md:opacity-0')
       } ${className}`}
       {...props}
     >
       <div className="flex items-center gap-2">
-        <h2
+        <h1
           className={`decoration-accent font-bold underline decoration-2 ${sizeClasses[size]}`}
         >
           {title}
-        </h2>
+        </h1>
         <div className="bg-accent h-4 w-4 rounded-full transition-all duration-300 ease-in-out active:h-3 active:w-12" />
       </div>
       {children}

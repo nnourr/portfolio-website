@@ -81,7 +81,7 @@ export default function HomeNavBar() {
               variant="ghost"
               key={link.key}
               onClick={() => !hide && handleNavigation(link)}
-              className={`group z-20 flex origin-right flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:py-2 ${
+              className={`group z-20 flex flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:py-2 ${
                 !hide ? 'flex-col' : 'flex-row-reverse'
               }`}
             >
@@ -90,7 +90,7 @@ export default function HomeNavBar() {
                   icons={workExperienceIcons}
                   intervalMs={2000}
                   animationType="fade"
-                  className="aspect-square h-[20px] object-contain md:h-[30px] dark:invert"
+                  className="aspect-square h-[20px] object-contain md:h-[25px] dark:invert"
                 />
               ) : (
                 <FontAwesomeIcon icon={link.icon} />

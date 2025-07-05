@@ -25,12 +25,18 @@ export const useBlogNavigation = () => {
   // Track scroll position to update current section and top button visibility
   useEffect(() => {
     const handleScroll = () => {
-      // Show top button after scrolling down 300px
-      setShowTopButton(window.scrollY > 300);
-
       // Find current section based on scroll position
       const h1Elements = document.querySelectorAll('h1[id]');
       let currentIndex = -1;
+
+      if (h1Elements.length === 0) {
+        return;
+      }
+
+      // Show top button after scrolling down past first section
+      setShowTopButton(
+        window.scrollY > h1Elements[0].getBoundingClientRect().top
+      );
 
       h1Elements.forEach((el, index) => {
         const rect = el.getBoundingClientRect();
