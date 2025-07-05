@@ -72,7 +72,7 @@ function Project({
         </div>
         <div className="flex flex-col gap-2 md:w-1/2">
           {/* Description */}
-          <p className="font-sans text-sm leading-relaxed">{children}</p>
+          <div className="font-sans text-sm leading-relaxed">{children}</div>
           {/* Tech Stack */}
           <div className="flex flex-wrap gap-2">
             {techStack.map(tech => (

@@ -47,7 +47,8 @@ function Home() {
             <QuickButton
               className="group-hover/button:opacity-60 hover:!opacity-100"
               onClick={() => {
-                window.location.href = '#work-exp';
+                const element = document.getElementById('work-exp');
+                element?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               work experience
@@ -55,7 +56,8 @@ function Home() {
             <QuickButton
               className="group-hover/button:opacity-60 hover:!opacity-100"
               onClick={() => {
-                window.location.href = '#passion-proj';
+                const element = document.getElementById('passion-proj');
+                element?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               passion projects
@@ -127,7 +129,7 @@ function Home() {
               startDate={'May 2023'}
               endDate={'Aug 2023'}
               companyLink={'https://rbc.com'}
-              blogLink={'https://blog.example.com'}
+              blogLink={'/blog/rbc'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>

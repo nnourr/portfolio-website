@@ -31,6 +31,7 @@ export default function NavBar({ children, className }: NavBarProps) {
         onMouseEnter={keepOpen}
         onMouseLeave={close}
         onClick={() => setTimeout(setOpen, 10)}
+        onFocus={() => setTimeout(setOpen, 10)}
       >
         <Glass layered={true}>
           <div

@@ -35,6 +35,7 @@ export default function BottomBar() {
     <div
       className={`fixed bottom-0 z-50 mx-auto flex w-full justify-center rounded-3xl transition-all duration-150`}
       onClick={() => setTimeout(setOpen, 10)}
+      onFocus={() => setTimeout(setOpen, 10)}
     >
       <div
         className="absolute right-1/2 bottom-4 h-16 w-52 translate-x-1/2 md:bottom-2 md:h-20 md:w-64"

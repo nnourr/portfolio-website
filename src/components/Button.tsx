@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const disabledClasses = disabled
-    ? 'opacity-50 cursor-not-allowed'
+    ? 'opacity-50 cursor-default'
     : 'cursor-pointer';
 
   return (

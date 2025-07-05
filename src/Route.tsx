@@ -3,7 +3,8 @@ import Home from './pages/Home';
 import Blog from './components/Blog/Blog';
 import BlogHome from './pages/Blog/BlogHome';
 import EcobeeBlog from './pages/Blog/ecobee';
-import BlogPost2 from './pages/Blog/BlogPost2';
+import RbcBlog from './pages/Blog/rbc';
+import System1Blog from './pages/Blog/system1';
 
 function AppRouter() {
   return (
@@ -13,7 +14,8 @@ function AppRouter() {
         <Route path="/blog" element={<Blog />}>
           <Route index element={<BlogHome />} />
           <Route path="ecobee" element={<EcobeeBlog />} />
-          <Route path="react-patterns" element={<BlogPost2 />} />
+          <Route path="rbc" element={<RbcBlog />} />
+          <Route path="system1" element={<System1Blog />} />
         </Route>
       </Routes>
     </HashRouter>

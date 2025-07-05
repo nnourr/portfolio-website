@@ -36,7 +36,8 @@ export default function Intro() {
             <QuickButton
               className="transition-all duration-400 group-hover/button:opacity-60 hover:!opacity-100"
               onClick={() => {
-                window.location.href = '#work-exp';
+                const element = document.getElementById('work-exp');
+                element?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               work experience
@@ -44,7 +45,8 @@ export default function Intro() {
             <QuickButton
               className="transition-all duration-400 group-hover/button:opacity-60 hover:!opacity-100"
               onClick={() => {
-                window.location.href = '#passion-proj';
+                const element = document.getElementById('passion-proj');
+                element?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               passion projects

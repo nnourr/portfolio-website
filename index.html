@@ -61,12 +61,7 @@
         <!-- Create vertical gradient that starts from bottom -->
 
         <!-- Apply gradient to displacement map -->
-        <feComposite
-          in="softMap"
-          in2="bottomGradient"
-          operator="multiply"
-          result="bottomMap"
-        />
+        <feComposite in="softMap" in2="bottomGradient" result="bottomMap" />
 
         <feSpecularLighting
           in="softMap"
