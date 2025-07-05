@@ -11,8 +11,6 @@ import type { BarItem } from '../../models/BarItem';
 import { useBlogNavigation } from '../../hooks/useBlogNavigation';
 import NavBar from '../NavBar';
 import Button from '../Button';
-import { useBarHideStore } from '../../stores/barHideStore';
-import { useEffect } from 'react';
 
 export default function BlogNavBar() {
   const navigate = useNavigate();

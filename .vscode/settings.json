@@ -3,17 +3,5 @@
       "colours",
       "headshot",
       "tailwindcss"
-    ],
-    "files.autoSave": "off",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "javascript.format.enable": true,
-    "eslint.options": {
-      "extensions": [ ".html", ".js", ".vue", ".jsx", ".ts" ]
-    },
-    "eslint.validate": [
-      "html",
-      "javascript",
-      "Angular"
-    ],
+    ]
 }
