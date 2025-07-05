@@ -4,9 +4,21 @@ interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   children: React.ReactNode;
   className?: string;
+  size?: 'md' | 'lg';
 }
 
-function Section({ title, children, className, ...props }: SectionProps) {
+const sizeClasses = {
+  md: 'text-2xl md:pl-4 md:text-3xl',
+  lg: 'text-4xl md:pl-8 md:text-5xl',
+};
+
+function Section({
+  title,
+  children,
+  className,
+  size = 'md',
+  ...props
+}: SectionProps) {
   const { ref, isInView } = useScrollInView<HTMLElement>();
 
   return (
@@ -20,7 +32,9 @@ function Section({ title, children, className, ...props }: SectionProps) {
       {...props}
     >
       <div className="flex items-center gap-2">
-        <h2 className="decoration-accent text-2xl font-bold underline decoration-2 md:pl-4 md:text-3xl">
+        <h2
+          className={`decoration-accent font-bold underline decoration-2 ${sizeClasses[size]}`}
+        >
           {title}
         </h2>
         <div className="bg-accent h-4 w-4 rounded-full transition-all duration-300 ease-in-out active:h-3 active:w-12" />

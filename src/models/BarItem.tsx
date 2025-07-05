@@ -1,4 +1,4 @@
-import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export interface BarItem {
   href: string;
@@ -7,4 +7,5 @@ export interface BarItem {
   label: string;
   sectionId?: string;
   route?: string;
+  onClick?: () => void;
 }

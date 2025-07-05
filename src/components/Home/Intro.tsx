@@ -1,5 +1,5 @@
-import Glass from './Glass';
-import QuickButton from './QuickButton';
+import Glass from '../Glass';
+import QuickButton from '../QuickButton';
 
 export default function Intro() {
   return (

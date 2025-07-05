@@ -1,24 +1,24 @@
-import Background from './components/Background';
-import QuickButton from './components/QuickButton';
-import Section from './components/Section';
-import TopBar from './components/TopBar';
-import NavBar from './components/NavBar';
-import { useScrollHandler } from './hooks/useScrollHandler';
-import BottomBar from './components/BottomBar';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Project from './components/Project';
-import { Separator } from './components/ui/separator';
+import Background from '../components/Background';
+import QuickButton from '../components/QuickButton';
+import Section from '../components/Section';
+import TopBar from '../components/TopBar';
+import BottomBar from '../components/BottomBar';
+import { useScrollHandler } from '../hooks/useScrollHandler';
+import Experience from '../components/Home/Experience';
+import Skills from '../components/Home/Skills';
+import Project from '../components/Home/Project';
+import { Separator } from '../components/ui/separator';
 import { faGithub, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { faFileAlt, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import Intro from './components/Intro';
+import Intro from '../components/Home/Intro';
+import HomeNavBar from '../components/Home/HomeNavBar';
 
-function App() {
+function Home() {
   useScrollHandler();
 
   return (
     <Background className={`font-courier text-contrast pb-24`}>
-      <NavBar />
+      <HomeNavBar />
       <TopBar />
       <BottomBar />
       <Intro />
@@ -106,7 +106,7 @@ function App() {
               startDate={'Jan 2024'}
               endDate={'Aug 2024'}
               companyLink={'https://ecobee.com'}
-              blogLink={'https://blog.example.com'}
+              blogLink={'/blog/ecobee'}
             >
               <ul className="marker:text-accent list-inside list-none">
                 <li>
@@ -356,4 +356,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

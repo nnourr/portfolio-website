@@ -1,7 +1,7 @@
-import Pill from './Pill';
+import Pill from '../Pill';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { type IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import Button from './Button';
+import Button from '../Button';
 
 interface ProjectLink {
   label: string;

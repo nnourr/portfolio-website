@@ -1,4 +1,5 @@
-import { Separator } from './ui/separator';
+import { Link } from 'react-router-dom';
+import { Separator } from '../ui/separator';
 
 interface ExperienceProps {
   company: string;
@@ -70,13 +71,12 @@ function Experience({
           <Separator orientation="vertical" />
           {children}
           {blogLink && (
-            <a
-              href={blogLink}
-              target="_blank"
+            <Link
+              to={blogLink}
               className="text-accent after:bg-accent relative cursor-pointer transition-all duration-150 ease-in-out after:absolute after:-inset-x-2 after:-inset-y-1 after:-z-10 after:rounded-full after:opacity-0 after:transition-all after:duration-150 after:ease-in-out hover:text-white hover:after:opacity-100"
             >
               read more
-            </a>
+            </Link>
           )}
         </div>
       </div>

@@ -1,93 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Glass from './Glass';
-import { CyclingIcon } from './CyclingIcon';
-import {
-  faGraduationCap,
-  faHome,
-  faRocket,
-  faNewspaper,
-} from '@fortawesome/free-solid-svg-icons';
-import type { BarItem } from '../models/BarItem';
 import { useScrollStore } from '../stores/scrollStore';
 import { useBarHideStore } from '../stores/barHideStore';
-import { useNavigate, useLocation } from 'react-router-dom';
-import Button from './Button';
+import type { ReactNode } from 'react';
 
-// Work experience cycling icons (company SVGs)
-export const workExperienceIcons = [
-  '/ecobee.svg',
-  '/rbc.svg',
-  '/lmai.svg',
-  '/system1.svg',
-  '/ebc.svg',
-];
+interface NavBarProps {
+  children?: (props: { hide: boolean }) => ReactNode;
+}
 
-export const navLinks: BarItem[] = [
-  {
-    href: '#root',
-    icon: faHome,
-    key: 'home',
-    label: 'Home',
-    sectionId: 'root',
-  },
-  {
-    href: '#work-exp',
-    icon: faRocket, // This will be overridden by cycling icons
-    key: 'work-exp',
-    label: 'Work Experience',
-    sectionId: 'work-exp',
-  },
-  {
-    href: '#education',
-    icon: faGraduationCap,
-    key: 'education',
-    label: 'Education',
-    sectionId: 'education',
-  },
-  {
-    href: '#passion-proj',
-    icon: faRocket,
-    key: 'passion-proj',
-    label: 'Passion Projects',
-    sectionId: 'passion-proj',
-  },
-  {
-    href: '#/blog',
-    icon: faNewspaper,
-    key: 'blog',
-    label: 'Blog',
-    route: '/blog',
-  },
-];
-
-export default function NavBar() {
+export default function NavBar({ children }: NavBarProps) {
   const { hide, setOpen, keepOpen, close } = useBarHideStore();
   const { showTopBar } = useScrollStore();
-  const navigate = useNavigate();
-  const location = useLocation();
 
-  const handleNavigation = (link: BarItem) => {
-    if (link.route) {
-      // Navigate to the specified route
-      navigate(link.route);
-    } else if (link.sectionId) {
-      // Navigate to home if not already there
-      if (location.pathname !== '/') {
-        navigate('/');
-      }
-
-      // Scroll to the target element
-      setTimeout(
-        () => {
-          const element = document.getElementById(link.sectionId!);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        },
-        location.pathname !== '/' ? 100 : 0
-      );
-    }
-  };
   return (
     <div
       className={`pointer-events-none fixed top-0 right-0 z-50 h-full w-full transition-all duration-300 md:right-1/2 md:translate-x-1/2 xl:max-w-11/12 ${
@@ -114,32 +37,7 @@ export default function NavBar() {
               !hide ? 'items-center px-2.5' : 'items-start px-1'
             }`}
           >
-            {navLinks.map(link => (
-              <Button
-                variant="ghost"
-                key={link.key}
-                onClick={() => !hide && handleNavigation(link)}
-                className={`group z-20 flex origin-right flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:py-2 ${
-                  !hide ? 'flex-col' : 'flex-row-reverse'
-                }`}
-              >
-                {link.key === 'work-exp' ? (
-                  <CyclingIcon
-                    icons={workExperienceIcons}
-                    intervalMs={2000}
-                    animationType="fade"
-                    className="aspect-square h-[20px] object-contain md:h-[30px] dark:invert"
-                  />
-                ) : (
-                  <FontAwesomeIcon icon={link.icon} />
-                )}
-                <div
-                  className={`bg-accent rounded-full opacity-50 md:group-hover:opacity-90 ${
-                    !hide ? 'h-1 w-4/5' : 'h-3/4 w-1'
-                  }`}
-                />
-              </Button>
-            ))}
+            {children && children({ hide })}
           </div>
         </Glass>
       </div>

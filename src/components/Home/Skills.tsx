@@ -6,8 +6,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import Pill from './Pill';
-import { useScrollInView } from '../hooks/useScrollInView';
+import Pill from '../Pill';
+import { useScrollInView } from '../../hooks/useScrollInView';
 
 interface Skill {
   name: string;
