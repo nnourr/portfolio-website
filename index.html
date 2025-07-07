@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Noureldeen Ahmed's portfolio - Software Engineer specializing in React, TypeScript, and modern web development. Featuring interactive projects like Plant Together, Music Circle, and ML-driven content creation."
+    />
+    <meta
+      name="keywords"
+      content="software engineer, web developer, React, TypeScript, portfolio, Noureldeen Ahmed"
+    />
+    <meta name="author" content="Noureldeen Ahmed" />
+    <meta property="og:title" content="nnourr - Software Engineer Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore my journey in software engineering through interactive projects and experiences. Featuring modern web development with React, TypeScript, and ML."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="nnourr - Software Engineer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Modern web development portfolio featuring React, TypeScript, and innovative projects in software engineering."
+    />
+    <meta name="twitter:creator" content="@nnnoureldeennn" />
+    <meta
+      name="twitter:image"
+      content="https://nnourr.tech/headshotcropped.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Noureldeen Ahmed - Software Engineer"
+    />
+    <title>nnourr</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Gabarito:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'sbbxvv60qm');
+    </script>
+  </head>
+  <body style="background-color: #000">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <div class="glass-distortion"></div>
+    <svg style="display: none">
+      <filter
+        id="glass-distortion"
+        x="0%"
+        y="0%"
+        width="100%"
+        height="100%"
+        filterUnits="objectBoundingBox"
+      >
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.007 0.0005"
+          numOctaves="1"
+          seed="25"
+          result="turbulence"
+        />
+
+        <feComponentTransfer in="turbulence" result="mapped">
+          <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+          <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+          <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+        </feComponentTransfer>
+
+        <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+
+        <!-- Create bottom-origin gradient mask -->
+        <feComposite in="SourceAlpha" operator="over" result="shape" />
+        <feColorMatrix
+          in="shape"
+          values="0 0 0 0 0
+                                          0 0 0 0 0
+                                          0 0 0 0 0
+                                          0 0 0 1 0"
+          result="alphaMask"
+        />
+
+        <!-- Create vertical gradient that starts from bottom -->
+
+        <!-- Apply gradient to displacement map -->
+        <feComposite in="softMap" in2="bottomGradient" result="bottomMap" />
+
+        <feSpecularLighting
+          in="softMap"
+          surfaceScale="5"
+          specularConstant="1"
+          specularExponent="100"
+          lighting-color="white"
+          result="specLight"
+        >
+          <fePointLight x="-200" y="-200" z="300" />
+        </feSpecularLighting>
+
+        <feComposite
+          in="specLight"
+          operator="arithmetic"
+          k1="0"
+          k2="1"
+          k3="1"
+          k4="0"
+          result="litImage"
+        />
+
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="bottomMap"
+          scale="200"
+          translate="0"
+          xChannelSelector="R"
+          yChannelSelector="G"
+          result="distorted"
+        />
+      </filter>
+    </svg>
+  </body>
+</html>
