@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 interface Section {
@@ -10,12 +10,14 @@ export const useBlogNavigation = () => {
   const [sections, setSections] = useState<Section[]>([]);
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(-1);
   const [showTopButton, setShowTopButton] = useState(false);
+  const h1ElementsRef = useRef<HTMLHeadingElement[]>([]);
   const location = useLocation();
 
   // Get all h1 sections when component mounts or route changes
   useEffect(() => {
     const h1Elements = document.querySelectorAll('h1[id]');
-    const newSections = Array.from(h1Elements).map(el => ({
+    h1ElementsRef.current = Array.from(h1Elements) as HTMLHeadingElement[];
+    const newSections = Array.from(h1ElementsRef.current).map(el => ({
       id: el.id,
       title: el.textContent || '',
     }));
@@ -26,8 +28,9 @@ export const useBlogNavigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Find current section based on scroll position
-      const h1Elements = document.querySelectorAll('h1[id]');
       let currentIndex = -1;
+
+      const h1Elements = h1ElementsRef.current;
 
       if (h1Elements.length === 0) {
         return;

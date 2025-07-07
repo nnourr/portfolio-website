@@ -65,8 +65,8 @@ const skills: Skill[] = [
 
 const categoryLabels = {
   all: 'All',
-  frontend: 'Front-end',
-  backend: 'Backend-end',
+  frontend: 'Frontend',
+  backend: 'Backend',
   database: 'Database',
   devops: 'DevOps & Tools',
   leadership: 'Leadership',
