@@ -5,11 +5,13 @@ import { useEffect, useState } from 'react';
 interface BackgroundProps {
   children?: React.ReactNode;
   className?: string;
+  showCTA?: boolean;
 }
 
 const Background: React.FC<BackgroundProps> = ({
   children,
   className = '',
+  showCTA = true,
 }) => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -64,13 +66,18 @@ const Background: React.FC<BackgroundProps> = ({
       />
       <div className="z-10">{children}</div>
 
-      <div className="text-contrast mt-16 flex flex-col items-center gap-2 py-8 text-center">
-        <h3 className="font-sans text-xl font-bold md:text-2xl">
-          Thanks for making it this far! 🚀
-        </h3>
-        <p>connect with me</p>
-        <FontAwesomeIcon icon={faCircleArrowDown} className="animate-bounce" />
-      </div>
+      {showCTA && (
+        <div className="text-contrast mt-16 flex flex-col items-center gap-2 py-8 text-center">
+          <h3 className="font-sans text-xl font-bold md:text-2xl">
+            Thanks for making it this far! 🚀
+          </h3>
+          <p>connect with me</p>
+          <FontAwesomeIcon
+            icon={faCircleArrowDown}
+            className="animate-bounce"
+          />
+        </div>
+      )}
     </div>
   );
 };

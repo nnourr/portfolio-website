@@ -9,6 +9,7 @@ import EbcBlog from './pages/Blog/ebc';
 import MLContentPipeline from './pages/Blog/ml-content-pipeline';
 import PlantTogether from './pages/Blog/plant-together';
 import MusicCircle from './pages/Blog/music-circle';
+import NotFound from './pages/NotFound';
 
 function AppRouter() {
   return (
@@ -25,6 +26,7 @@ function AppRouter() {
           <Route path="plant-together" element={<PlantTogether />} />
           <Route path="music-circle" element={<MusicCircle />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
   );
