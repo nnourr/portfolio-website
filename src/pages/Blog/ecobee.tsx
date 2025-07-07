@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Button from '../../components/Button';
 import { useBarHideStore } from '../../stores/barHideStore';
 import { useBlogNavigation } from '../../hooks/useBlogNavigation';
+import Quote from '../../components/quote';
 import {
   Carousel,
   CarouselContent,
@@ -89,27 +90,26 @@ function EcobeeBlog() {
           </section>
 
           <section>
-            <h1
-              className="decoration-accent text-2xl font-semibold underline decoration-2"
-              id="Contents"
-            >
-              Contents
-            </h1>
-            <nav className="flex flex-col gap-1">
-              {sections.map(({ id, title }) => (
-                <Button
-                  variant="ghost"
-                  key={id}
-                  onClick={() =>
-                    scrollToSection(sections.findIndex(s => s.id === id))
-                  }
-                  title={`Jump to ${title} section`}
-                  className="text-accent origin-left text-left hover:underline dark:font-bold"
-                >
-                  {title}
-                </Button>
-              ))}
-            </nav>
+            <Quote>
+              <h3 className="mb-2 text-xl font-semibold" id="Contents">
+                Contents
+              </h3>
+              <nav className="flex flex-col gap-1">
+                {sections.map(({ id, title }) => (
+                  <Button
+                    key={id}
+                    variant="ghost"
+                    onClick={() =>
+                      scrollToSection(sections.findIndex(s => s.id === id))
+                    }
+                    title={`Jump to ${title} section`}
+                    className="text-accent origin-left text-left hover:underline dark:font-bold"
+                  >
+                    {title}
+                  </Button>
+                ))}
+              </nav>
+            </Quote>
           </section>
 
           <section>
@@ -407,7 +407,7 @@ function EcobeeBlog() {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index} className="basis-full pl-1">
                     <img
-                      src={`/ecobeeSlides/ (${index + 1}).webp`}
+                      src={`/ecobeeSlides/(${index + 1}).webp`}
                       alt={`Ecobee presentation slide ${index + 1}`}
                       className="w-full rounded-lg shadow-md"
                     />

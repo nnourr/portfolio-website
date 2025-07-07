@@ -31,7 +31,7 @@ function PassionProjects() {
             },
             {
               label: 'blog',
-              url: 'https://blog.example.com',
+              url: '/blog/plant-together',
               icon: faFileAlt,
             },
             {
@@ -74,7 +74,7 @@ function PassionProjects() {
             },
             {
               label: 'blog',
-              url: 'https://blog.example.com',
+              url: '/blog/music-circle',
               icon: faFileAlt,
             },
             {
@@ -113,7 +113,7 @@ function PassionProjects() {
             },
             {
               label: 'blog',
-              url: 'https://blog.example.com',
+              url: '/blog/ml-content-pipeline',
               icon: faFileAlt,
             },
             {

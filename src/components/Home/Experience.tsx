@@ -73,7 +73,7 @@ function Experience({
           {blogLink && (
             <Link
               to={blogLink}
-              className="md:text-contrast/90 hover:after:bg-accent md:group-hover:after:bg-secondary after:bg-secondary/40 text-accent md:group-hover:text-accent md:hover:after:bg-accent relative cursor-pointer transition-all duration-150 ease-in-out after:absolute after:-inset-x-1 after:-inset-y-0.5 after:-z-10 after:rounded-2xl after:transition-all after:duration-150 after:ease-in-out md:after:inset-0 md:after:bg-transparent md:group-hover:after:-inset-x-2 md:group-hover:after:-inset-y-1 md:group-hover:after:rounded-full md:hover:text-black"
+              className="md:text-contrast/80 hover:after:bg-accent md:group-hover:after:bg-secondary after:bg-secondary/40 text-accent md:group-hover:text-accent md:hover:after:bg-accent relative cursor-pointer transition-all duration-150 ease-in-out after:absolute after:-inset-x-1 after:-inset-y-0.5 after:-z-10 after:transition-all after:duration-150 after:ease-in-out md:after:inset-0 md:after:rounded-2xl md:after:bg-transparent md:group-hover:after:-inset-x-2 md:group-hover:after:-inset-y-1 md:group-hover:after:rounded-full md:hover:text-black"
             >
               read more
             </Link>

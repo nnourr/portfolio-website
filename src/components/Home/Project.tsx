@@ -2,6 +2,7 @@ import Pill from '../Pill';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { type IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button';
+import { useNavigate } from 'react-router-dom';
 
 interface ProjectLink {
   label: string;
@@ -34,6 +35,7 @@ function Project({
   className = '',
   reverse = false,
 }: ProjectProps) {
+  const navigate = useNavigate();
   return (
     <div
       className={`flex flex-col gap-2 ${className} ${reverse && 'md:gap-0'} md:hover:bg-secondary/40 rounded-xl transition-all duration-300 ease-in-out md:px-4 md:py-2`}
@@ -93,7 +95,7 @@ function Project({
                 variant="outline"
                 size="sm"
                 className="flex items-center gap-2"
-                onClick={() => window.open(link.url, '_blank')}
+                onClick={() => navigate(link.url)}
                 title={`Open ${title} ${link.label} in new tab`}
               >
                 <FontAwesomeIcon icon={link.icon} />

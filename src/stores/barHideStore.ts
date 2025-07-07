@@ -23,7 +23,7 @@ export const useBarHideStore = create<BarHideState>(set => {
     // If setting to false (showing the bar), start auto-hide timer
     inactivityTimeout = setTimeout(() => {
       set({ hide: true });
-    }, 2000);
+    }, 3000);
   };
 
   const keepOpen = () => {

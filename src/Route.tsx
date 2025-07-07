@@ -6,6 +6,9 @@ import EcobeeBlog from './pages/Blog/ecobee';
 import RbcBlog from './pages/Blog/rbc';
 import System1Blog from './pages/Blog/system1';
 import EbcBlog from './pages/Blog/ebc';
+import MLContentPipeline from './pages/Blog/ml-content-pipeline';
+import PlantTogether from './pages/Blog/plant-together';
+import MusicCircle from './pages/Blog/music-circle';
 
 function AppRouter() {
   return (
@@ -18,6 +21,9 @@ function AppRouter() {
           <Route path="rbc" element={<RbcBlog />} />
           <Route path="system1" element={<System1Blog />} />
           <Route path="ebc" element={<EbcBlog />} />
+          <Route path="ml-content-pipeline" element={<MLContentPipeline />} />
+          <Route path="plant-together" element={<PlantTogether />} />
+          <Route path="music-circle" element={<MusicCircle />} />
         </Route>
       </Routes>
     </HashRouter>
