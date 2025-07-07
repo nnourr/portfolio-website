@@ -1,0 +1,36 @@
+# https://nnourr.tech robots.txt
+
+# Allow all robots full access
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nnourr.tech/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Prevent crawling of specific file types
+Disallow: /*.pdf$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.svg$
+Disallow: /*.webp$
+Disallow: /*.mp4$
+Disallow: /*.webm$
+
+# Allow crawling of specific important assets
+Allow: /headshotcropped.png
+Allow: /icon.webp
+Allow: /Noureldeen_Ahmed_Resume.pdf
+
+# Prevent crawling of development/build files
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /build/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
+Disallow: /coverage/ 
