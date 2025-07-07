@@ -49,7 +49,12 @@ function Experience({
             <div className="flex flex-col">
               <h3 className="decoration-accent/50 leading-tight font-bold underline md:text-xl">
                 {companyLink ? (
-                  <a href={companyLink} target="_blank">
+                  <a
+                    href={companyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${company}`}
+                  >
                     {company}
                   </a>
                 ) : (

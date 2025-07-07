@@ -59,6 +59,7 @@ export default function BottomBar() {
                 key={link.key}
                 href={hide ? undefined : link.href}
                 target="_blank"
+                aria-label={link.label}
                 className="md:hover:bg-secondary group z-20 flex origin-bottom flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:px-2"
               >
                 <FontAwesomeIcon className="aspect-square" icon={link.icon} />
