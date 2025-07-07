@@ -79,6 +79,7 @@ export default function BottomBar() {
                 if (!hide) toggleDarkMode();
               }}
               variant="ghost"
+              aria-label="Toggle dark mode"
               className={`md:hover:bg-contrast group z-20 flex flex-col items-center gap-1 px-3 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-lg ${
                 !hide ? 'py-2.5' : 'py-1'
               }`}

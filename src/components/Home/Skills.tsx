@@ -117,7 +117,10 @@ function Skills({ className = '' }: SkillsProps) {
           value={selectedCategory}
           onValueChange={value => setSelectedCategory(value as CategoryFilter)}
         >
-          <SelectTrigger className="border-accent/30 w-48 cursor-pointer border-2 bg-transparent transition-all duration-300 active:scale-95">
+          <SelectTrigger
+            className="border-accent/30 w-48 cursor-pointer border-2 bg-transparent transition-all duration-300 active:scale-95"
+            aria-label="Filter skills by category"
+          >
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
