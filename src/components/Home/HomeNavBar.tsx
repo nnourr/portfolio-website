@@ -81,6 +81,7 @@ export default function HomeNavBar() {
               variant="ghost"
               key={link.key}
               onClick={() => !hide && handleNavigation(link)}
+              title={`Navigate to ${link.label}`}
               className={`group z-20 flex flex-col items-center gap-1 transition-all duration-150 ease-in-out md:hover:scale-120 md:hover:rounded-md md:hover:py-2 ${
                 !hide ? 'flex-col' : 'flex-row-reverse'
               }`}

@@ -10,7 +10,7 @@ interface BarHideState {
 export const useBarHideStore = create<BarHideState>(set => {
   let inactivityTimeout = setTimeout(() => {
     set({ hide: true });
-  }, 2000);
+  }, 5000);
   const setOpen = () => {
     // Clear any existing timeout
     if (inactivityTimeout) {

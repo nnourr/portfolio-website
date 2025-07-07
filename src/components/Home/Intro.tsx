@@ -30,6 +30,7 @@ export default function Intro() {
               onClick={() => {
                 window.open('/Noureldeen_Ahmed_Resume.pdf', '_blank');
               }}
+              title="Open resume in new tab"
             >
               view resume
             </QuickButton>
@@ -39,6 +40,7 @@ export default function Intro() {
                 const element = document.getElementById('work-exp');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
+              title="Scroll to work experience section"
             >
               work experience
             </QuickButton>
@@ -48,6 +50,7 @@ export default function Intro() {
                 const element = document.getElementById('passion-proj');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
+              title="Scroll to passion projects section"
             >
               passion projects
             </QuickButton>
@@ -56,12 +59,12 @@ export default function Intro() {
       </Glass>
       <div className="after:inset-shadow-glow animate-in fade-in shadow-glass relative h-[22rem] w-2/5 rounded-e-2xl object-bottom opacity-90 duration-400 ease-in-out lg:h-96 lg:w-1/2">
         <img
-          src="/headshotcropped.png"
+          src="/headshotcropped.webp"
           alt="me"
           className="h-full w-full rounded-e-2xl object-cover object-center"
         />
         <img
-          src="/headshotcropped.png"
+          src="/headshotcropped.webp"
           alt="me"
           className="absolute top-0 left-0 -z-10 h-full w-full object-cover object-center blur-2xl dark:opacity-50"
         />

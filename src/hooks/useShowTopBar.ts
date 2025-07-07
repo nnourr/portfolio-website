@@ -22,5 +22,5 @@ export const useShowTopBar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [setShowTopBar]);
+  }, [isWide, setShowTopBar]);
 };

@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Blog from './components/Blog/Blog';
 import BlogHome from './pages/Blog/BlogHome';
 import EcobeeBlog from './pages/Blog/ecobee';

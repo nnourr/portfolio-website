@@ -16,7 +16,7 @@ function EcobeeBlog() {
 
   useEffect(() => {
     setOpen();
-  }, []);
+  }, [setOpen]);
 
   return (
     <div className="relative mt-6 pt-10 md:pt-22">
@@ -103,6 +103,7 @@ function EcobeeBlog() {
                   onClick={() =>
                     scrollToSection(sections.findIndex(s => s.id === id))
                   }
+                  title={`Jump to ${title} section`}
                   className="text-accent origin-left text-left hover:underline dark:font-bold"
                 >
                   {title}
@@ -406,7 +407,7 @@ function EcobeeBlog() {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index} className="basis-full pl-1">
                     <img
-                      src={`/ecobeeSlides/ (${index + 1}).JPG`}
+                      src={`/ecobeeSlides/ (${index + 1}).webp`}
                       alt={`Ecobee presentation slide ${index + 1}`}
                       className="w-full rounded-lg shadow-md"
                     />

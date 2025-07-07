@@ -11,6 +11,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   variant = 'primary',
   size = 'md',
+  title,
   ...props
 }) => {
   const baseClasses =
@@ -37,6 +38,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       disabled={disabled}
+      title={title}
       {...props}
       className={`${disabledClasses} ${className} ${baseClasses}`}
     >

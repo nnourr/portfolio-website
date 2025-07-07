@@ -189,6 +189,7 @@ function CarouselPrevious({
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
+      title="View previous slide"
       {...props}
     >
       <Glass className="size-full rounded-md p-1" layered>
@@ -218,6 +219,7 @@ function CarouselNext({
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
+      title="View next slide"
       {...props}
     >
       <Glass className="size-full rounded-md p-1" layered>

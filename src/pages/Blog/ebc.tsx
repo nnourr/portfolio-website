@@ -9,18 +9,18 @@ function EbcBlog() {
 
   useEffect(() => {
     setOpen();
-  }, []);
+  }, [setOpen]);
 
   return (
     <div className="relative mt-6 pt-10 md:pt-22">
       <div className="fade-in animate-in absolute -top-24 -right-4 -left-4 -z-10 h-32 duration-1000 ease-in-out md:h-52">
         <img
-          src="/ebc-banner.jpg"
+          src="/ebc-banner.webp"
           alt="ebc banner"
           className="h-full w-full rounded-2xl object-cover opacity-90"
         />
         <img
-          src="/ebc-banner.jpg"
+          src="/ebc-banner.webp"
           alt="ebc banner"
           className="absolute top-0 left-0 -z-10 h-2/3 w-full rounded-2xl object-cover blur-2xl md:opacity-70"
         />

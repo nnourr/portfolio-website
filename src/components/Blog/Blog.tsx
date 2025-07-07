@@ -4,12 +4,14 @@ import BottomBar from '../BottomBar';
 import BlogNavBar from './BlogNavBar';
 import { useTopBarStore } from '../../stores/topBarStore';
 import { useEffect } from 'react';
+import { useShowTopBar } from '../../hooks/useShowTopBar';
 
 interface BlogProps {
   className?: string;
 }
 
 function Blog({ className = '' }: BlogProps) {
+  useShowTopBar();
   const { setShowTopBar } = useTopBarStore();
 
   useEffect(() => {
@@ -17,7 +19,7 @@ function Blog({ className = '' }: BlogProps) {
     return () => {
       setShowTopBar(false);
     };
-  }, []);
+  }, [setShowTopBar]);
 
   return (
     <Background

@@ -65,6 +65,7 @@ function BlogHome() {
           variant="secondary"
           size="sm"
           onClick={() => navigate('/')}
+          title="Return to home page"
           className="bg-secondary/30 md:bg-secondary/60 hover:bg-secondary -bottom-10 left-0 flex w-fit items-center overflow-hidden rounded-2xl md:shadow-md"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
