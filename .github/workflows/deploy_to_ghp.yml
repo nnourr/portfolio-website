@@ -3,10 +3,7 @@ name: Deploy Angular to GitHub Pages
 on:
   push:
     branches:
-      - react-rewrite
-  pull_request:
-    branches:
-      - react-rewrite
+      - main
   workflow_dispatch:
 
 # Required permissions
