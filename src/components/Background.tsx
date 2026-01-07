@@ -59,7 +59,7 @@ const Background: React.FC<BackgroundProps> = ({
       className={` ${className} bg-bg after:bg-pale-accent/10 dark:after:bg-pale-accent/10 relative z-0 h-fit overflow-hidden pb-20 after:absolute after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:blur-xl md:after:hidden`}
     >
       <div
-        className="bg-pale-accent/10 dark:bg-pale-accent/15 pointer-events-none fixed -top-[500vh] left-0 -z-10 h-[600vh] w-full mask-[url('/circuit-board.svg')] mask-size-[50vh] transition-transform duration-75 ease-linear"
+        className="bg-pale-accent/10 dark:bg-accent/5 pointer-events-none fixed -top-[500vh] left-0 -z-10 h-[600vh] w-full mask-[url('/circuit-board.svg')] mask-size-[50vh] transition-transform duration-75 ease-linear"
         style={{
           transform: `translateY(${parallaxOffset}px)`,
         }}
